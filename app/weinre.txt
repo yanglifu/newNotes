@@ -1,0 +1,7 @@
+app Éó²éÔªËØ
+
+node ²å¼ş weinre
+
+1. npm install weinre -g
+
+2. weinre --httpPort 9900 --boundHost -all-

@@ -1,0 +1,16 @@
+@import "color";
+$i:blue;
+$y:green;
+
+div#content{
+	width: 200px;
+	height: 500px;
+	background: red;
+}
+h1{
+	background: $w;
+}
+
+div{
+	background:red;
+}

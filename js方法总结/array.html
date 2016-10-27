@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>array 属性和方法</title>
+
+</head>
+<body>
+	<script>
+		var a = [1,2,3,4,5],
+			b = ["q","b","a"],
+			c = [33,4,1111,-222],
+			d = [1,2,4];
+
+			a.length;				//	属性长度
+
+			a.push("one");			//	从末尾插入
+
+			a.push("one","tow")		// 	多个元素插入
+
+			a.pop()					// 	删除数组最后一个元素
+
+			a.unshift("first")		// 	从array 前插入
+
+			a.shift()				//	删除数组第一个元素
+
+			delete a[1]				//	删除索引为1的元素	不会修改元素的 length	元素的索引不会改变  这个array变为稀疏数组
+		 
+			b.join();				//	转化为字符串
+
+			b.sort();				//	数组元素以字母表顺序排序
+
+			c.sort(function(a,b){
+				return a-b;			//	根据顺序 返回 : 负数 、0、正数				
+			});
+
+			c.sort(function(a,b){
+				return b-a;			//	返回 数值大小相反的排序
+			});
+
+
+			b.concat(4,5);			//  合并数组
+
+			b.concat(4,[5,[6,7]])	//	只能合并 一维数组
+
+			b.slice(1)				//	截取数组	1个参数 开始位置到结束 	2个参数  第一个位置 到 第二个位置
+
+			b.reverse()				//  数组颠倒顺序	
+
+
+			//ECMAScript5 中数组的方法
+
+			arr = d.map(function(x){ return x*x;});
+
+			console.log(a);
+
+			console.log(b.join());
+
+			console.log(b.sort());			
+
+			console.log(c);
+
+			console.log(b.concat(4,5));
+
+			console.log(b.concat(4,[5,[6,7]]));
+
+			console.log(b.slice(1));
+
+			console.log(d);
+			console.log(arr);
+
+	</script>
+</body>
+</html>

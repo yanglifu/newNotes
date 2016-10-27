@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1200,initial-scale=1.0,user-scalable=no">
+    <meta name="renderer" content="webkit">
+	<title>优思网校-首页</title>
+	<link type="text/css" rel="stylesheet" href="../lib/css/school-index.scss">
+	<script src="../lib/compontent/jquery/jquery-1.11.3.js"></script>
+	<script src="../lib/compontent/jquery/placeholders.js"></script>
+	<script src="../lib/js/ie8_function.js"></script>
+	<script src="../lib/js/functions.js"></script>
+</head>
+<body>
+	<!--头部-->
+	<div class="school-top">
+		<div class="school-inner">
+			<div class="fn-left left">
+				<a class="first" href="javascript:void(0)">
+					<i class="icon-fontphone iconfont"></i>
+					<span>免费热线 : 4000 939 775</span>
+				</a>
+				<a href="javascript:void(0)">
+					<i class="icon-fontwenxi iconfont"></i>
+					<span>微信</span>
+					<img src="../lib/images/font-right.png" alt="">
+				</a>
+				<a href="javascript:void(0)">
+					<i class="icon-fontxinxi iconfont"></i>
+					<span>在线咨询</span>
+				</a>
+			</div>
+			<div class="fn-right right">
+				<a href="#">
+					<i class="iconfont icon-fontcurriculum"></i>
+					<span>课程管理</span>
+				</a>
+				<a href="#">
+
+					<i class="iconfont icon-fontorder"></i>
+					<span>订单管理</span>
+				</a>
+				<a class="xinxi" href="#">
+					<i class="iconfont icon-fontnews"></i>
+					<span>消息</span><span class="red">(12)</span>
+				</a>
+
+				<div class="login_register fn-hide">
+					<a class="" href="#">登录</a>
+					<span class="shu">|</span>
+					<a  id="school-register" href="#">注册</a>					
+				</div>
+
+				<div class="my_logon " href="javascript:void(0)">
+					<img src="../lib/images/photo1.jpg" alt="">
+					<span id="id_name">王小彭sda</span>					
+					<i class="iconfont icon-fontbottom i1"></i>
+					<i class="iconfont icon-xia i2"></i>
+					<ul class="my_list ">
+						<li><a href="javascript:void(0)"><span class="icon-fintinformation iconfont">&nbsp;&nbsp;</span>个人资料</a></li>
+						<li><a href="javascript:void(0)"><span class="iconfont icon-modify">&nbsp;&nbsp;</span>
+							修改密码</a>
+						</li>
+						<li class="last">
+						<a href="javascript:void(0)"><span class="iconfont icon-guanbi">&nbsp;&nbsp;</span>退出登录 </a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="school-header-box">
+		<div class="school-header">
+			<div class="fn-left left">
+				<img src="../lib/images/school-logo.png" alt="">
+			</div>
+			<div class="fn-right right">
+				<a href="javascript:void(0)">首页</a>
+				<a class="school-nav-index" href="javascript:void(0)">在线1对1</a>
+				<a href="javascript:void(0)">在线小班课</a>
+				<a href="javascript:void(0)">优思优势</a>
+				<a href="javascript:void(0)">授课系统下载</a>
+			</div>
+		</div>
+	</div>
+	<!--//头部end -->
+
+	<!--// banner -->
+	<div class="school-index-banner">
+		<div class="school-banner-inner">
+			<!--// 左边 -->
+			<ul class="fn-left ul_list">
+				<li>
+					<a  href="javascript:void(0)">优思教辅开放</a>
+				</li>
+				<li>
+					<a class="index" href="javascript:void(0)">中考压轴题</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">新学科物理</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">高考提分宝典</a>
+				</li>
+			</ul>
+			<!--// 左边 end -->
+			<!--// 注册  -->
+			<div class="fn-right login-register ">
+				<div class="top">
+					<a class="fn-left register" href="javascript:void(0)">注册账号</a>
+					<a class="fn-right login" href="javascript；void(0)">
+						登录
+						<span class="iconfont icon-arrow"></span>
+					</a>
+				</div>
+				<ul class="ul_register">
+					<li class="one">
+						<span class="iconfont icon-phone"></span>
+						<span class="separate">|</span>
+						<input name="phone" type="text" placeholder="输入手机号">
+					</li>
+					<p id="phone_verification">1sdsadsdsadsa</p>
+					<li class="one">
+						<span class="iconfont icon-password"></span>
+						<span class="separate">|</span>
+						<input name="password" type="text" placeholder="设置6-20位密码">
+					</li>
+					
+					
+					<li class="verification">
+						<div class="fn-left left">
+							<span class="iconfont icon-verification"></span>
+							<span class="separate">|</span>
+							<input name="verification_code" type="text" placeholder="手机验证码">
+						</div>
+						<div class="fn-right right">
+							<div class="get_code">获取验证码</div>
+						</div>
+					</li>
+					
+					<li class="service_agreement">
+						<img id="img_agreement" src="../lib/images/school-index-2.png" alt="">
+
+						我已经阅读并同意<a href="javascript:void(0)"><span>《服务协议》</span></a>
+					</li>
+					<li class="one last">
+						<a class="" id="audition_course"  href="www.baidu.com">
+							注册
+						</a>
+					</li>
+					<p id="code_verification">weswewf</p>
+				</ul>
+			</div>
+			<!--// 注册  end-->
+			<!--// 登录  -->
+			<div class="fn-right login-register fn-hide">
+				
+				<div class="login_">
+					<img src="../lib/images/student-1.png" alt=""> 
+					<h4 class="color_fff">
+						王小妞
+					</h4>
+					<ul class="student-information">
+						<li>
+							<a href="javascript:void(0)"><span>2</span></a>
+							<a href="javascript:void(0)">代付款</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><span>3</span></a>
+							<a href="javascript:void(0)">已开课</a>
+						</li>
+						<li class="last">
+							<a href="javascript:void(0)"><span>0</span></a>
+							<a href="javascript:void(0)">待试听</a>
+						</li>
+					</ul>
+				</div>
+				<ul class="ul_register">
+					<li class="one last">
+						<a href="javascript:void(0)">预约课程</a>
+					</li>
+					<li class="one last cb-FFA get_into">
+						<a href="javascript:void(0)">进入学习中心</a>
+					</li>
+				</ul>
+			</div>
+			<!--// 登录 end-->			
+		</div>
+		
+		<div class="img-box">
+			1
+		</div>
+		<div class="img-box">
+			2
+		</div>
+		<div class="img-box">
+			3
+		</div>
+		<div class="img-box">
+			<img src="../lib/images/banner1.jpg" alt="">
+		</div>
+		<ul class="banner-list">
+			<li class="index"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>	
+	<!--// banner end-->
+	<!--//  绝对的名师  -->
+
+	<div class="school-index1">
+		<div class="school-inner1">
+			<ul class="school-list1">
+				<li>
+					<img src="../lib/images/school-index3.png" alt="">
+					<h4>绝对是名师</h4>
+					<p>100%名校学霸+省重点老师</p>
+				</li>
+				<li>
+					<img src="../lib/images/school-index4.png" alt="">
+					<h4>在家就能学</h4>
+					<p>自主研发授课系统,课堂实时互动</p>
+				</li>
+				<li>
+					<img src="../lib/images/school-index5.png" alt="">
+					<h4>家长能旁听</h4>
+					<p>了解孩子课堂表现,监督上课效果</p>
+				</li>
+				<li>
+					<img src="../lib/images/school-index6.jpg" alt="">
+					<h4>专业教研教辅支持</h4>
+					<p>20多个省重点初高中名师合作研发</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--//  绝对的名师  end--> 
+
+	<!--//  在线一对一课程 -->
+	<div class="school-index2">
+		<div class="fn-left left">
+			<img src="../lib/images/school-index8.png" alt="">
+		</div>
+		<div class="fn-right right">
+			<img src="../lib/images/school-index9.jpg" alt="">
+		</div>
+	</div>
+	<!--//  在线一对一课程 end-->
+
+	<!--// 拥有专业的教辅教研开发团队 -->
+	<div class="school-box-11">
+		<div class="school-inner-11">
+			<h4>拥有专业的教辅教研研发团队</h4>
+			<div class="xian"></div>
+			<p>高薪聘请清华、北大等top10名校老师研发优思课程，教研团队具有多年教研和教学经验，课程具有专业性和权威性，与学校里的课程能很好契合。</p>
+			<h5>优思教研人员必须满足:</h5>
+			<h6>1.在本科学科有5年以上教研经验的老师</h6>
+			<h6>2.有3年以上的教学经验</h6>
+			<a class="btn-a" href="javascript:void(0)">
+				进入优思教辅
+				<span class="iconfont icon-fontright"></span>
+			</a>
+			<ul class="list-11">
+				<li>
+					<img src="../lib/images/school-10.png" alt="">
+					<a href="javascript:void(0)">
+						12728套
+					</a>
+					<span>最新全国各地试卷</span>
+				</li>
+				<li>
+					<img src="../lib/images/school-11.png" alt="">
+					<a href="javascript:void(0)">
+						3325套
+					</a>
+					<span>精品教学课件</span>
+				</li>
+				<li>
+					<img src="../lib/images/school-12.png" alt="">
+					<a href="javascript:void(0)">
+						400万套
+					</a>
+					<span>知识点优质题库</span>
+				</li>
+				<li>
+					<img src="../lib/images/school-13.png" alt="">
+					<a href="javascript:void(0)">
+						152名
+					</a>
+					<span>各省市重点中学名师</span>
+				</li>
+				<li>
+					<img src="../lib/images/school-14.png" alt="">
+					<a href="javascript:void(0)">
+						78个
+					</a>
+					<span>知名连锁机构</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<!--// 拥有专业的教辅教研开发团队  end-->
+
+	<!--// 在线教学管理-->
+	<div class="school-index3">
+		<img src="../lib/images/school-index10.jpg" alt="">
+	</div>
+	<!--// 在线教学管理 end-->
+
+	<!--// 四对一的贴心服务 -->
+	<div class="school-modular-box-4">
+		<div class="school-modular4">
+			<a class="a-left a-btn-index" href="javascript:void(0)">预约试听</a>
+		</div>		
+	</div>
+	<!--//  end-->
+
+	<!--// 超过50家国内大型媒体报道 -->
+	<div class="school-index4">
+		<div class="school-inner4">
+			<div class="school-position bg_left"></div>
+			<div class="school-position bg_right"></div>
+			<div class="school-title">
+				<a href="javascript:void(0)">超过50家国内大型<span>媒体报道</span></a>
+			</div>
+			<div class="school-describe">
+				<p>优思网校是希望从大学生家教市场切入，避开目前竞争激烈的职业家教市场。不过，也不是第一家，36氪曾报道过 "知学" ，希望能过通过家教切入,最后围绕着大学生群体做其他的后续服务。</p>
+				<span class="fn-right">—— 新浪教育</span>
+			</div>
+			<ul class="school-trademark">
+				<li>
+					<img src="../lib/images/school-trademark1.png" alt="">
+				</li>
+				<li>
+					<img src="../lib/images/school-trademark2.png" alt="">
+				</li>
+				<li>
+					<img src="../lib/images/school-trademark3.png" alt="">
+				</li>
+				<li>
+					<img src="../lib/images/school-trademark4.png" alt="">
+				</li>
+				<li>
+					<img src="../lib/images/school-trademark5.png" alt="">
+				</li>
+				<li>
+					<img src="../lib/images/school-trademark6.png" alt="">
+				</li>
+
+				<li>
+					<img src="../lib/images/school-trademark7.png" alt="">
+				</li>
+				<li>
+					<img src="../lib/images/school-trademark8.png" alt="">
+				</li>
+				<li>
+					<img src="../lib/images/school-trademark9.png" alt="">
+				</li>
+				<li>
+					<img src="../lib/images/school-trademark10.png" alt="">
+				</li>
+				<li>
+					<img src="../lib/images/school-trademark11.png" alt="">
+				</li>
+				<li>
+					<img src="../lib/images/school-trademark11.png" alt="">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--// 超过50家国内大型媒体报道 end-->
+
+	<!--// 合作机构 -->
+	<div class="school-index4  bg_color4">
+		<div class="school-inner4">
+			
+			<div class="school-title">
+				<a href="javascript:void(0)">合作机构</a>
+			</div>
+			
+			<ul class="school-trademark">
+				<li>
+					<img src="../lib/images/school-trademark1.png" alt="">
+				</li>
+				<li>
+					<img src="../lib/images/school-trademark2.png" alt="">
+				</li>
+				<li>
+					<img src="../lib/images/school-trademark3.png" alt="">
+				</li>
+				<li>
+					<img src="../lib/images/school-trademark4.png" alt="">
+				</li>
+				<li>
+					<img src="../lib/images/school-trademark5.png" alt="">
+				</li>
+				<li>
+					<img src="../lib/images/school-trademark6.png" alt="">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--// 合作机构 end-->	
+
+	<!--//footer start-->
+	<div class="school-footer-box">
+		<div class="school-footer">
+			<ul class="fn-left left">
+				<li> 
+					<a href="javascript:void(0)"><span>帮助中心</span></a>
+					<a href="javascript:void(0)">
+					<img src="../lib/images/school-footer-right.png" alt="">
+					购买指南</a>
+					<a href="javascript:void(0)">
+					<img src="../lib/images/school-footer-right.png" alt="">
+					支付方式</a>
+					<a href="javascript:void(0)">
+					<img src="../lib/images/school-footer-right.png" alt="">
+					服务保障</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><span>教员中心</span></a>
+					<a href="javascript:void(0)">
+					<img src="../lib/images/school-footer-right.png" alt="">
+					申请教员</a>
+					<a href="javascript:void(0)">
+					<img src="../lib/images/school-footer-right.png" alt="">
+					教员登录</a>
+					<a href="javascript:void(0)">
+					<img src="../lib/images/school-footer-right.png" alt="">
+					服务条款</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><span>媒体中心</span></a>
+					<a href="javascript:void(0)">
+					<img src="../lib/images/school-footer-right.png" alt="">
+					新闻动态</a>
+					<a href="javascript:void(0)">
+					<img src="../lib/images/school-footer-right.png" alt="">
+					官方视频</a>
+					<a href="javascript:void(0)">
+					<img src="../lib/images/school-footer-right.png" alt="">
+					图片资源</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><span>关于公司</span></a>
+					<a href="javascript:void(0)">
+					<img src="../lib/images/school-footer-right.png" alt="">
+					公司简介</a>
+					<a href="javascript:void(0)">
+					<img src="../lib/images/school-footer-right.png" alt="">
+					加入我们</a>
+					<a href="javascript:void(0)">
+					<img src="../lib/images/school-footer-right.png" alt="">
+					联系我们</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><span>关注我们</span></a>
+					<a href="javascript:void(0)">
+					<img src="../lib/images/school-footer-right.png" alt="">
+					新浪微博</a>
+					<a href="javascript:void(0)">
+					<img src="../lib/images/school-footer-right.png" alt="">
+					官方微信</a>
+					<a href="javascript:void(0)">
+					<img src="../lib/images/school-footer-right.png" alt="">
+					官方贴吧</a>
+				</li>
+			</ul>
+			<div class="fn-right right">
+				<h4 class="icon-fontphone1 iconfont"></h4>
+				<p>400-619-0909</p>
+				<span>周一至周日:09:00-22:00</span>
+			</div>
+		</div>
+	</div>
+	<div class="school-sequence">
+		<a href="javascript:void(0)">优思网校</a>
+	<span>Copyright ©2015-2016 优思教育版权所有(沪|CP备14041652号-1)</span>
+	</div>
+	
+	<!--// 图形验证弹框-->
+	<div class="school_mask fn-hide">
+		
+	</div>
+	
+	<div class="code_box fn-hide">
+		<h4>图形验证  <i id="img_code_off" class="fn-right iconfont icon-xxx"></i></h4>
+		<ul class="code">
+			<li>
+				<img src="../lib/images/my-order-1.png" alt="">
+				<div class="btn_code"><i class="iconfont  icon-repeat"></i>  看不清</div>
+			</li>
+			<li>
+				<input type="text" placeholder="请输入图形验证码">
+			</li>
+			<li>
+				<a href="javascript:void(0)">确定</a>
+			</li>
+			
+				<p class="prompt"></p>
+			
+		</ul>
+	</div>
+
+	<!--// 图形验证弹框-->
+	<!--//footer end-->	
+	<script src="../lib/js/school-index.js"></script>
+</body>
+</html>

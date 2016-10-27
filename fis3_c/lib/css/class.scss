@@ -1,0 +1,65 @@
+@import "color";
+//分类
+.jf-grade{
+  width:100%;
+  height: auto;
+  border:1px solid $searchborder;
+  padding: 12px;
+  overflow: hidden;
+}
+.jf-grade>li{
+  width:100%;
+  height: 32px;
+  border-bottom:1px dashed #e9e9e9;
+  overflow: hidden;
+}
+.jf-grade .list{
+  width:100%;
+  height: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.jf-grade .list li{
+  width:auto;
+  height: 100%;
+  float: left;
+  padding: 0 12px;
+  color: $gradecolor;
+  line-height: 32px;
+  text-align: center;
+}
+.jf-grade .list li a:hover{
+  color: #de332f;
+}
+.jf-grade .list li.last{
+  background: url("../img/jf-s-x.png") no-repeat 48px center;
+  width:60px;
+}
+.jf-grade .list li.last-bg{
+  background: url("../img/jf-s-s.png") no-repeat 48px center;
+}
+.jf-grade .list li.first{
+  color: $gradecolor1;
+  text-align: left;
+  width:58px;
+}
+.jf-grade .list .last span{
+  color: #fb6d69;
+  cursor: pointer;
+}
+// 选中的颜色 和父级背景
+/*.jf-li-index{
+  background: #eeeeee;
+}*/
+.jf-grade .list li .jf-a-index{
+  color: #de332f;
+}
+
+// 更多的下划线
+/*.jf-grade .list .last a:hover{
+  text-decoration: underline;
+}
+.jf-grade .list li.lf-list-index a{
+   color: #de332f;
+ }*/

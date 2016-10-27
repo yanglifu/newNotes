@@ -1,0 +1,193 @@
+@import "color";
+.jf-top{
+  width: 100%;
+  height: 40px;
+  background: $topbackground;
+}
+.jf-top-inner{
+  width:1200px;
+  height: 100%;
+  margin:0 auto;
+}
+.jf-top-inner1{
+  width:1000px;
+}
+.jf-top-inner .left,.jf-top-inner .right{
+  width:auto;
+  height: 100%;
+  line-height: 40px;
+}
+.jf-top-inner span{
+  color: $topcolor;
+}
+.jf-top-inner .left img{
+  height: 12px;
+}
+.jf-top-inner .left .left-lesson{
+  margin-left:16px;
+}
+.jf-top-inner .right a{
+  color: $topcolor1;
+}
+
+//登录成功
+.top-photo{
+  width:32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-top: 3px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.top-index{
+  width:76px;
+  height: 20px;
+  margin-left: 8px;
+  margin-top: 10px;
+  line-height: 20px;
+  color: #737373;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.top-index span:hover{
+  color:  $topcolor1;
+}
+.jf-header{
+  width:100%;
+  height:96px ;
+}
+.jf-header-inner{
+  width:1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+.jf-header-inner1{
+  width:1000px;
+}
+.jf-top-inner .left,.jf-top-inner .right{
+  width:auto;
+}
+.jf-top-inner .left,.jf-top-inner .right a{
+  color: #4a4848;
+}
+.jf-top-inner .left,.jf-top-inner .right a:hover{
+  color: $topcolor1;
+}
+// logo
+.jf-logo{
+  padding-top: 22px;
+}
+.jf-nickname{
+
+}
+// 登录成功 昵称右侧小箭头
+.jf-top-list-bg{
+  width:20px;
+  height: 40px;
+  background: url("../img/jf-top-login-x.png") no-repeat  center 16px;
+  position: relative;
+  z-index: 40;
+
+}
+.jf-top-list-bg>.uls{
+  width:100px;
+  height: auto;
+  position: absolute;
+  top:40px;
+  right: 14px;
+  background: $topbackground;
+  z-index: 45;
+}
+.jf-top-list-bg>.uls li{
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+.jf-top-list-bg>.uls>li a{
+  color: $topcolor;
+}
+.jf-top-list-bg>.uls>li a:hover{
+  color: $topcolor1;
+}
+/* 搜索 */
+.jf-search{
+  width:740px;
+  height: 40px;
+  border:2px solid $searchborder;
+  margin-top:28px;
+}
+.jf-search-min{
+  width:600px;
+}
+.jf-search .left{
+  width:60px;
+  height: 100%;
+  background: $searchbackground url("../img/jf-bottom.png")no-repeat 44px 18px;
+  color: $searchcolor;
+  padding: 0 10px;
+  line-height: 40px;
+  position: relative;
+  z-index: 999;
+  cursor: pointer;
+}
+.jf-select{
+  position: absolute;
+  z-index: 999;
+  top:36px;
+  left:-2px;
+  width: 62px;
+  height: auto;
+  text-align: center;
+  background: $searchbackground;
+  border:2px solid #e8e8e8;
+  border-top:0;
+}
+.jf-select> li{
+  width:100%;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 2px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.jf-select li:hover{
+  background:#696e78;
+  color: #ffffff;
+}
+
+.jf-search .center{
+  width:558px;
+  height: 100%;
+  overflow: hidden;
+}
+.jf-search .center1{
+  width:400px;
+}
+.jf-search .center input{
+  width:100%;
+  height: 100%;
+  outline: none;
+  border:0;
+  line-height: 36px;
+  text-indent: 4px;
+}
+.jf-search .right{
+  height: 100%;
+  overflow: hidden;
+}
+.jf-search .right input{
+  outline: none;
+  width:98px;
+  height: 40px;
+  color: $searchcolor;
+  line-height: 30px;
+  background: $topbackground;
+  border:1px solid $searchborder;
+}
+.jf-search .right input:hover{
+  background: #FF6161;
+  color: #ffffff;
+}

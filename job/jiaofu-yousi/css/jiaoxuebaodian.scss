@@ -1,0 +1,405 @@
+@import "color";
+@import "reset";
+@import "top";
+@import "font";
+@import "nav";
+@import "lf";
+@import "footer";
+.jf-content {
+  width: 100%;
+  height: auto;
+}
+.jf-content-inner{
+  width:1200px;
+  height: auto;
+  min-height: 800px;
+  overflow: hidden;
+  padding-top: 40px;
+}
+//左
+.jf-content-inner>.left{
+  width:866px;
+  height: auto;
+  border:1px solid $searchborder;
+}
+// 文章列表
+.jf-content-inner .left .jf-list{
+  width:100%;
+  height:152px;
+  padding: 18px;
+}
+.jf-content-inner .left .jf-list .left{
+  width:158px;
+  height: 116px;
+  overflow: hidden;
+  position: relative;
+}
+.jf-list-official{
+  width:32px;
+  height: 20px;
+  position: absolute;
+  top:0;
+  left:12px;
+  overflow: hidden;
+}
+.jf-content-inner .left .jf-list .right{
+  width:618px;
+  height: 116px;
+  margin-left: 20px;
+}
+.jf-content-inner .left .jf-list .right h5{
+  font-size: 16px;
+  color: $breadcolor2;
+  line-height: 22px;
+  margin-top: 3px;
+}
+.jf-content-inner .left .jf-list .right a:hover{
+  text-decoration: underline;
+  color: #3278ad;
+}
+.jf-content-inner .left .jf-list .right p{
+  width:100%;
+  height: 54px;
+  margin-top: 10px;
+  overflow: hidden;
+  font-size: 12px;
+  color: $pcolor;
+  line-height: 24px;
+}
+.jf-content-inner .left .jf-list .right span{
+  color: $spancolor;
+}
+.jf-content-inner .left .jf-list .right img{
+  margin-left: 20px;
+}
+
+//右边
+.jf-content-inner>.right{
+  width:310px;
+  height: auto;
+}
+.jf-content-inner>.right .right-top{
+  width: 100%;
+  height: 256px;
+  border:1px solid $searchborder;
+}
+
+.right-top .top{
+  width:100%;
+  height: 82px;
+  background: $bgcolor;
+  padding: 10px 40px;
+}
+.right-top .top h5{
+  font-size: 14px;
+}
+.right-top .top .on-sign {
+  color: $breadcolor2;
+}
+.right-top .top .left{
+  width:54px;
+  height: 54px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.right-top .top .right{
+  width:auto;
+  height: 54px;
+  margin-left: 20px;
+  line-height: 54px;
+  color: $breadcolor2;
+}
+.right-top .center{
+  width:270px;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid $searchborder;
+  overflow: hidden;
+}
+.right-top .center h4{
+  font-size: 20px;
+  color: $footercolor;
+}
+.right-top .center h4:hover{
+  color: #da403c;
+}
+.right-top .center span{
+  font-size: 12px;
+  color: $pcolor;
+}
+.right-top .center .left,.right-top .center .right{
+  width:50%;
+  height: 48px;
+}
+.right-top .center .left{
+  border-right:1px solid $searchborder;
+}
+.right-top .bottom{
+  width:244px;
+  height: 46px;
+  background: #da403c;
+  margin: 28px auto;
+  text-align: center;
+  line-height: 46px;
+  color: #fdf9f9;
+}
+.right-top .bottom-no{
+  width:244px;
+  height: 46px;
+  margin: 28px auto;
+  text-align: center;
+  line-height: 46px;
+  color: #fdf9f9;
+  background: #B8B8B8;
+}
+
+.right-top .bottom:hover{
+  background: #a62b28;
+}
+
+//热门推荐
+.right-bottom{
+  width:100%;
+  height: 292px;
+  margin-top: 20px;
+  border:1px solid $searchborder;
+  overflow: hidden;
+}
+.right-bottom .title{
+  width:100%;
+  height: 40px;
+  border-bottom: 1px solid $searchborder;
+}
+.right-bottom .title li{
+  float: left;
+  line-height: 40px;
+  width:auto;
+  padding: 0 10px;
+  height: 40px;
+  color: #3d3d3d;
+  border-bottom:2px solid #da403c;
+}
+.right-bottom .list{
+  width: 100%;
+  padding: 12px;
+}
+.right-bottom .list li{
+  width:100%;
+  height: 40px;
+  line-height: 40px;
+  border-bottom:1px dashed $searchborder;
+}
+.right-bottom .list li a{
+  color: #848484;
+}
+.right-bottom .list li a:hover{
+  color: #da403c;
+  text-decoration: underline;
+}
+//分页的位置
+.jf-position{
+  left:100px
+}
+
+
+
+
+// 弹框
+.mask{
+  position: fixed;
+  width:100%;
+  height: 100%;
+  top:0;
+  left:0;
+  background: #000000;
+  opacity: 0.6;
+  z-index: 99999;
+}
+.ex8-appointment{
+  position: fixed;
+  width:380px;
+  height: 310px;
+  background: url("../img/jf-i-logo.png")no-repeat center;
+  z-index: 999999;
+}
+.jf-login{
+  width:240px;
+  height: 230px;
+  margin: 80px auto;
+}
+.jf-login a{
+  display: block;
+  color: #66aaeb;
+  margin-top: 10px;
+}
+.jf-login input{
+  width:100%;
+  height: 40px;
+  border:0;
+  outline: none;
+  background: #f5f5f5;
+  margin-top: 8px;
+  line-height: 40px;
+}
+input[name=button]{
+  background: #66aaeb;
+  color: #f7fafd;
+}
+
+.ex8-inputbox{
+  width:14px;
+  height: 14px;
+  background: url("../img/jf-i-close.png") no-repeat center;
+  position: absolute;
+  top:70px;
+  right: 20px;
+  cursor: pointer;
+}
+.errorMsg{
+  color: #333333;
+}
+
+//意见反馈
+.jf-opinion{
+  width:30px;
+  height: 94px;
+  position: fixed;
+  top:50%;
+  right:-6px;
+  background: #939393;
+  padding: 6px;
+  color: #254c6a;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.jf-feedback{
+  position: fixed;
+  top:0;
+  left:0;
+  z-index:999999;
+  width:380px;
+  height: 268px;
+  background: #ffffff;
+}
+.jf-feedback-login{
+  width:340px;
+  height: 230px;
+  margin: 20px auto;
+}
+.jf-feedback-login textarea{
+  width:336px;
+  height: 122px;
+  border:0;
+  outline: none;
+  background: #f5f5f5;
+  color: #a6a6a6;
+  resize: none;
+}
+.jf-feedback-login #phone{
+  width:100%;
+  height: 28px;
+  background: #f5f5f5;
+  border:0;
+  outline: none;
+  margin-top: 10px;
+  color: #A9A9A9;
+}
+.jf-feedback-login .jf-code{
+  width:100%;
+  height: 30px;
+  margin-top: 6px;
+}
+.jf-feedback-login .jf-code #code{
+  display: block;
+  width:64px;
+  height: 28px;
+  background: #f5f5f5;
+  border:1px solid #e8e8e8;
+  outline: none;
+  float: left;
+  color: #A9A9A9;
+}
+.jf-feedback-login .jf-code img{
+  display: block;
+  float: left;
+  width:64px;
+  height: 28px;
+  margin-left: 20px;
+  border:1px solid #e8e8e8;
+}
+.jf-feedback-login .jf-code .left,.jf-login .jf-code .right{
+  width:56px;
+  height: 26px;
+  outline: none;
+}
+.jf-feedback-login .jf-code .left{
+  margin-right: 10px;
+  color: #505050;
+  border:1px solid #e8e8e8;
+}
+.jf-feedback-login .jf-code .right{
+  color: #ffeae9;
+  background: #ff3934;
+  border:0;
+}
+
+// 背景变化
+.bgphoto{
+  background: url("../img/jf-logo-d.png") no-repeat center !important;
+}
+
+//试卷
+
+.jf-paging{
+  width:100%;
+  height: 200px;
+}
+.jf-paging-inner{
+  width:1200px;
+  height: 200px;
+  margin:0 auto;
+}
+.paging-inner{
+  width:846px;
+  height: 100%;
+  text-align: center;
+}
+.uls-paging{
+  width:auto;
+  height: 38px;
+  margin-top: 90px;
+  display: inline-block;
+}
+.uls-paging-teaching{
+  right:314px;
+}
+
+// 搜索的结果页面分页
+.search-paging{
+  right:280px;
+}
+.uls-paging li:hover a{
+  color: $navborder;
+}
+.uls-paging li{
+  float: left;
+  padding: 8px 16px;
+  margin: 0 10px;
+  border:1px solid $searchborder;
+}
+
+//选中的颜色
+.uls-paging li.index{
+  border:0;
+}
+.uls-paging li.index a{
+  color: $navborder;
+}
+
+// 试卷库
+.jf-margin-left{
+  right: 300px;
+}

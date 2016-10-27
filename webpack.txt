@@ -1,0 +1,72 @@
+
+webpack  先编译 npm run dev   后运行 npm run build 
+
+webpack.config.js 配置基本
+	var path = require('path');    	  使用 require(XXX) 的形式来引入各模块
+	entry    页面入口文件配置
+	output 	入口文件输出配置
+	module    加载插件配置
+		
+	
+0.  npm install	安装 package.json  中所有的依赖
+
+1.  npm init	生成package.json 文件
+  	
+2. 运行webpack  	生成bundle.js 文件就这样出现在你的 /build 文件夹下 需要在 build/ 下的 index.html 去启动项目。
+
+3. 在package.json  中配置 	如下   	则:  npm run build  代替webpack 命令 	
+
+	"scripts":{
+		"build":"webpack"
+	}
+	
+4. 在package.json 中配置  如下    
+	"scripts":{
+		"build":"webpack",
+		"dev": "webpack-dev-server --port 9090 --devtool eval --progress --colors --hot --content-base build"
+	}
+
+	 则: npm run  dev  代替
+	
+	 1. webpack-dev-server - 	在 localhost:8080 建立一个 Web 服务器
+	 2. --port 9090 启动端口 9090        * Error: listen EADDRINUSE 127.0.0.1:8080  端口冲突错误 *
+	 3. --devtool eval		 为你的代码创建源地址。当有任何报错的时候可以让你更加精确地定位到文件和行号
+	 4. --progress  	  显示合并代码进度
+	 5. --colors	命令行中显示颜色！
+	 6. --content-base build 	 指向设置的输出目录
+
+5. 在webpack.config.js     检测文件更改 浏览器自动刷新
+	module.exports = {
+    	   entry: [
+        	   	'webpack/hot/dev-server',
+        	 	'webpack-dev-server/client?http://localhost:8084',
+        	   	path.resolve(__dirname, 'app/main.js')
+    	   ],
+    	  output: {
+        	     path: path.resolve(__dirname, 'build'),
+        	    filename: 'bundle.js',
+    	  },
+            };
+6. 停止服务器运行 ctrl+c   如果按ctrl+z  则再次运行时，会报错 ： listen EADDRINUSE 127.0.0.1:8084  端口冲突 
+		         如果直接关闭命令窗口  报错同上
+7. react JS 配置 
+
+8. css 配置   注意引入的css文件必须要有内容 否则报错
+
+9. 安装依赖
+	(1) npm i webpack-dev-server --save				安装webpack-dev-server
+
+	(2) npm install babel-loader babel-core babel-preset-es2015 babel-preset-react --save-dev	安装es6 的依赖
+	
+	(3) npm install react react-dom --save	  			安装 react
+
+	(6) npm install css-loader style-loader --save-dev		安装 css的加载器
+	
+	(7) npm install less-loader  或者 npm install sass-loader		安装 less和sass
+
+	(6) npm install url-loader --save-dev				安装 图片插件
+ 
+
+
+
+

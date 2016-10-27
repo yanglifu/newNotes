@@ -1,0 +1,84 @@
+1. 超出部分省略号
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+2. 阴影
+    -webkit-box-shadow: 0px 0px 5px #000;
+    x轴偏移量  y,  模糊度 , color
+
+3. 透明背景    
+    filter:Alpha(opacity=40);
+    background:#000000;/*实现IE背景透明*/	
+    background:rgba(0, 0, 0, 0.4) none repeat scroll 0 0;/*实现FF背景透明，文字不透明*/
+
+4. 内边框
+    box-sizing: border-box;	
+
+5. autocomplete="off"   input  关闭谷歌自动填充
+
+	input:-webkit-autofill{
+		 -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+ 		 -webkit-text-fill-color: #999;
+	}
+
+6. 浏览器不自动记住 用户名密码
+	在提交的表单前面 , 创建2个隐藏的 input   type  :text    password 
+
+7. 文字字间距  letter-spacing: 4px;
+
+8. -webkit-animation: rotate 2s ease 0.5s infinite normal;
+
+		参数说明 ： 名称  执行时间 运动曲线  延迟执行  次数  是否反向执行   	
+
+9. navigator 查看浏览器版本
+
+10. 垂直居中 vertical-align:middle;
+
+11. <a href="tel:4000939775">4000-939-775</a> 	拨打电话
+
+12. 'WMode': 'Opaque'	嵌入视频层级  解决视频框  至顶的问题
+
+13. width: calc(100% - 10rem);  	css3加减法  注意 : 空格
+
+14. html  双核浏览器  优先使用谷歌内核渲染
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1200,initial-scale=1.0,user-scalable=no">
+    <meta name="renderer" content="webkit">
+
+15.  letter-spacing:8px  字间距
+
+16. autocomplete="off"   input  关闭谷歌自动填充
+
+17. textarea 文本域 的 提示   注意 ： 文本域 闭合标签 不能换行
+
+18. <a href="#abc"></a>	锚点
+	#abc:target {width:100%};
+    <div id="#abc:target"></div>
+
+19. 移动端选项卡click事件  会有1个蓝色的边框
+	解决办法 ：    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+20.  iframe 用法
+	自适应
+ 	<script type="text/javascript" language="javascript">
+		function iFrameHeight() {
+			var ifm= document.getElementById("mainweb");
+			var subWeb = document.frames ? document.frames["mainweb"].document :
+			ifm.contentDocument;
+			if(ifm != null && subWeb != null) {
+			ifm.height = subWeb.body.scrollHeight;
+			}
+		}
+	</script> 
+	<iframe rv-src="items.inner" id="mainweb" name="mainweb" width="100%" height="100%" frameborder="0"  onLoad="iFrameHeight()" ></iframe>
+
+21. window.location.reload(); 刷新当前页面
+22. outline 属性在一个声明中设置所有轮廓属性。	
+	input,textarea{
+    	     outline:none;
+	}
+22. ios 数字变为 电话问题  <meta name="format-detection" content="telephone=no" />
+
+23. 数字单词边界换行	 word-break:break-all  	word-wrap:break-word
+		

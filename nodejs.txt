@@ -1,0 +1,91 @@
+
+REPL 命令
+
+	ctrl + c - 终止当前命令
+
+	ctrl + c twice - 终止 Node REPL
+
+	ctrl + d - 终止 Node REPL
+
+	Up/Down Keys - 查看命令历史记录和修改以前的命令
+
+	tab Keys - 当前命令列表
+
+	.help - 列出所有命令
+
+	.break - 退出多行表达
+
+	.clear - 从多行表达式退出
+
+	.save - 当前 Node REPL会话保存到一个文件
+
+	.load - 加载文件的内容到当前Node REPL会话
+
+1. npm install express     	 npm 命令安装常用的 Node.js web框架模块 express:
+	
+
+2. npm ls -g	查看全局插件
+
+3. npm uninstall express	卸载  express插件
+
+4. npm update express	更新模块
+
+5. npm search express	搜索模块
+
+6. node.js  回调函数	nodejs/main.js
+	阻塞代码		nodejs/main.js
+	非阻塞代码	nodejs/main1.js
+
+ 
+7. url
+	url.parse('https://www.baidu.com/',[true],[true])  	 解析url
+
+	url.format({})			组合成url完整地址
+	
+	url.resolve('http://00','/course/list')  //http://00/course/list  拼接url路径
+
+
+8. querystring.stringify({name:'scott',course:['jade','node'],from:''})	序列化		
+	'name=scott&course=jade&course=node&from='
+
+    querystring.stringify({name:'scott',course:['jade','node'],from:''},',')
+   	 'name=scott,course=jade,course=node,from='
+
+    querystring.stringify({name:'scott',course:['jade','node'],from:''},',',':')
+
+9.  querystring.parse('name=scott&course=jade&course=node&from=')	反序列化
+	{ name: 'scott', course: [ 'jade', 'node' ], from: '' }
+
+10. querystring.escape("<哈哈>")					转译
+	'%3C%E5%93%88%E5%93%88%3E'
+
+11. querystring.unescape('%3C%E5%93%88%E5%93%88%3E')		反转译
+
+12. http 
+
+
+13. Buffer  二进制缓存区  --构造函数
+
+	new Buffer('Hello','base64')
+
+	var buf = new Buffer(8);	重建长度为 8 的缓存区
+
+	var buf = new Buffer([1,2,3,4])
+
+
+
+
+	
+
+
+
+
+
+
+
+			
+		
+	
+
+
+

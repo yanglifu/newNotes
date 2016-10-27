@@ -1,0 +1,223 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "微软雅黑";
+    font-size: 12px;
+}
+.drawing{
+    width: 1200px;height:600px;
+    margin: 30px auto;
+}
+.drawing .tiaojie,.drawing .left,.drawing .right{
+    float: left;
+    height: 600px;
+}
+.drawing .tiaojie{
+    width: 5%;
+    background: #243C3C;
+    text-align: center;
+}
+.drawing .tiaojie ul{
+    width:100%;
+    height: 50%;
+}
+
+.drawing .tiaojie ul li{
+    width:80%;
+    height: 40px;
+    margin: 20px auto;
+    background: blue;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.drawing .tiaojie ul li:nth-child(1){
+    background:#000000;
+}
+.drawing .tiaojie ul li:nth-child(2){
+    background: #ffffff;
+}
+.drawing .tiaojie ul li:nth-child(3){
+    background:red;
+}
+.drawing .tiaojie ul li:nth-child(4){
+    background: blue;
+}
+.drawing .tiaojie ul li:nth-child(5){
+    background:green;
+}
+.drawing .tiaojie ul li:nth-child(6){
+    background:deeppink;
+}
+.drawing .tiaojie ul li:nth-child(7){
+    background:orange;
+}
+.drawing .tiaojie ul li:nth-child(8){
+    background:purple;
+}
+.drawing .left{
+    width:75%;
+    position: relative;
+}
+.drawing .left > .zhezhao{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 2;
+}
+.drawing .left > .xp{
+    display: none;
+    position: absolute;
+    background: #122EA0;
+}
+.drawing .left > .xuanze{
+    display: none;
+    border:1px dashed #000000;
+    position: absolute;
+}
+.drawing .right{
+    width: 20%;
+    position: relative;
+    overflow: hidden;
+}
+.drawing .right .tool,.drawing .right .list{
+    width:50%;
+    height: 100%;
+    float: left;
+}
+.drawing .right .tool{
+    border-right:1px solid darkgreen;
+}
+.drawing .right .tool ul{
+    width:100%;
+    height: 100%;
+    border:1px solid rgba(0,0,0,0);
+    background: #243C3C;
+}
+.drawing .right .tool ul li{
+    margin: 13px auto;
+    width:60%;
+    height: 60px;
+    color: #ffffff;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+}
+
+.drawing .right .tool ul li span{
+     display: inline-block;
+ }
+.drawing .right .tool ul li input{
+    border: 0;
+}
+.drawing .right .tool ul li:nth-child(1){
+    background-color:#207D59;
+}
+.drawing .right .tool ul li:nth-child(2){
+    background-color:#3B5B8E;
+}
+.drawing .right .tool ul li:nth-child(3){
+    background-color:#5C9FAF;
+}
+.drawing .right .tool ul li:nth-child(4){
+    background-color:#B85B53;
+}
+.drawing .right .tool ul li:nth-child(5){
+    background-color:#435DB2;
+}
+.drawing .right .tool ul li:nth-child(6){
+    background-color:#B243AD;
+}
+.drawing .right .tool ul li:nth-child(7){
+    background-color:#122EA0;
+}
+.drawing .right .tool ul li:nth-child(8){
+    background-color:#A05512;
+}
+.drawing .right .list ul{
+    width:100%;
+    height: 100%;
+    border:1px solid rgba(0,0,0,0);
+    background: #243C3C;
+}
+.drawing .right .list ul li{
+     margin: 13px auto;
+     width:60%;
+     height: 60px;
+     border-radius: 3px;
+     color: #ffffff;
+     text-align: center;
+     line-height: 60px;
+    cursor: pointer;
+ }
+
+.drawing .right .list .uls1 li{
+    background: #207D59;
+}
+
+.drawing .right .list .uls2 li{
+    background: #3B5B8E;
+}
+.drawing .right .list .uls3 li{
+    background: #5C9FAF;
+}
+
+.drawing .right .list .uls4 li{
+    background: #B85B53;
+}
+.drawing .right .list .uls5 li{
+    background: #435DB2;
+}
+
+.drawing .right .list .uls6 li{
+    background: #B243AD;
+}
+.drawing .right .list .uls7 li{
+    background: #122EA0;
+}
+
+.drawing .right .list .uls8 li{
+    background: #A05512;
+}
+
+/* 画布 */
+.c1{
+    background: #cccccc;
+}
+
+/* 小画板  */
+.canvasbox{
+    width:200px;
+    height: 134px;
+    border:1px dashed #000;
+    position: relative;
+    left:200px;
+    animation: canvas 5s infinite linear alternate;          /* forwards 动画停留在最后一帧 */
+    background: #ccc ;                                       /*  infinite 重复执行 */
+                                                            /*  alternate 奇数为正方向移动  偶数为反方向移动  */
+}
+.c2{
+
+    width:100%;
+}
+
+@keyframes canvas {
+    0%{
+        transform-origin: center ;
+        transform: rotateY(0deg);
+        background: #ccc;
+    }
+    50%{
+        background: blue;
+    }
+    100%{
+        transform-origin: center;
+        transform: translate(200px);
+
+        background: #ccc;
+    }
+}
+

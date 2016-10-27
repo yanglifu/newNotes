@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <link rel="stylesheet" href="css/function.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/canvas.css">
+</head>
+<body>
+    <div class="drawing">
+        <div class="tiaojie">
+              <ul>
+                  <li data-color="#000000"></li>
+                  <li data-color="#ffffff"></li>
+                  <li data-color="red"></li>
+                  <li data-color="blue"></li>
+                  <li data-color="green"></li>
+                  <li data-color="deeppink"></li>
+                  <li data-color="orange"></li>
+                  <li data-color="purple"></li>
+              </ul>
+        </div>
+        <div class="left">
+            <div class="zhezhao"></div>
+            <canvas class="c1"></canvas>
+            <div class="xp"></div>
+            <div class="xuanze"></div>
+        </div>
+        <div class="right">
+            <div class="tool">
+                <ul>
+                    <li><span>画图</span></li>
+                    <li><span>文件</span></li>
+                    <li><span>类型</span></li>
+                    <li title="画线颜色"><input class="xcolor" type="color"><span></span></li>
+                    <li title="填充颜色"><input class="tcolor" type="color"><span></span></li>
+                    <li><span>粗细</span></li>
+                    <li><span>橡皮</span></li>
+                    <li class="tool-xuanze"><span>选择</span></li>
+                </ul>
+            </div>
+            <div class="list">
+                <ul class="functions uls1">
+                    <li data-role="pen"><span>画笔</span></li>
+                    <li data-role="line"><span>线</span></li>
+                    <li data-role="rect"><span>矩形</span></li>
+                    <li data-role="circle"><span>圆</span></li>
+                    <li data-role="five"><span>五角星</span></li>
+                </ul>
+                <ul class="functions uls2">
+                    <li><span>新建</span></li>
+                    <li><span>保存</span></li>
+                    <li><span>后退</span></li>
+                </ul>
+                <ul class="functions uls3">
+                    <li data-role="stroke"><span>画线</span></li>
+                    <li data-role="fill"><span>填充</span></li>
+                </ul>
+                <ul class="functions uls4">
+                </ul>
+                <ul class="functions uls5">
+                </ul>
+                <ul class=" functions uls6">
+                    <li data-role="1"><span>细</span></li>
+                    <li data-role="3"><span>中</span></li>
+                    <li data-role="6"><span>粗</span></li>
+                </ul>
+                <ul class=" functions uls7">
+                    <li data-role="20"><span>小</span></li>
+                    <li data-role="30"><span>中</span></li>
+                    <li data-role="80"><span>大</span></li>
+                </ul>
+                <ul class="functions uls8">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--//小画板-->
+    <div class="canvasbox">
+        <canvas id="c2" class="c2" width="900" height="600"></canvas>
+    </div>
+    <!--//end-->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/gongneng.js"></script>
+    <script src="js/canvas.js"></script>
+</body>
+</html>

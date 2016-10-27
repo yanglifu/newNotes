@@ -1,0 +1,24 @@
+fis3 release -d  <path>  将项目 发送到某处  <path> 路径
+
+fis3 release -h   获取更多的参数设置
+	列
+	-h, --help 		 打印此帮助信息	
+	-d, --dest <path>  	 释放输出目录
+	-l, --lint 
+	-w, --watch		监控项目的变更	
+	-L，--live 		自动重新加载您的浏览器
+	-c, --clean		干净的编译缓存
+	-u, --unique		使用独特的编译缓存
+	-r, --root <path>	指定项目根
+	-f, --file <filename>	指定文件路径` fis-conf.js `
+	--no-color		禁用彩色输出
+	--verbose 		启用详细模式	
+
+
+fis3 server start  // 创建一个本地服务器
+fis3 server stop   // 关闭服务器
+fis3 server open    // 打开根目录
+
+//fis3  编译 css 使用流程
+ fis3 release development -wL(选择启动的配置项)    //
+

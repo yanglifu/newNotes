@@ -1,0 +1,3 @@
+ipconfig   查看windows IP 配置
+d:                           /*进入D:根目录*/
+cd f                         /* 进入f问价夹 */

@@ -1,0 +1,49 @@
+@import "color";
+// 导航
+.jf-nav{
+  width:100%;
+  height: 42px;
+  margin-top: 5px;
+  border-bottom:2px solid $navborder;
+}
+.jf-nav-inner{
+  width:1200px;
+  height: 42px;
+  margin: 0 auto;
+
+}
+.jf-nav-inner ul{
+  width:auto;
+  height: 100%;
+
+}
+.jf-nav-inner ul li{
+  height: 100%;
+  float: left;
+  line-height: 42px;
+  padding: 0 20px;
+  color: #ffffff;
+}
+.jf-nav-inner ul li a{
+  color: #999999;
+}
+.jf-nav-inner ul li.lis-first{
+  background: $navborder;
+}
+
+//间距
+
+.jf-nav-inner ul li.jf-nav-left{
+  margin-left: 12px;
+}
+
+.jf-nav-inner ul li.lis-first a{
+  color: #fff5f5;
+}
+//选中
+.jf-nav-inner ul li.jf-index a{
+  color: $navborder;
+}
+.jf-nav-inner ul li a:hover{
+  color: $navborder;
+}

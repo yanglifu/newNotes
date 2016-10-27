@@ -1,0 +1,573 @@
+Canvas allows us to create some absolutely amazing graphics on the web these days. But the API it provides is disappointingly low-level. It's one thing if we simply want to draw few basic shapes on canvas and forget about them. But as soon as there's need for any kind of interaction, change of picture at any point, or drawing of more complex shapes — situtation changes dramatically.
+
+Fabric aims to solve this problem
+
+画布使我们能够在网络上创造一些绝对惊人的图形。但它提供的API是非常低级的。这是一件事，如果我们只是想画一些基本的形状在画布上，忘记了他们。但只要有任何一种交往的需要，在任何时候换画，或画更复杂的形状变化情况。
+织物的目的是解决这个问题油，有很小的控制。
+
+Instead of operating on such low level, Fabric provides simple but powerful object model on top of native methods. It takes care of canvas state and rendering, and lets us work with “objects” directly.
+
+Let's take a look at a simple example demonstrating this difference. Let's say we want to draw a red rectangle somewhere on canvas. Here's how we would do this with native <canvas> API.
+
+织物提供了简单而强大的对象模型，而不是在这样低的水平上，在本机的方法。它需要照顾画布状态和渲染，让我们与“对象”直接工作。
+让我们来看一个简单的例子说明这种差异。让我们说，我们要画一个红色的长方形在画布上。下面是我们如何做到这与天然的<画布>。
+
+
+At this point, there's almost no difference in size — the two examples are pretty similar. However, you can already see how different the approach to working with canvas is. With native methods, we operate on context — an object representing entire canvas bitmap. In Fabric, we operate on objects — instantiate them, change their properties, and add them to canvas. You can see that these objects are first-class citizens in Fabric land.
+
+But rendering plain red rectangle is just so boring. We could have at least made something fun with it! Perhaps, rotate slightly?
+
+Let's try 45 degrees. First, using native <canvas> methods
+在这一点上，大小几乎没有区别--这2个例子非常相似。然而，你可以看到不同的方法来使用画布的方法是怎样的。用本机方法，我们在上下文中操作一个对象表示整个画布位图。在织物，我们操作的对象初始化它们，改变它们的特性，并将它们添加到画布。你可以看到，这些物品都是一等公民在织物的土地。
+但是渲染平原的红色矩形是很无聊的。我们至少可以做一些有趣的事情！或许，微微转动？
+让我们尝试45度。首先，使用天然的<画布>方法
+
+What happened here?
+
+All we had to do in Fabric is change object's “angle” value to 45. With native methods however, things become much more “fun”. Remember that we can't operate on objects. Instead, we tweak positioning and angle of entire canvas bitmap (ctx.translate, ctx.rotate) to suit our needs. We then draw rectangle again, but remembering to offset bitmap properly (-10, -10), so that it's still rendered at the point of 100,100. As a bonus exercise, we had to translate degrees to radians when rotating canvas bitmap.
+
+I'm sure you're starting to see exactly why Fabric exists and how much low-level boilerplate it hides.
+
+But let's take a look at yet another example — keeping track of canvas state.
+
+What if at some point, we wanted to move that now-familiar red rectangle to a slightly different location on canvas? How would we do this without being able to operate on objects? Would we just call another fillRect on a canvas bitmap?
+
+Not quite. Calling another fillRect command actually draws rectangle on top of whatever is already drawn on canvas. Remember I mentioned painting with a brush earlier? In order to “move” it, we'd need to first erase previously drawn content, and then draw rectangle at a new location.
+
+发生了什么事？
+我们所要做的就是把织物中的“角度”值改为45。然而，与当地的方法，事情变得更加“有趣”。记住，我们不能在对象上操作。相反，我们调整定位和整个画布位图角（ctx.translate，CTX。旋转）来满足我们的需求。然后我们再画一个长方形，但是记得要正确地（10、10），所以它仍然在100100点上呈现。作为一个额外的锻炼，我们不得不转换角度时旋转画布位图。
+我敢肯定，你开始看到为什么织物存在多少低级样板它隐藏。
+但是让我们来看看另一个例子--保持画布状态的轨迹。
+如果在某个时候，我们想将现在所熟悉的红色矩形移到画布上的稍微不同的位置上？我们如何做到这一不能够操作的对象？我们只是呼吁画布位图另一用吗？
+不完全。用命令调用另一个实际绘制在任何矩形已经画在画布上。记得我刚才提到过一个刷过的画吗？为了“移动”，我们需要先清除先前绘制的内容，然后在一个新的位置绘制矩形。
+
+Notice a very important difference. With Fabric, we no longer need to erase the content before attempting to “modify” any content. We still work with objects, simply changing their properties, and then re-render canvas to get a “fresh picture”.
+注意一个非常重要的区别。与织物，我们不再需要擦除的内容，然后尝试“修改”任何内容。我们仍然与对象的工作，简单地改变他们的属性，然后重新渲染画布得到一个“新鲜的画面”。
+
+We already saw how to work with rectangles by instantiating fabric.Rect constructor. But of course Fabric covers all the other basic shapes as well — circles, triangles, ellipses, and so on. All of them are exposed under fabric “namespace” as fabric.Circle, fabric.Triangle, fabric.Ellipse, etc.
+
+7 basic shapes provided in Fabric:
+
+fabric.Circle
+fabric.Ellipse
+fabric.Line
+fabric.Polygon
+fabric.Polyline
+fabric.Rect
+fabric.Triangle
+Want to draw a circle? Just create a circle object, and add it to canvas. Same with any other basic shape:
+
+
+
+我们已经看到如何通过实例化布矩形矩形构造函数的工作。当然，织物覆盖所有其他基本形状为圆、三角形、椭圆、等等。所有这些都是在织物的“名字空间”中暴露出来的，如织物、圆、织物、三角形、织物、椭圆等。
+织物提供的7种基本形状：
+圈织物。
+织物。椭圆
+线织物。
+多边形的织物。
+线织物。
+矩形织物。
+三角形的织物。
+想画一个圆吗？只需创建一个圆形对象，并将其添加到画布上。与其他基本形状相同：
+
+.and there we have a green circle, drawn at 100,100 location and a blue triangle at 50,50 location.
+。我们有一个绿色的圆圈，画在100100的位置，位置在50,50蓝色三角。
+
+Manipulating objects
+
+Creating graphic objects — rectangles, circles, or something else — is certainly only the beginning. At some point, we will probably want to modify those objects. Perhaps certain action will need to trigger change of state, or play animation of some sort. Or we might want to change object properties (color, opacity, size, position) on certain mouse interactions.
+
+Fabric takes care of canvas rendering and state management for us. We only need to modify objects themselves.
+
+Earlier example demonstrated set method and how calling set({ left: 20, top: 50 }) “moved” object from previous location. In a similar fashion, we can change any other property of an object. But what are those properties?
+
+Well, as you would expect there are those related to positioning — left, top; dimension — width, height; rendering — fill, opacity, stroke, strokeWidth; scaling and rotation — scaleX, scaleY, angle; and even those related to flipping — flipX, flipY.
+
+Yes, creating flipped object in Fabric is as easy as setting flip* property to true.
+
+You can read any of these properties via get method, and set them via set. Let's try changing some of the red rectangle's properties:
+操作对象
+创建图形对象-矩形，圆形，或其他东西-当然只是开始。在某些时候，我们可能要修改这些对象。也许某些动作需要触发状态的变化，或者播放一些种类的动画。或者我们可能想要改变某些鼠标交互的对象属性（颜色、不透明度、大小、位置）。
+织物需要画布渲染和状态管理为我们。我们只需要修改对象本身。
+早期的示例演示了集合方法和如何调用集（{左：20、50 }）“移动”对象从先前的位置。以类似的方式，我们可以改变任何其他属性的对象。但这些属性是什么？
+好吧，如你所希望的那些定位左，前相关；尺寸宽度，高度；绘制填充，不透明度，中风，strokewidth；缩放和旋转scaleX，称，角；甚至那些翻转- flipx相关，flipy。
+是的，在织物中创建翻转的对象是一样容易设置翻转*属性为真。
+你可以通过获取方法读取这些属性中的任何一种，并通过集合设置它们。让我们试着改变一些红色矩形的属性：
+
+
+First, we're setting “fill” value to “red”, essentially making object of red color. The next statement sets both “strokeWidth” and “stroke” values, giving rectangle a 5px stroke of pale green color. Finally, we're changing “angle” and “flipY” properties. Notice how each of the 3 statements used slightly different syntax.
+
+This demonstrates that set is a universal method. You will probably use it quite often, and so it's meant to be as convenient as possible.
+
+We've covered setters, and what about getters? Quite obviously, there's generic get method but also a number of specific get* ones. To read “width” value of an object, you would use get('width') or getWidth(). To get a “scaleX” value — get('scaleX') or getScaleX(), and so on. There's a method like getWidth or getScaleX for each of the “public” object properties (“stroke”, “strokeWidth”, “angle”, etc.)
+
+You might notice that in earlier examples objects were created with the same configuration hash as the one we just used in set method. That's because it is exactly the same. You can either “configure” object at the time of creation, or use set method after:
+首先，我们将“填充”值设置为“红色”，基本上是红色的对象。下一个语句集“strokewidth”和“中风”的价值观，使矩形的颜色淡绿色5px中风。最后，我们对“角”和“flipy”性质。注意3个语句中的每一个使用的语法有多不一样。
+这表明，集合是一个普遍的方法。你可能会经常使用它，所以它的意思是尽可能方便。
+我们被引领者，什么人？很显然，有通用的方法，但也有一些具体的获得*的。读“一个物体的宽度值”，你会用得到（'width”）或getwidth()。为了得到一个“scaleX“价值得到（'scalex”）或getscalex()，等等。有一个方法getscalex getWidth或每个“公共”对象的属性（“中风”、“strokewidth”、“角”，等）
+你可能会注意到，在早期的例子中，对象被创建了一个与我们所用的相同的配置哈希。那是因为它完全一样。您可以在创建时“配置”对象，或在使用方法之后使用：
+
+Default options
+
+At this point, you might ask — what happens when we create an object without passing any “configuration” object. Does it still have those properties?
+
+Yes, of course. Objects in Fabric always have a default set of properties. When omited during creation, it is this default set of properties that's “given” to object. We can try and see for ourselves:
+默认选项
+在这一点上，你可能会问，当我们创建一个对象，而不传递任何“配置”对象时会发生什么。它还有那些属性吗？
+是的，当然。织物中的物体总是有一个默认的属性集合。当它在创作中，这是默认的属性集的“给予”对象。我们可以试着去看自己：
+
+
+Our rectangle got a default set of properties. It's positioned at 0,0, is of black color, fully opaque, has no stroke and no dimensions (width and height are 0). Because of no dimensions, we can't see it on canvas. But giving it any positive values for width/height would certainly reveal a black rectangle at the left/top corner of canvas.
+我们的矩形得到了一个默认的属性集。它位于0,0，是黑色，不透明，没有行程，没有尺寸（宽度和高度0）。因为没有尺寸，我们不能在画布上看到它。但是给它任何正面的宽度/高度肯定会揭示一个黑色长方形在画布左/角。
+
+Hierarchy and Inheritance
+
+Fabric objects do not just exist independent of each other. They form a very precise hierarchy.
+
+Most of the objects inherit from a root fabric.Object. fabric.Object pretty much represents a 2-dimensional shape, positioned in 2-dimensional canvas plane. It's an entity that has left/top and width/height properties, as well as a slew of other graphic characteristics. Those properties that we saw on objects — fill, stroke, angle, opacity, flip*, etc. — are common to all Fabric objects that inherit from fabric.Object.
+
+This inheritance allows us to define methods on fabric.Object and share them among all child “classes”. For example, if you wanted to have getAngleInRadians method on all objects, you would simply create it on fabric.Object.prototype:
+层次结构和继承
+织物不只是相互独立存在。它们形成一个非常精确的层次结构。
+大多数对象继承自根fabric.object。织物。物体相当多代表一个2维的形状，位于2维的帆布平面上。它是一个实体，它的左/顶和宽/高性能，以及一系列其他图形特性。这些属性，我们看到的物体填满，中风，角度，透明度，翻转，等等-是所有对象继承自fabric.object常见织物。
+这种继承使我们能够定义织物的方法，并且在所有的儿童“类”中分享它们。例如，如果你要对所有的对象getangleinradians方法，你只会在fabric.object.prototype创造：
+
+As you can see, method immediately becomes available on all instances.
+
+While child “classes” inherit from fabric.Object, they often also define their own methods and properties. For example, fabric.Circle needs to have “radius” property. And fabric.Image — which we'll look at in a moment — needs to have getElement/setElement methods for accessing/setting HTML <img> element from which image instance originates.
+正如你所看到的，在所有情况下，立即成为可用的方法。
+虽然儿童“类”继承了织物，但它们通常也定义自己的方法和属性。例如，织物，圆需要有“半径”的属性。和织物图像，我们来看看在一个时刻，需要有getelement /函数方法访问/设置HTML <IMG>元素来源于图像实例。
+
+Canvas
+Now that we covered objects in more detail, let's get back to canvas.
+
+First thing you can see in all of Fabric examples if creation of canvas object — new fabric.Canvas('...'). fabric.Canvas serves as a wrapper around <canvas> element, and is responsible for managing all of the fabric objects on that particular canvas. It takes an id of an element, and returns an instance of fabric.Canvas.
+
+We can add objects onto it, reference them off of it, or remove them:
+帆布
+现在，我们覆盖的对象更详细，让我们回到画布。
+第一件事你可以看到在所有织物的例子，如果创造的画布对象-新的织物帆布（“……”）。织物，帆布作为一种包装物，在<帆布>元素，并负责管理所有的织物上，特别是帆布。它需要一个元素的ID，并返回fabric.canvas实例。
+
+
+我们可以将对象添加到它，引用它们，或删除它们：
+
+While managing objects is the main purpose of fabric.Canvas, it also serves as a configuration host. Need to set background color or image for an entire canvas? Clip all contents to a certain area? Set different width/height? Specify whether canvas is interactive or not? All of these options (and others) can be set on fabric.Canvas, either at the time of creation or after:
+虽然管理对象是织物的主要用途，但也可作为配置主机。需要为整个画布设置背景颜色或图像？剪辑所有内容到某个区域？设置不同的宽度/高度？是否指定画布是否交互？所有这些选项（和其他）都可以在织物上设置，画布，无论是在创作的时候还是在：
+
+Interactivity
+
+While we're on a subject of canvas element, let's talk about interactivity. One of the unique features of Fabric — that's built right in — is a layer of interactivity on top of all that convenient object model we just looked at.
+
+Object model exists to allow programmatic access and manipulation of objects on canvas. But on the outside, on a user level, there's a way to manipulate those objects via mouse (or touch, on touch devices). As soon as you initialize canvas via new fabric.Canvas('...'), it's possible to select objects, drag them around, scale or rotate them, and even group together to manipulate in one chunk!
+
+互动性
+当我们在一个主题的画布元素，让我们谈论互动。一个独特的功能，织物-这是建立在-是一个层的互动性之上的所有方便的对象模型，我们只是看了看。
+对象模型的存在，允许在画布上的对象的访问和操作。但在外部，在用户层面上，有一种方式来操纵这些对象通过鼠标（或触摸，触摸设备）。一旦你通过新的织物来初始化画布（“……”），就可以选择物体，拖动它们周围，刻度或旋转它们，甚至可以在一个组块一起操作！
+
+If we wanted user to allow dragging something on canvas — let's say an image — all we'd need to do is initialize canvas and add an object on it. No additional configuration or setup required.
+
+To control this interactivity, we could use Fabric's “selection” boolean property on canvas in combination of “selectable” boolean property of individual objects.
+如果我们想让用户在画布上拖动某个东西，让我们说一个图像-所有我们需要做的是初始化画布，并添加一个对象。没有额外的配置或安装要求。
+为了控制这种互动，我们可以使用织物的“选择”布尔属性在帆布上的“可选”的布尔属性的个别对象。canvas代替帆布。
+
+This creates a “lighter” version of canvas, without any event handling logic. Note that you still have an entire object model to work with — adding objects, removing or modifying them, as well as changing any of the canvas configuration — all of this still works. It's only event handling that's gone.
+
+Later, when we go over custom build option, you'll see that if StaticCanvas is all you need, you can even create a lighter version of Fabric. This could be a nice option, if you need something like non-interactive charts, or non-interactive images with filters in your application.
+
+这将创建一个“打火机”版本的画布，没有任何事件处理逻辑。请注意，您仍然有一个完整的对象模型来工作，添加对象，删除或修改它们，以及更改任何画布配置-所有这一切仍在工作。这是唯一的事件处理，已经走了。
+后来，当我们去定制选项，你会看到，如果staticcanvas就是你全部的需要，你甚至可以创建一个更轻版本的织物。这可能是一个很好的选择，如果你需要的东西，如非交互式图表，或与过滤器在您的应用程序的非交互式图像。
+
+Images
+
+Speaking of images…
+
+Adding rectangles and circles on canvas is fun but why don't we play with some images? As you would imagine by now, Fabric makes this easy. Let's instantiate fabric.Image object and add it to canvas:
+
+(html)
+
+图像
+图像的说…
+在画布上添加矩形和圆形是有趣的，但为什么我们不玩一些图像？就像你想象的那样，织物使这个容易。我们实例化的织物图像对象并将其添加到画布：
+（HTML）度角，并略有透明！不坏。
+
+Now, what if we don't really have an image in a document, but only a URL of an image? Not a problem. Let's see how to use fabric.Image.fromURL:
+现在，如果我们真的没有在一个文档中的图像，但只有一个网址的图像？不是问题。让我们来看看如何使用fabric.image.fromurl：
+
+Looks pretty straightforward, doesn't it? Just call fabric.Image.fromURL with a URL of an image, and give it a callback to invoke once image is loaded and created. The callback function receives already-created fabric.Image object as a first argument. At that point, you can add it to canvas or perhaps change first, and then add to canvas:
+
+Path and PathGroup
+
+We've looked at simple shapes, then images. What about even more complex, rich shapes and content?
+
+Meet the power couple — Path and PathGroup.
+
+Paths in Fabric represent an outline of a shape which can be filled, stroked, and modified in other ways. Paths consist of a series of commands, that essentially mimic a pen going from one point to another. With the help of such commands as “move”, “line”, “curve”, or “arc”, paths can form incredibly complex shapes. And with the help of groups of Paths (PathGroup's), the possibilities open up even more.
+
+Paths in Fabric closely resemble SVG <path> elements. They use the same set of commands, they can be created from <path> elements, and serialized into them. We'll look more closely into serialization and SVG parsing later, but for now it's worth mentioning that you will likely rarely create Path instances by hand. Instead, you'll be using Fabric's built-in SVG parser. But to understand what Path objects are, let's try creating a simple one by hand:
+看起来很简单，不是吗？只是一个电话fabric.image.fromurl的图像的URL，并给它一个回调调用一次加载和创建图像。回调函数接收已创建的织物。图像对象作为第一个参数。在这一点上，你可以将它添加到画布上或者是先改变，然后再添加到画布上：
+
+路径和路径组
+我们已经看了简单的形状，然后图像。更复杂、丰富的形状和内容呢？
+满足功率耦合路径和路径组。
+在织物上的路径代表一个轮廓的形状，可以填充，抚摸，并在其他方式修改。路径包括一系列的命令，这基本上模仿一个笔从一个点到另一个。在“移动”，“线”，“曲线”，或“弧”等命令的帮助下，路径可以形成令人难以置信的复杂形状。同组的路径（路径组的帮助），开放更多的可能性。
+在织物与SVG路径<路径>元素。他们使用同一组命令，它们可以从<路径>元素创建和序列化到他们。我们会更仔细的序列化和SVG解析后，但现在值得一提的是，你可能很少手工创建路径实例。相反，你会用织物的内置SVG解释器。但要了解什么路径对象，让我们尝试创建一个简单的手：
+
+We're instantiation fabric.Path object, passing it a string of path instructions. While it looks cryptic, it's actually easy to understand. “M” represents “move” command, and tells that invisible pen to move to 0, 0 point. “L” stands for “line” and makes pen draw a line to 200, 100 point. Then, another “L” creates a line to 170, 200. Lastly, “z” tells forces drawing pen to close current path and finalize the shape. As a result, we get a triangular shape.
+
+Since fabric.Path is just like any other object in Fabric, we were also able to change some of its properties. But we can modify it even more:
+我们实例化的织物的路径对象，它传递一个字符串路径指示。虽然它看起来神秘，它实际上很容易理解。“米”代表“移动”命令，并告诉那只看不见的笔移动到0点，0点。“升”代表“线”，使笔画线到200，100点。然后，另一个“升”创建一条线到170，200。最后，“画”告诉力画笔，以接近当前路径和定型。结果，我们得到了一个三角形的形状。
+因为织物的路径和其他物体一样，我们也能改变它的一些特性。但我们可以修改它更：
+
+Out of curiosity, let's take a look at a slightly more complex path syntax. You'll see why creating paths by hand might not be the best idea.
+出于好奇，让我们来看看一个稍微复杂的路径语法。你会看到为什么用手创造的路径可能不是最好的主意。
+
+Oh boy, what's going on here?
+
+Well, “M” still stands for “move” command, so the pen starts its drawing journey at “121.32, 0” point. Then there's “L” command that brings it to “44.58, 0”. So far so good. What's next? “C” command, which stands for “cubic bezier”. It makes the pen draw bezier curve from current point to “36.67, 0” one. It uses “29.5, 3.22” as control point at the beginning of a line, and “24.31, 8.41” as the control point at the end of the line. This whole thing is then followed by a dozen of other cubic bezier commands, which finally create a nice-looking shape of an arrow.
+哦，孩子，这里发生了什么事？
+嗯，“我”仍然代表“移动”命令，所以这支笔开始它的绘图旅程“121.32，0”点。“升”命令把它带到“44.58，0”。到目前为止好。下一步是什么？“C”命令，即“Bezier”。它使钢笔画Bezier曲线从当前点到“36.67、0”。它采用“29.5、3.22”作为控制点，在一条线的开始，“24.31、8.41”作为控制点的终点线。这整件事是随后的十几个其他三次贝塞尔命令，从而创建一个漂亮的形状是一个箭头。
+
+Chances are, you won't be working with such “beasts” directly. Instead, you might want to use something like fabric.loadSVGFromString or fabric.loadSVGFromURL methods to load entire SVG file, and let Fabric's SVG parser do its job of walking over all SVG elements and creating corresponding Path objects.
+
+Speaking of entire SVG documents, while Fabric's Path usually represent SVG <path> elements, a collection of paths that are often present in SVG documents, are represented as PathGroups (fabric.PathGroup instances). As you can imagine, PathGroup is nothing but a group of Path objects. And since fabric.PathGroup inherits from fabric.Object, it can be added to canvas just like any other object, and manipulated the very same way.
+
+Just like with Paths, you probably won't be working with them directly. But if you stumble upon one after parsing SVG document, you'll know exactly what it is and which purpose it serves.
+
+机会是，你不会和这样的“野兽”直接合作。相反，你可能想使用像fabric.loadsvgfromstring或fabric.loadsvgfromurl方法加载整个SVG文件，让织物的SVG解释器做工作走在所有SVG元素并创建相应的路径对象。
+对于整个SVG文件，而面料的路径通常代表SVG <路径>元素的集合，通常是在SVG文件的当前路径，为pathgroups（fabric.pathgroup实例）。你可以想象，药费也不过是一组路径对象。因为fabric.pathgroup继承物。对象，它可以添加到画布就像任何其他对象，和操纵非常相同的方式。
+就像与路径，你可能不会直接与他们一起工作。但如果你偶然发现一个解析后的SVG文档，你会知道它到底是什么，它的用途。
+
+Afterword
+
+We've only scratched the surface of what's possible with Fabric. You can now easily create any of the simple shapes, complex shapes, images; add them to canvas, and modify in any way you want — positions, dimensions, angles, colors, strokes, opacity — you name it.
+
+In the next parts of this series, we'll take a look at working with groups; animation; text; SVG parsing, rendering, serialization; events; image filters; and more.
+
+Meanwhile, feel free to take ato Fabric.js. Part 2.
+
+In the first part of this series, we only started to get familiar with Fabric.js. We looked at the reasons to use Fabric, at its object model and object hierarchy, at different kind of entities available in Fabric — simple shapes, images, and complex paths. We also learned how to perform simple operations with Fabric objects on canvas.
+
+Now that most of the basics are out of the way, let's get down to some fun stuff!
+
+介绍fabric.js。2部分。
+在本系列的第一部分，我们才开始熟悉fabric.js。我们看了使用织物，在其对象模型和对象层次结构，在不同类型的实体可在织物-简单的形状，图像和复杂的路径。我们还学会了如何使用帆布上的织物进行简单的操作。
+现在，大部分的基本知识都不在了，让我们去一些有趣的东西！
+
+
+Animation
+
+No respectable canvas library goes without animation facility. And Fabric is not an exception. Since there's such a powerful object model and graphical capabilities, it would be a shame not to have animation helpers built in.
+
+Remember how easy it was to change property of any object? We just called set method, passing corresponding value(s):
+
+动画
+没有一位可敬的帆布库，没有动画设施。织物也不例外。因为有这样一个强大的对象模型和图形功能，这将是一个耻辱，没有建立在动画。
+记住要改变任何对象的属性是多么容易？我们只称之为集合方法，通过相应的值（s）：
+
+First argument is the property to animate. Second argument is the ending value of animation. If rectangle has -15° angle, and we pass 45, it will be animated from -15° to 45°. The third argument is an optional object specifying finer details of animation — duration, callbacks, easing, etc.
+
+One convenient feature of animate is that it also supports relative values. For example, if you wanted to animate object's left property by 100px, you could do it like this:
+
+第一个参数是动画的属性。二是动画的结束值。如果长方形有15个角，我们将45个，它将是动画从- 15至45个角。第三个参数是一个可选的对象指定细节动画持续时间，回调，宽松，等等。
+动画的一个方便的特点是，它也支持相对值。例如，如果你想动画对象的左财产100px，你可以这样做：
+
+You might be wondering why we always specify "onChange" callback there. Isn't third argument optional? It is, but calling canvas.renderAll on each animation frame is what allows us to see actual animation! You see, when we call animate method, it only animates property value over time, following specific algorithm (i.e. easing). So rect.animate('angle', 45) will change object's angle but won't re-render canvas screen after each change of the angle. And we obviously need this re-rendering in order to see the actual animation.
+
+Remember that there's entire object model underneath that canvas surface. Objects have their own properties and relations, and canvas is only responsible for projecting their existence to the outside world.
+
+The reason animate doesn't automatically re-render canvas after each change is due to performance. After all, we can have hundreds or thousands animating objects on canvas, and it wouldn't be good if every one of them tried to re-render screen. In the case of many objects, you could use something like requestAnimationFrame (or other timer-based) loop to render canvas continuosly on its own, without calling renderAll for each object. But most of the time, you'll probably need to explicitly specify canvas.renderAll as "onChange" callback.
+
+你也许会问，为什么我们总是指定“onchange”回调有。第三个参数是可选的吗？是的，但在每个动画帧调用canvas.renderall是什么让我们看到实际的动画！你看，我们称之为生命的方法时，它只赋予属性值随着时间的推移，具体算法（即宽松）。所以如果动画（'angle '，45）将改变对象的角度，但不会重新渲染画布的每个变化后屏幕角度。显然，我们需要这个重新渲染，以看到实际的动画。
+请记住，在画布表面有完整的对象模型。对象有自己的属性和关系，而画布则只负责将其存在投射到外部世界。
+在每次更改后，动画不自动重新渲染画布的原因是由于性能。毕竟，我们可以有成百上千的动画对象在画布上，它不会是好的如果他们每个人都试图重新绘制屏幕。在多目标的情况下，你可以使用类似requestanimationframe（或其他基于定时器的）环渲染画布不断对自己，没有renderall每个对象调用。但大多数时候，你可能需要显式地指定为“变化”canvas.renderall回调。
+
+那么，我们可以通过其他选项来传递动画吗？
+来自：允许指定启动动画的属性值（如果我们不想让电流值被使用）。
+持续时间：默认为500（毫秒）。可以用来改变动画的持续时间。
+完备：回调的调用动画结束时。
+缓解功能。
+所有这些选项都应该是自我解释的，也许除了一个宽松的。让我们仔细看看。
+默认情况下，将使用“easeinsine”功能动画。如果这不是你所需要的，有一系列的宽松选项下fabric.util.ease。例如，如果我们想移动的物体在一个弹性的方式的权利：
+
+
+Notice fabric.util.ease.easeOutBounce as an easing option. Other notable ones include easeInCubic, easeOutCubic, easeInElastic, easeOutElastic, easeInBounce, and easeOutExpo.
+
+So this covers animation part of Fabric. Just to give you some ideas of what becomes possible — you can animate object's angle to make it rotate; animate left/top properties to make it move; animate width/height to make it shrink/grow; animate opacity to make it fade in/out; and so on.
+通知fabric.util.ease.easeoutbounce作为一个宽松的选择。其他值得注意的包括easeincubic，easeoutcubic，easeinelastic，easeoutelastic，easeinbounce，和easeoutexpo。
+所以这套动画部分织物。只是给你一些可能的想法-你可以使它的动画对象的角度来旋转；动画/顶部的属性使它移动；动画的宽度/高度，使其收缩/成长；动画不透明度，使其褪色/输出，等等。
+
+
+In the first part of this series, we learned how to work with images in Fabric. There's fabric.Image constructor, that accepts image element. There's also fabric.Image.fromURL method, which can create image instance ouf of a URL string. And any of these images can be thrown and rendered on canvas just like any other object.
+
+But as fun working with images as it is, it's even cooler to apply image filters to them!
+
+Fabric provides few filters by default, and makes it easy to define your own. Some of the built-in ones you might be very well familiar with — filter to remove white background, grayscale filter, invert or brightness ones. Others might be a little less popular — gradient transparency, sepia, or noise.
+
+So how do we apply filters to images in Fabric? Well, every instance of fabric.Image has "filters" property which is a simple array of filters. Each of the filters in that array is an instance of one of Fabric filters. Or an instance of your own custom filter.
+
+So let's create a grayscale image.
+在这个系列的第一部分，我们学会了如何在织物中使用图像。有结构，图像构造，接受图像元素。还有fabric.image.fromurl方法，可以创建一个URL字符串图像实例外。这些图像可以在画布上像其他任何对象一样被抛出和渲染。
+但随着图像的乐趣，它是，它甚至更酷的应用图像过滤器，他们！
+织物提供了默认的几个过滤器，使它很容易定义你自己的。一些内置的，您可能是非常熟悉的-过滤器，以消除白色背景，灰度过滤器，反转或亮度的。其他人可能有点不太受欢迎的梯度的透明度，棕褐色，或噪声。
+那么，我们如何应用过滤器的图像在织物？织物的每一个实例，图像都有一个“过滤器”的属性，它是一个简单的过滤器阵列。该数组中的每一个过滤器都是一个织物过滤器的实例。或您自己的自定义筛选器的实例。
+让我们创建一个灰度图像。
+
+----
+colors
+
+Whether you're more comfortable working with hex, RGB, or RGBA colors, Fabric provides a solid color foundation to help you express yourself most naturally. Here are some of the ways in which you can define a color in Fabric
+无论你更舒适的工作与十六进制RGB，或者RGBA颜色、面料来帮助你最自然的表达自己，提供了一个坚实的色彩基础。下面是一些你可以在织物上定义颜色的方法：
+
+Conversion is straightforward as well. toHex() will convert color instance to hex representation. toRgb() — to RGB one, and toRgba() — to RGB with alpha channel.
+转换也很简单。tohex()将颜色实例进制表示。torgb()成RGB，和torgba() -带Alpha通道的RGB。：
+Conversion is not the only thing you can do with colors. You can also overlay one color with another, or turn it to grayscale version.
+转换不是你能做的唯一的颜色。你也可以用另一种颜色叠加，或者把它变成灰度版。
+
+
+
+Gradients----渐变
+
+
+An even more expressive way to work with colors is via gradients. Gradients allow us to blend one color into another, creating some stunning graphical effects.
+
+Fabric supports gradients via setGradient method (setGradientFill before v1.1.0), defined on all objects. Calling setGradient('fill', { ... }) is just like setting "fill" value of an object, except that we fill object with gradient, rather than single color.
+
+
+一个更具表现力的方式与颜色的工作是通过梯度。梯度使我们能够把一种颜色混合到另一个颜色，创造了一些令人惊叹的图形效果。
+织物经setgradient支持梯度方法（setgradientfill之前V1.1.0），对所有对象的定义。打电话setgradient（有关”，{…}）是一个对象的“填充”值，只是我们用渐变填充对象，而不是单一颜色。
+
+
+Events  --事件
+
+The event-driven architecture is the basis for some amazing power and flexibility within a framework. Fabric is no exception, and provides an extensive event system, starting from low-level "mouse" events to high-level objects ones.
+
+These events allow us to tap into different moments of various actions happening on canvas. Want to know when the mouse was pressed? Just observe "mouse:down" event. How about when object was added to canvas? "object:added" is there for you. And what about when the entire canvas is re-rendered? Just use "after:render".
+
+The event API is very simple and resembles that of jQuery, Underscore.js, or other popular JS libraries. There's on method to initialize event listener, and off to remove it.
+
+Let's take a look at an actual example:
+事件驱动的架构是一个框架内的一些惊人的力量和灵活性的基础。织物也不例外，并提供了一个广泛的事件系统，从低级别的“鼠标”事件的高层次对象的。
+这些事件使我们能够开发出不同的时刻，在画布上发生的各种行动。要知道什么时候老鼠被压了吗？只需观察“鼠标：向下”事件。当物体被添加到画布上时，如何？对象：添加“为您有。当整个画布重新呈现的时候呢？只使用“后：渲染”。
+事件API非常简单，类似于jQuery，Underscore.js，或其他流行的js库。有一种方法来初始化事件侦听器，然后关闭它以移除事件侦听器。
+让我们来看看一个实际的例子：
+
+We're adding event "mouse:down" event listener onto canvas, and giving it an event handler that will log coordinates of where the event originated. In other words, it'll log where exactly on canvas the mouse was pressed. The event handler receives an options object, which has 2 properties: e — the original event, and target — a clicked object on canvas, if any. The event is present at all times, but target only exists if you actually did click on some object on canvas. The target is also only passed to handlers of events where it makes sense. For example, for "mouse:down" but not for "after:render" (which denotes that entire canvas was re-drawn).
+
+We're adding event "mouse:down" event listener onto canvas, and giving it an event handler that will log coordinates of where the event originated. In other words, it'll log where exactly on canvas the mouse was pressed. The event handler receives an options object, which has 2 properties: e — the original event, and target — a clicked object on canvas, if any. The event is present at all times, but target only exists if you actually did click on some object on canvas. The target is also only passed to handlers of events where it makes sense. For example, for "mouse:down" but not for "after:render" (which denotes that entire canvas was re-drawn).
+我们在画布上添加事件“鼠标：向下”事件侦听器，并赋予它一个事件处理程序，它将记录事件源的坐标。换句话说，它会记录在画布上鼠标按下的位置。该事件处理程序接收一个选项对象，该对象具有2个属性：即原始事件和目标对象在画布上的一个点击对象。事件是在任何时候都存在，但目标只存在，如果你真的点击一些对象在画布上。目标也只传递给事件处理程序，在这里它是有意义的。例如，对于“鼠标：向下”，但不是“后：渲染”（表示整个画布被重新绘制）。
+
+We're adding event "mouse:down" event listener onto canvas, and giving it an event handler that will log coordinates of where the event originated. In other words, it'll log where exactly on canvas the mouse was pressed. The event handler receives an options object, which has 2 properties: e — the original event, and target — a clicked object on canvas, if any. The event is present at all times, but target only exists if you actually did click on some object on canvas. The target is also only passed to handlers of events where it makes sense. For example, for "mouse:down" but not for "after:render" (which denotes that entire canvas was re-drawn).
+我们在画布上添加事件“鼠标：向下”事件侦听器，并赋予它一个事件处理程序，它将记录事件源的坐标。换句话说，它会记录在画布上鼠标按下的位置。该事件处理程序接收一个选项对象，该对象具有2个属性：即原始事件和目标对象在画布上的一个点击对象。事件是在任何时候都存在，但目标只存在，如果你真的点击一些对象在画布上。目标也只传递给事件处理程序，在这里它是有意义的。例如，对于“鼠标：向下”，但不是“后：渲染”（表示整个画布被重新绘制）。
+
+
+The above example will log "an object was clicked!" if you click an object. It will also show the type of object clicked.
+
+So which other events are available in Fabric? Well, from mouse-level ones there are "mouse:down", "mouse:move", and "mouse:up". From generic ones, there are "after:render". Then there are selection-related events: "before:selection:cleared", "selection:created", "selection:cleared". And finally, object ones: "object:modified", "object:selected", "object:moving", "object:scaling", "object:rotating", "object:added", and "object:removed"
+
+Note that events like "object:moving" (or "object:scaling") are fired continuously every time an object is moved (or scaled) even by one pixel. On the other hand, events like "object:modified" or "selection:created" are fired only at the end of the action (object modification or selection creation).
+
+Note how we attached events right onto canvas (canvas.on('mouse:down', ...)). As you can imagine, this means that events are all scoped to canvas instances. If you have multiple canvases on a page, you can attach different event listeners to each one of them. They're all independent and respect only events that were assigned to them.
+
+上面的例子将记录“对象被点击！”如果你点击一个对象。它也会显示对象的类型。
+那么，其他的事件是在织物？好的，从老鼠的水平上有“老鼠：下来”，“老鼠：移动”，和“老鼠：”。从一般的，有“后：渲染”。然后有选择相关的事件：“前：选择：清除”，“选择：创建”，“选择：清除”。最后，对象的对象：对象：对象：对象：对象：对象：对象：对象：对象：对象：对象：对象：对象：对象：对象：对象：对象：对象：对象：对象：对象：对象：对象：对象
+注意类似“对象：移动”（或“对象：缩放”）的事件，每次一个对象被移动（或缩放），即使是一个像素。另一方面，事件如“对象：修改”或“选择：创建”仅在动作结束时被发射（对象修改或选择创建）。
+我们如何附加事件到画布（画布上（注意，'mouse：下来，…））。你可以想象，这意味着事件都限于帆布实例。如果你有多个画布上的一页，你可以将不同的事件侦听器的每个人。他们都是独立的，只尊重被分配给他们的事件。
+
+For convenience, Fabric takes event system even further, and allows you to attach listeners directly to canvas objects. Let's take a look:
+为了方便，织物需要更进一步的事件系统，并允许您直接连接到画布对象的听众。让我们来看一看：
+
+
+We're attaching event listeners directly to rectangle and circle instances. Instead of "object:selected", we're using "selected" event. Similarly, we could have used "modified" event ("object:modified" when attaching to canvas), "rotating" event ("object:rotating" when attaching to canvas), and so on.
+
+Check this events demo for a more extensive exploration of Fabric's event system.
+我们将事件侦听器直接连接到矩形和圆实例。而不是“对象：选择”，我们使用“选定”事件。类似地，我们可以使用“修改”事件（“对象：在画布上附加修改”，“旋转”事件（“对象：在画布上的旋转”等。
+检查此事件演示了更广泛的探索织物的事件系统。
+
+
+We've covered most of the basics in first and second parts of this series. Let's move on to the more advanced stuf!
+本系列的第一和第二部分中，我们已经涵盖了大部分的基本知识。让我们转移到更先进的东西！
+
+
+---Groups 组
+First thing we'll talk about is groups. Groups are one of Fabric's most powerful features. They are exactly what they sound like — a simple way to group any Fabric objects into a single entity. Why would we want to do this? To be able to work with those objects as a single unit, of course!
+
+Remember how any number of Fabric objects on canvas can be grouped with the mouse, forming a single selection? Once grouped, the objects can all be moved and even modified together. They form a group. We can scale that group, rotate, and even change its presentational properties — color, transparency, borders, etc.
+
+This is exactly what groups are for, and every time you see a selection like this on canvas, Fabric creates a group of objects implicitly, behind the scenes. It only makes sense to provide access to working with groups programmatically. This is what fabric.Group is for.
+
+首先我们会谈论的是群体。组是织物的最强大的功能之一。它们正是它们听起来像一个简单的方法来将任何织物物体变成一个单一的实体。我们为什么要这么做？当然，能够与这些对象作为一个单一的单位工作！
+记住，在画布上的织物对象有多少可以与鼠标进行分组，形成一个单一的选择？一旦分组，所有的对象都可以被移动，甚至可以在一起修改。他们组成一组。我们可以规模组、旋转，甚至改变其表象性的颜色、透明度、边框等。
+这正是什么组是为，并且每次你看到这样的选择在画布上，织物创建一组对象隐式，背后的场景。它的唯一意义提供团体的编程工作。这是什么面料。
+
+One important thing you've probably noticed by now is that objects in group are all positioned relative to the center of a group. When we changed text of text object, it stayed centered even after changing its width. If you don't want this behavior, you need to specify objects' left/top coordinates. In that case, they will be grouped together according to those coordinates.
+
+Let's create and group 3 circles so they're positioned horizontally one after each other:
+
+你可能已经注意到的一个重要的事情是，组中的对象都是相对于一组的中心。当我们改变文本的文本对象，它停留在中心，即使在改变它的宽度。如果你不想要这个行为，你需要指定对象的左/顶坐标。在这种情况下，他们将根据这些坐标组合在一起。
+让我们创建和组3个圆圈，使他们的定位水平彼此：
+
+Another thing to keep in mind when working with groups is the state of objects. For example, when forming a group with images, you need to make sure those images are fully loaded. Since Fabric already provides helper methods for ensuring that image is loaded, this becomes fairly easy:
+另一件事要记住，当工作与群体是对象的状态。例如，当与图像形成一组时，您需要确保这些图像被完全加载。由于织物已经提供了帮助的方法，以确保图像被加载，这变得相当容易：
+
+Serialization --- 序列化
+
+As soon as you start building a stateful application of some sort, perhaps allowing users to save results of canvas contents on a server, or streaming contents to a different client, you'll need canvas serialization. How else are you to send canvas contents? Of course, there's always an option to export canvas to an image, but uploading an image to a server is certainly quite bandwidth-heavy. Nothing beats text when it comes to size, and that's exactly why Fabric provides an excellent support for canvas serialization/deserialization.
+
+一旦你开始建立某种状态的应用，或者允许用户保存画布内容结果在服务器上，或流媒体内容到不同的客户，你需要帆布系列。你还可以把画布内容发送到其他人吗？当然，总有一个选项可以输出到一个图像，但上传一个图像到服务器肯定是相当大的带宽。没有什么比文字说到大小，而这正是为什么织物提供帆布序列化/反序列化一个极好的支持。
+
+The backbone of canvas serialization in Fabric is fabric.Canvas#toObject() and fabric.Canvas#toJSON() methods. Let's take a look at a simple example, first serializing an empty canvas:
+
+在织物帆布系列的骨干是织物帆布# toobject()和织物帆布# tojson()方法。让我们以一个简单的例子，首先将一张空白的画布：
+
+We're using ES5 JSON.stringify() method, which implicitly calls toJSON method on passed object, if that method exists. Since canvas instance in Fabric has toJSON method, it's as if we called JSON.stringify(canvas.toJSON()) instead.
+
+Notice the returned string that represents empty canvas. It's in JSON format, and essentially consists of "objects" and "background" properties. "objects" is currently empty, since there's nothing on canvas, and background has a default transparent value ("rgba(0, 0, 0, 0)").
+
+Let's give canvas different background and see how things change:
+
+我们使用ES5 JSON。stringify()方法，其中隐式调用传递对象tojson方法，如果该方法存在。由于织物帆布实例tojson方法，就好像我们称之为JSON。stringify（帆布。tojson()）代替。
+注意表示空白画布的返回字符串。这是JSON格式，主要是由“物”和“背景”的性质。”对象的“当前是空的，因为没有什么在画布上，和背景有一个默认的透明值（“RGBA（0，0，0，0）”）。
+让我们给画布不同的背景，看看事情的变化：
+
+As one would expect, canvas representation now reflects new background color. Now, let's add some objects!
+正如人们所预期的，画布代表现在反映了新的背景色。现在，让我们添加一些对象！
+
+..and the logged output is:
+和记录的输出是：
+
+Woah. At first sight quite a lot changed, but looking closer we see that it's newly-added object that's now part of "objects" array, serialized into JSON. Notice, how its representation includes all of its visual traits — left, top, width, height, fill, stroke, and so on.
+
+If we were to add another object — say, a red circle positioned next to the rectangle, you would see that representation changed accordingly:
+
+哇。乍一看，相当多的改变，但仔细一看我们发现它是新添加的对象，现在对象序列化为JSON数组的一部分。注意，它的表现形式包括所有的视觉特征：左，顶，宽，高，填充，笔画，等等。
+如果我们要添加另一个对象，比如说，一个红色的圆圈放置在矩形的旁边，你会看到相应的表示改变了：
+
+I highlighted the "type":"rect" and "type":"circle" parts, so that you can see better where those objects are. Even though it might seem like a lot of output at first, it is nothing comparing to what you would get with image serialization. Just for comparison, let's take a look at about 1/10th (!) of a string you would get with canvas.toDataURL('png')
+我强调“型”：“矩形”和“型”：“圆”的部分，所以你可以看到更好的对象在哪里。虽然它可能看起来像一个大量的输出，它是没有什么比你将得到与图像序列化。只是为了比较，让我们看看第十/ 1（！）一个字符串，你会todataurl画布（'png”）。
+
+...and ~17000 characters more.
+……17000个字。
+
+You might be wondering why there's also fabric.Canvas#toObject. Quite simply, toObject returns the same representation as toJSON, only in a form of actual object, without string serialization. For example, taking earlier example of canvas with just a green rectangle, `canvas.toObject()`'s output is this:
+
+你可能会奇怪为什么还有织物帆布#物体。很简单，对象返回相同的表示tojson，只是形式上的实际对象，没有字符串序列化。例如，以只有一个绿色的长方形，前面的例子`帆布画布上。这是toobject() `输出：
+
+As you can see, toJSON output is essentially a stringified toObject output. Now, the interesting (and useful!) thing is that toObject output is smart and lazy. What you see inside "objects" array is the result of iterating over all canvas objects and delegating to their own toObject method. fabric.Path has its own toObject — that knows to return path's "points" array, and fabric.Image has its own toObject — that knows to return image's "src" property. In a true object-oriented fashion, all objects are capable of serializing themselves.
+
+This means that when you create your own "class", or simply need to customize object's serialized representation, all you need to do is work with toObject method — either completely replacing it or extending it. Let's try this:
+你可以看到，tojson输出本质上是一个字符串化对象输出。现在，有趣的（和有用的！）的事情是，对象输出是聪明和懒惰。你看到里面的“对象”阵列是所有帆布对象和委派自己的对象方法迭代结果。织物。路径都有自己的目标，知道返回路径的“点”阵列，和织物图像都有自己的目标，知道返回图像的“src”属性。在一个真正的面向对象的方式，所有的对象都是可序列化的自己。
+这意味着，当你创建你自己的“类”，或者仅仅是需要自定义对象的序列化表示，所有你需要做的是与物体的方法要么完全取代或延伸。让我们尝试一下：
+
+We extended object's existing toObject method with additional property — "name", so that property is now part of toObject output, and as a result appears in canvas JSON representation. One more thing worth mentioning is that if you extend objects like this, you'll also want to make sure object's "class" (fabric.Rect in this case) has this property in "stateProperties" array, so that loading canvas from string representation would parse and add it to an object correctly.
+
+我们的扩展对象的现有对象的方法与其他财产的“名字”，使物业现在是对象输出的一部分，并作为一个结果出现在画布的JSON表示。还有一件事值得一提的是，如果你将这样的对象，你也要确保对象的“类”（在这种情况下fabric.rect）具有此属性在“stateproperties”阵列，以便从字符串表示形式加载帆布将解析并将它添加到一个对象的正确。
+
+Another efficient text-based canvas representation is in SVG format. Since Fabric specializes in SVG parsing and rendering on canvas, it only makes sense to make this a two-way process and provide canvas-to-SVG conversion. Let's add the same rectangle to canvas, and see what kind of representation is returned from toSVG method:
+
+另一个有效的基于文本的帆布表示是SVG格式。由于织物是SVG的解析和渲染在画布上，它才有意义，使这是一个双向的过程，转换为SVG画布。让我们添加相同的矩形画布，看看什么样的表示是从tosvg方法返回：
+
+Just like with toJSON and toObject, toSVG — when called on canvas — delegates its logic to each individual object, and each individual object has its own toSVG method that is special to the type of object. If you ever need to modify or extend SVG representation of an object, you can do the same thing with toSVG as we've done with toObject.
+
+就像tojson和物体时，tosvg呼吁帆布代表其逻辑每一单独的对象，每个对象都有自己的tosvg方法是特殊的对象类型。如果你需要修改或扩展一个对象的SVG表示，你可以做同样的事情与tosvg为我们所做的物体。
+
+The benefit of SVG representation comparing to Fabric's proprietary toObject/toJSON is that you can throw it into any SVG-capable renderer (browser, application, printer, camera, etc.) and it should just work. With toObject/toJSON, however, you would first need to load it onto canvas. Speaking of loading things on canvas, now that we can serialize canvas into an efficient chunk of text, how would we go about loading back onto canvas?
+
+SVG表示与织物的专有对象/ tojson的好处是，你可以把它变成任何SVG能够渲染器（浏览器、应用、打印机、照相机等），它应该只是工作。与物体/ tojson，然而，你首先需要加载到画布。说到装东西的帆布，现在我们可以序列化为文本块画布上有效，我们会怎么装到帆布？
+
+Deserialization, SVG parser  -- 反序列化，SVG解释器
+
+Similarly to serialization, there's two ways to load canvas from a string: from JSON representation, or from SVG one. When using JSON representation, there's fabric.Canvas#loadFromJSON and fabric.Canvas#loadFromDatalessJSON methods. When using SVG, there's fabric.loadSVGFromURL and fabric.loadSVGFromString ones.
+
+Notice that first 2 methods are instance ones, and are called on canvas instance directly, whereas last 2 methods are static ones and are called on "fabric" object rather than on canvas.
+
+There's not much to say about these methods. They work exactly as you would expect them to. Let's take, for example, previous JSON output from canvas and load it on clean canvas:
+
+类似于系列化，有两种方式从加载字符串帆布：从JSON表示，或从一个SVG。使用JSON表示的时候，有织物帆布# loadfromjson和织物帆布# loadfromdatalessjson方法。使用SVG时，有fabric.loadsvgfromurl和fabric.loadsvgfromstring的。
+注意，前2个方法是实例的，并且在画布上直接调用，而最后2个方法是静态的，并且被称为“织物”对象，而不是在画布上。
+关于这些方法的不多。他们工作正如你所期望的那样。让我们看，例如，从以前的JSON输出和负载画布上干净的帆布：
+
+So loading canvas from string is pretty easy. But what about that strange-looking loadFromDatalessJSON method? How exactly is it different from loadFromJSON that we just used? On order to understand why we need this method, we need to look at the serialized canvas that has a more-or-less complex path object. Like this one:
+所以从字符串加载的画布是相当容易的。但那些奇怪的loadfromdatalessjson方法？它到底是如何不同于loadfromjson我们只是用了吗？为了理解为什么我们需要这个方法，我们需要看看序列化的帆布，有更多或更少的复杂路径对象。喜欢这一个：
+
+
+..and that's only 5th (!) part of the entire output!
+那是只有第五个（！）部分输出全部！
+
+What's going on here? Well, it turns out that this fabric.Path instance — this shape — consists of literally hundreds of bezier lines dictating how exactly it is to be rendered. All those ["c",0,2.67,-0.979,5.253,-2.048,9.079] chunks in JSON representation correspond to each one of such curves. And when there's hundreds (or even thousands) of them, the canvas representation ends up being quite enormous.
+
+What to do?
+
+这里发生了什么事？哦，原来这织物。路径实例-形状-由数百个贝塞尔线口述被渲染的究竟是怎么样的呢。所有那些[“C”，0,2.67，- 0.979,5.253，- 2.048,9.079 ]块JSON表示对应于每一个这样的曲线。当有数百（甚至是数千），画布表示结束了相当巨大的。
+做什么？
+
+This is when fabric.Canvas#toDatalessJSON comes handy. Let's try it:
+这是当织物帆布# todatalessjson来方便。让我们尝试一下：
+
+Well, that's certainly smaller! So what happened? Notice how before calling toDatalessJSON, we gave the path (dragon shape) object "sourcePath" property of "/assets/dragon.svg". Then, when we called toDatalessJSON the entire humongous path string from previous output (those hundreds of path commands) was replaced with a single "dragon.svg" string. You can see it highlighted above.
+
+当然，这当然是小！那么发生了什么？注意，在调用todatalessjson，我们把路径（龙形）对象”sourcepath“属性”/资产/龙。SVG。然后，当我们被称为todatalessjson整个巨大的路径字符串从以前的输出（那些成百上千的路径命令）是与一个单一的“龙取代。SVG字符串。你可以看到上面突出。，并使用相应的路径对象的数据。
+
+Now, let's take a look at SVG-loading methods. We can either use string or URL:
+现在，让我们来看看在SVG加载方法。我们可以使用字符串或网址：
+
+First argument is the SVG string, second one is the callback function. The callback is invoked when SVG is parsed and loaded and receives 2 arguments — objects and options. objects contains an array of objects parsed from SVG — paths, path groups (for complex objects), images, text, and so on. In order to group all of those objects into a cohesive collection, and to make them look the same way as they are in SVG document, we're using fabric.util.groupSVGElements passing it both objects and options. In return, we get either an instance of fabric.Path or fabric.PathGroup, which we can then add onto canvas.
+
+fabric.loadSVGFromURL works the same way, except that you pass string containing URL rather than SVG contents. Note that Fabric will attempt to fetch that URL via XMLHttpRequest, so the SVG needs to conform to the usual SOP rules.
+
+第一个参数是SVG字符串，二是回调函数。回调被调用时，SVG的解析和加载和接收2个参数对象和选项。对象包含对象从SVG路径解析数组，路径组（复杂对象），图像，文本，等等。为了所有这些对象为一个集合，并让他们看起来一样，他们是在SVG文档中，我们使用fabric.util.groupsvgelements传递对象和选项。作为回报，我们得到的织物的一个实例。路径或fabric.pathgroup，我们可以添加到画布上。
+fabric.loadsvgfromurl以同样的方式工作，除非你通过含有URL而非SVG内容字符串。注意，织物将试图获取URL通过XMLHttpRequest，所以SVG需要符合通常的SOP规程。
+
+Subclassing 子类别化
+
+
+Since Fabric is built in a truly object-oriented fashion, it's designed to make subclassing and extension simple and natural. As you know from 1st part of this series, there's an existing hierarchy of objects in Fabric. All 2D objects (paths, images, text, etc.) inherit from fabric.Object, and some "classes" — like fabric.PathGroup — even form 3-level inheritance.
+
+So how would we go about subclassing one of the existing "classes" in Fabric? Or maybe even creating our own?
+
+For this task we'll need fabric.util.createClass utility method. createClass is nothing but a simple abstraction over Javascript's prototypal 
+由于织物是建立在一个真正的面向对象的方式，它的设计使子类化和扩展的简单和自然。正如你所知道的，从这第一个部分，有一个现有的层次结构的对象在织物。所有的2D对象（路径，图像，文本，等等）继承物。对象，和一些“类”一样的fabric.pathgroup甚至形成三继承。
+那么我们要如何去继承一个现有的“类”吗？或者甚至创造我们自己的？
+这个任务，我们需要fabric.util.createclass实用方法。createclass无非是JavaScript的原型的一个简单的抽象
+
+inheritance. Let's first create a simple Point "class":
+继承。让我们先创建一个简单的点“类”：
+
+createClass takes an object and uses that object's properties to create "class" with instance-level properties. The only specially-treated property is "initialize", which is used as constructor. So now when initializing Point, we'll create an instance with "x" and "y" properties, and "toString" method:
+
+createclass接受一个对象和使用对象的属性来创建类实例层性能。唯一的特殊处理的属性是“初始化”，它被用作构造函数。所以现在当初始化点，我们会用“X”和“Y”属性创建一个实例，与“toString方法”：
+
+method: 方法
+
+If we wanted to create a child of "Point" class — say a colored point, we would use createClass like so:
+如果我们要创造一个“点”类的孩子说一个彩色的点，我们会用这样的createclass：
+
+Notice how the object with instance-level properties is now passed as a second argument. And first argument receives Point "class", which tells createClass to use it as a parent "class" of this one. In order to avoid duplication, we're using callSuper method, which calls the method of a parent "class". This means that if we were to change Point, the changes would also propagate to ColoredPoint one. To see ColoredPoint in action:
+
+请注意，实例级属性的对象是如何通过二次参数传递的。和第一个参数接收点的“类”，它告诉createclass使用它作为一个家长的“类”这一。为了避免重复，我们用callsuper方法，调用父类的方法。这意味着，如果我们改变一点，变化也会传播到coloredpoint一。在行动中看到coloredpoint：
+
+So now that we went over creating our own "classes" and "subclasses", let's see how to work with already-existing Fabric ones. For example, let's create a LabeledRect "class" which will essentially be a rectangle that has some kind of label associated with it. When rendered on canvas, that label will be represented as a text inside rectangle. Something similar to previous group example with circle and text. As you're working with Fabric, you'll notice that combined abstractions like this could be achieved either by using groups or by using custom classes.
+
+所以现在我们去创造自己的“类”和“子类”，让我们看看如何与已有的织物工作。例如，让我们创建一个labeledrect“类”基本上是一个矩形，具有某种标签与它相关联的。在画布上渲染时，该标签将被表示为矩形内的文本。与循环和文本相似的前一组例子。当你与织物工作时，你会注意到这样的抽象组合，可以通过使用组或使用自定义类来实现。
+
+It seems like there's quite a lot going on here, but it's actually pretty simple.
+看起来这里有很多的东西，但其实很简单。
+
+First, we're specifying parent "class" as fabric.Rect, to utilize its rendering abilities. Next, we define "type" property, setting it to "labeledRect". This is just for consistency, since all Fabric objects have type property (rect, circle, path, text, etc.) Then there's already-familiar constructor (initialize) in which we're utilizing callSuper once again. Additionally, we set object's label to whichever value was passed via options. Finally, we're left with 2 methods - toObject and _render. toObject, as you already know from serialization chapter, is responsible for object (and JSON) representation of an instance. Since LabeledRect has the same properties as regular rect, but also a label, we're extending parent's toObject method and simply adding label into it. Last but not least, _rendermethod is what's responsible for actual drawing of an instance. There's another callSuper call in it, which is what renders rectangle, and additional 3 lines of text-rendering logic.
+
+首先，我们指定父类织物。矩形，利用它的渲染能力。接下来，我们定义的“类型”属性设置为“labeledrect”。这是一致性，因为所有的织物的对象类型的属性（矩形、圆、路径、文本等）就已经熟悉的构造函数（初始化），我们利用callsuper再次。此外，我们将对象的标签，以任何价值是通过选项传递。最后，我们剩下的2种方法，物体和_render。物体，你已经知道从序列化的章，负责对象（JSON）实例表示。因为labeledrect规则矩形具有同样的性质，但也是一个标签，我们延长父母的物体方法和简单地添加标签到它。最后但并非最不重要的，_rendermethod是负责实际绘制实例。有一callsuper调用，使得矩形，和额外的3行文本显示逻辑。
+
+Now, if we were to render such object:
+现在，如果我们要渲染这样的对象：
+
+..we would get this:
+我们会得到这个：
+
+Changing label value or any other usual rectangle properties would obviously work as expected:
+更改标签值或任何其他通常的矩形属性将很明显地工作：
+
+Of course at this point, you're free to modify behavior of this "class" any way you want. For example, making certain values default, to avoid passing them every time to constructor. Or making certain configurable properties available on the instance. If you do make additional properties configurable, you might want to account for them in toObject and initialize:
+
+当然，在这一点上，你可以自由地修改这个“类”任何你想要的方式。例如，使某些值默认值，以避免将它们每次传递给构造函数。或者在实例上提供某些可配置的属性。如果你做了额外的性能配置，你可能要考虑他们在对象初始化：
+
+On this note, I'm wrapping up the 3rd installment of this series, in which we dived into some of the more advanced aspects of Fabric. With help of groups, classes and (de)serialization you can take your app to a whole new level.
+在这一点上，我结束了这一系列的第三部分，在这一系列中，我们进入了一些更先进的织物方面。在群、类和（或）序列化的帮助下，你可以把你的应用程序带到一个全新的水平。

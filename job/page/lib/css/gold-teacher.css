@@ -1,0 +1,359 @@
+html,body{
+    font-family: "微软雅黑";
+    min-width: 1200px;
+}
+
+@font-face {font-family: 'iconfont';
+    src: url('../font/iconfont.eot'); /* IE9*/
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.jiaofu-icon{
+    font-family:"iconfont" !important;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+div.yousi-banner{
+    width:1200px;
+    height: 380px;
+    margin: 0 auto;
+}
+
+div.yousi-banner img {
+    width:100%;
+    height: 100%;
+}
+
+/*  暑假  */
+div.yousi-summer-vacation{
+    width:1200px;
+    height: auto;
+    margin: 0 auto;
+    background: #3D8DDA;
+    padding-bottom: 80px;
+}
+
+div.yousi-summer-vacation-edition{
+    width:100%;
+    height: 226px;
+    background: url("../images/yousi-summer1.png") no-repeat center;
+    text-align: center;
+}
+
+div.yousi-summer-vacation-edition h4{
+    font-size: 32px;
+    color: #fff;
+    line-height: 120px;
+}
+
+div.yousi-summer-vacation-edition img{
+    width:100%;
+    height: 100%;
+}
+
+div.yousi-summer-vacation-option{
+    width:1000px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+ul.yousi-summer-vacation-option-grade{
+    width: 100%;
+    height: 80px;
+    background: #323D48;
+}
+
+ul.yousi-summer-vacation-option-grade li{
+    float: left;
+    width:16.66%;
+    text-align: center;
+    font-size: 21px;
+    color: #999999;
+    line-height: 80px;
+    cursor: pointer;
+}
+/* 高亮 */
+ul.yousi-summer-vacation-option-grade li.yousi-white{
+    color: #fff;
+}
+
+ul.yousi-summer-vacation-option-subject{
+    width: 100%;
+    height: 60px;
+    background: #3E5466;
+}
+
+ul.yousi-summer-vacation-option-subject li{
+    float: left;
+    width:16.66%;
+    text-align: center;
+    line-height: 60px;
+}
+
+ul.yousi-summer-vacation-option-subject li a{
+    font-size: 16px;
+    color: #fff;
+    padding: 2px 10px;
+    border:1px solid #fff;
+    border-radius: 3px;
+}
+
+.yousi-btn-subjects{
+    background: #3D8DDA !important;
+    border:1px solid #3D8DDA !important;
+}
+/* box */
+div.yousi-box{
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 20px;
+    background: #F6F6F6;
+    padding-bottom: 20px;
+}
+
+/*咨询*/
+div.yousi-consultation{
+    width:900px;
+    height: 120px;
+    margin: 0 auto;
+    background: url("../images/yousi-consultation.png") no-repeat center;
+    position: relative;
+}
+
+a.btn-consultation{
+    display: block;
+    width:106px;
+    height: 36px;
+    background: #72bfb2;
+    border-radius: 3px;
+    position: absolute;
+    top:48px;
+    right: 80px;
+    text-align: center;
+    line-height: 36px;
+    color: #fff;
+}
+
+a.btn-close{
+    display: block;
+    width:20px;
+    height: 20px;
+    position: absolute;
+    top:20px;
+    right: 20px;
+    background: url("../images/yousi-btn-close.png") no-repeat center;
+}
+
+/*1v1*/
+div.yousi-1v1-table{
+    width:900px;
+    margin: 20px auto;
+    height: auto;
+    text-align: center;
+}
+
+div.yousi-1v1-table h4{
+    line-height: 80px;
+    font-size: 30px;
+    color: #323d48;
+    background: #3d8dda;
+}
+
+div.yousi-1v1-table h5{
+    line-height: 50px;
+    font-size: 16px;
+    color: #323d48;
+    background: #e5e5e5;
+}
+/* 表格 */
+table.jiaofu-1v1{
+    width:100%;
+
+    background: #fff;
+    color: #323d48;
+}
+
+table.jiaofu-1v1 tr.jiaofu-tr-1{
+    border:1px solid #377fc4;
+    background: #3d8dda;
+}
+
+table.jiaofu-1v1 tr.jiaofu-tr-1 td{
+    border:1px solid #377fc4;
+    height: 60px;
+    font-size: 21px;
+}
+
+table.jiaofu-1v1 tr{
+    border:1px solid #f0f0f0;
+}
+
+table.jiaofu-1v1 tr td{
+    border:1px solid #f0f0f0;
+    height: 60px;
+    font-size: 16px;
+}
+
+a.jiaofu-look{
+    color: #ff5959;
+    border:1px solid #ff5959;
+    padding: 0 12px;
+    border-radius: 25px;
+    font-size: 14px;
+}
+
+a.jiaofu-click-advisory{
+    display: inline-block;
+    height: 36px;
+    background: url("../images/yousi-bottom.png") no-repeat bottom center;
+}
+/* p 公告*/
+p.jiaofu-link{
+    width:900px;
+    height:  auto;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 30px;
+    background: url("../images/yousi-p.png") no-repeat left center;
+}
+
+p.jiaofu-link span{
+    margin-left: 40px;
+}
+
+p.jiaofu-link a{
+    color: #ee5025;
+}
+
+/*名校*/
+div.jiaofu-school{
+    width:1200px;
+    height: 450px;
+    margin:  0 auto;
+}
+
+div.jiaofu-school img{
+    width:100%;
+    height: 100%;
+}
+
+div.jiaofu-smoll-course{
+    width:1200px;
+    height: 450px;
+    margin: 0 auto;
+    padding-top: 150px;
+    background: url("../images/yousi-small-course.png") no-repeat center;
+}
+
+/*明星教员*/
+
+ul.jiaofu-list{
+    width:1040px;
+    height: 268px;
+    margin:  0 auto;
+}
+
+ul.jiaofu-list li{
+    width:172px;
+    height: 100%;
+    float: left;
+    margin: 0 17px;
+}
+
+div.jiaofu-imgs{
+    width:100%;
+    height: 184px;
+}
+
+div.jiaofu-imgs img{
+    width:100%;
+    height: 100%;
+}
+
+div.jiaofu-describe{
+    width:100%;
+    height: 76px;
+    background: #fff;
+    margin-top: 6px;
+    padding: 12px ;
+}
+
+div.jiaofu-describe h6{
+    font-size: 16px;
+    color: #4e4e4e;
+}
+
+div.jiaofu-describe p{
+    font-size: 12px;
+    color: #a0a0a0;
+    margin-top: 8px;
+}
+
+
+/*右侧固定*/
+ul.yousi-fixed{
+    width:140px;
+    height: auto;
+    position: fixed;
+    top:260px;
+    right:0;
+    text-align: center;
+    box-shadow: 0 0 10px #333;
+}
+
+ul.yousi-fixed li{
+    width:100%;
+    height: 42px;
+    line-height: 42px;
+    font-size: 14px;
+    border-bottom: 1px dashed #3e5466;
+    background: #3d8dda;
+}
+
+ul.yousi-fixed li a{
+    color: #fff;
+}
+
+ul.yousi-fixed li.one{
+    background: #ffdc28;
+    border:0;
+}
+
+ul.yousi-fixed li.one a{
+    color: #4b5d62;
+}
+
+ul.yousi-fixed li.two{
+    height: 58px;
+    border:0;
+    line-height: 20px;
+    padding-top:14px;
+}
+
+ul.yousi-fixed li.two p{
+    padding: 0 20px;
+}
+
+ul.yousi-fixed li.three{
+    margin-top: 20px;
+    height: 80px;
+    border:0;
+    background: #ff5466;
+}
+
+ul.yousi-fixed li.four{
+    background: #f23652;
+    border:0;
+}
+
+ul.yousi-fixed li.bg_{
+    background: #3d8dda url("../images/jiaofu-hot.png") no-repeat top left;
+}

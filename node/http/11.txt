@@ -1,0 +1,5 @@
+Promise then ·½·¨
+
+promiseObj.then(onFulfilled,onRejected){
+   	
+}

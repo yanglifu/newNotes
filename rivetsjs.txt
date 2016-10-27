@@ -1,0 +1,46 @@
+介绍：
+
+	rivetsjs  双向数据绑定  类似 angularjs   特点：小 轻量级  适用于 app 移动端
+
+1.  基本用法
+
+	<div class='box'>{name}</div>
+	var val = 'yang'
+	rivets.bind(dom,{
+	       name:val	
+	});
+
+2.  rv-show
+
+      列：            <img class="img-sex" src="../../image/icon/nv.png" rv-show="social.items.sex | eq '女生'" alt="">
+                        <img class="img-sex" src="../../image/icon/nan.png" rv-show="social.items.sex | eq '男生'" alt="">
+ 	注意： 如果结果为数字  则不加  '' 否则 报错
+	          <img src="../../image/icon/zan_selected.png" rv-show="social.items.praise_status | eq 1" alt="">
+                        <img src="../../image/icon/zan.png"  rv-show="social.items.praise_status | eq 0 " alt="">
+
+3.  rv-hide
+
+4.  rv-each-[item]
+	<div class="teachers-list" rv-each-imgs="social.items.praise_list">
+                    <img rv-src="imgs" alt="">
+              </div>
+
+5.  rv-src
+
+6.  rv-on-click
+	<div class="image_click_area" tapmode="hover" rv-on-click="controller.photo">
+      	      <img rv-src="img" alt="">
+	</div>
+
+	rivets.bind(dom,{
+	      name:val,
+	      controller:{
+		photo:function(el,model){
+		      
+		}
+	      }
+	});
+ 	
+
+
+		

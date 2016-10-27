@@ -1,0 +1,37 @@
+basic-data.html		个人中心 -- 基本资料
+
+confirm-order.html		确认订单 -- 付款
+
+course-schedule.html	我的课程
+
+modify-password.html  	修改密码
+
+my-order.html		我的订单
+
+my_time.html		课堂表
+
+order-completion.html	成功购买
+
+school-download.html	下载
+
+school-index.html		首页
+
+school-list.html		全部课程列表
+
+school-small.html		在线小班课
+
+student-core.html		我的课程信息
+
+student-index.html		消息通知
+
+student-login.html		登录
+
+student-volume.html	优惠卷
+
+view-course.html		课程资料下载
+
+yousi-online-1v1.html	在线1v1
+
+yousi-online-small.html	首页
+
+yousi-online-small.html	优思优势

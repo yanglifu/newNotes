@@ -1,0 +1,560 @@
+@import "top-app";
+// 优思师资
+
+article.index-article{
+	box-sizing: border-box;
+	padding: 0.4rem;
+}
+
+div.index-yousi-teachers{
+	width: 49.2%;
+	display: block;
+	padding: 2rem 1rem;
+	background: #fab67c;
+	border-radius: 0.2rem;
+	.left{
+		width: 30%;
+		img{
+			width:4rem;
+			height:4.5rem;
+		}
+	}
+	.right{
+		width: 70%;
+		box-sizing: border-box;
+		padding: 0.4rem 0 0.4rem 0.4em;
+		h4{
+			color: #333333;
+			font-size: 1.6rem; 
+		}
+		p{
+			color: #fff;
+			margin-top: 0.4rem;
+			font-size:0.9rem;
+		} 
+	}
+}
+
+div.index-yousi-advantage{
+	background: #fcd07d;
+}
+
+// 给你孩子选中优秀的老师
+div.index-teachers{
+	box-sizing: border-box;
+	padding: 0 .4rem;
+}
+div.index-doog-teachers{
+	width: 100%;
+	background:  #f2f2f2;
+	padding-top: 4rem;
+	h4{
+		text-align: center;
+		border-radius: 0.2rem;
+		font-size: 2.6rem;
+		color: #333333;
+		font-weight: 800;
+		margin-bottom: 1rem;
+		span{
+			color: #fb5c5a;
+		}
+	}
+	p{
+		width: 100%;
+		text-align: center;
+		color: #666666;
+		font-size:1.4rem;
+		line-height: 2.4rem;
+		span{
+			color: #3aaffe;
+		}
+	}
+	.img-box{
+		width: 100%;
+		text-align: center;
+		margin-top: 2.8rem;
+		img{
+			width: 100%;
+			display: block;
+		}
+	}
+}
+
+div.index-bg1{
+	background: #e7e7e7;
+}
+
+//立即预约
+
+div.index-appointment{
+	width: 90%;
+	margin: 2rem auto 0;
+	overflow: hidden;
+	padding-bottom: 4rem; 
+
+	input[name ^= index-input]{
+		width: 100%;
+		padding: 1.2rem 0;
+		font-size: 1.4rem;
+		border: 1px solid #DEDEDE;
+		border-radius: .3rem;
+		background: #e1e4e8;
+		margin-top: 1.8rem;
+		 
+	}
+	input[name = index-input-button]{
+		background: #fb5c5a;
+		color: #fff;
+	}
+	select[name ^= index-select]{
+		width:48%;
+		height:4rem;
+		padding: 1.2rem 0;
+		font-size: 1.4rem;
+		border: none;
+		border-radius: .3rem;
+		background: #e1e4e8;
+		margin-top: 1.8rem;
+	}
+	.index-error{
+		text-align: right;
+		color:red;
+	}
+	.green{
+		color:green !important;
+	} 
+}
+
+//超过50家
+div.index-bg2{
+	background: #fff;
+}
+div.index-50{
+	width: 98%;
+	margin: 0 auto;
+	padding-top: 2rem;
+	.index-p-50{
+		width:88%;
+		margin: 0 auto;
+		text-align: left; 
+	}
+	h5{
+		width: 90%;
+		margin: 0 auto;
+		text-align: right;
+		font-size: 1.6rem;
+		color: #333;
+	}
+}
+
+// 商家列表图片
+
+div.index-photo-list{
+	text-align: center;
+	padding: 2rem 0;
+	img{
+		box-sizing: border-box;
+		width:22%;
+		margin:.3rem 0.4%;
+		border:1px solid #e8e8e8;
+	}
+}
+
+
+//联系我们
+div.index-contact-us{
+	background: #373940;
+	padding-top: 4rem;
+	padding-bottom: 6rem;
+	h4{
+		color: #999999;
+		text-align: center;
+		font-size: 1.4rem;
+	}
+	div.index-photo{
+		width:100%;
+		text-align: center;
+		margin-top: 2rem;
+		a{
+			-webkit-tap-highlight-color: rgba(0,0,0,0); 
+		}
+		img{
+			width: 14%;
+			margin: 0 1.2rem;
+		}
+	}
+
+	div.index-a{
+		width:100%;
+		text-align: center;
+		margin-top: 2rem;
+		font-size: 1.4rem;
+		color: #fff;
+		a{
+			color: #999;
+		}
+		span{
+			color: #999;
+			margin:0 1rem;
+		}
+	}
+
+	p{
+		box-sizing: border-box;
+		width: 100%;
+		padding: 1rem;
+		color: #999;
+		line-height:2rem;
+		text-align: center;
+		font-size: 1.2rem;
+	}
+}
+
+
+//底部固定框
+div.index-fixed{
+	position:fixed;
+	bottom: 0;
+	left: 0;
+	right:0;
+	height: 4.5rem;
+	z-index: 9999;
+
+	.left{
+		width: 40%;
+		height:100%;
+		background: #fb5c5a;
+		line-height: 4.5rem;
+		text-align: center;
+		font-size:1.4rem;
+		a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			color: #fff;
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+		}
+	}
+
+	.right{
+		width: 60%;
+		height: 100%;
+		background: #ed232a;
+		font-size:1.4rem;
+		line-height: 4.5rem;
+		text-align: center;
+		a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			color: #fff;
+			-webkit-tap-highlight-color: rgba(0,0,0,0); 
+		}
+	}
+}
+
+.index-relative{
+	position: relative !important;
+}
+
+
+// 优思优势
+
+div.advant-box{
+	text-align: center;
+	position: relative;
+	padding-top: 3rem;
+	h4{
+		font-size: 2.6rem;
+		font-weight: 900;
+		color: #333333;
+		span{
+			color: #fb5c5a;
+		}
+	}
+}
+
+//优势 1
+
+div.advant1-box{
+	.advant1-inner{
+		width: 88%;
+		padding:3rem 0;
+		text-align: center;
+		position: relative;
+		margin: 0 auto;
+		border-bottom:1px dashed #d9d9d9;
+		img.img-left{
+			width:4rem;
+			display: block;
+			position: absolute;
+			left:0;
+			top:14%;
+		}
+
+		img.img-right{
+			width:4rem;
+			display: block;
+			position: absolute;
+			right:0;
+			top:14%;
+		}
+
+		img.img0{
+			width:60%;
+		}
+
+		h4{
+			margin-top: 2rem;
+			font-size: 2.2rem;
+			font-weight: 900;
+			color: #333;
+			margin-bottom: 1rem;
+		}
+
+		p{
+			font-size: 1.2rem;
+			line-height: 2rem;
+			color: #666666;
+			span{
+				color: #03affe;
+			}
+		}
+	}
+}
+
+div.advant4-box{
+	.advant1-inner{
+		border:none;
+		img.img0{
+			width: 80%;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+}
+
+
+//全国老师
+
+div.teachers-country{
+	background: #f2f2f2;
+	box-sizing: border-box;
+	padding: .5rem 0;
+	.teachers-country-inner1{
+		width:97%;
+		margin:0 auto;
+		background: #fff;
+		border-radius:.3rem;
+		overflow: hidden;
+		.left{
+			width:10rem;
+			img{
+				display:block;
+				width:100%;
+			}
+		}
+		.right{
+			width: calc(100% - 10rem);
+			box-sizing: border-box;
+			padding: 1.2rem;
+			h4{
+				font-size: 1.6rem;
+				font-weight: 700;
+				color: #333;
+			}
+			p{
+				width: 100%;
+				font-size:1.4rem;
+				color: #999;
+				margin-top: .6rem;
+			}
+		}
+	}
+
+	.teachers-country-inner2{
+		width:97%;
+		margin:0 auto;
+		background: #fff;
+		border-radius:.3rem;
+		overflow: hidden;
+		.right{
+			width:10rem;
+			img{
+				display:block;
+				width:100%;
+			}
+		}
+		.left{
+			width: calc(100% - 10rem);
+			box-sizing: border-box;
+			padding: 1.2rem;
+			h4{
+				font-size:1.6rem;
+				font-weight: 700;
+				color: #333;
+				text-align: right;
+			}
+			p{
+				width: 100%;
+				font-size:1.4rem;
+				color: #999;
+				margin-top: .6rem;
+				text-align: right;
+			}
+		}
+	}
+
+	.inner-marginTop{
+		margin-top: .5rem;
+	}
+
+	.teachers-good{
+		padding: 3rem 0;
+		h5{
+			font-size: 2.6rem;
+			font-weight: 900;
+			text-align: center;
+			color: #333333;
+			span{
+				color: #fb5c5a;
+			}
+		}
+		p{
+			font-size: 1.4rem;
+			text-align: center;
+			margin-top: 1rem;
+			color: #999999;
+		}
+	}
+	
+	.teachers-screen{
+		width:97%;
+		margin:0 auto;
+		border-radius:.3rem;
+		overflow: hidden;       
+		img{
+			width:100%;
+		}
+	}
+}
+
+
+// 优思老师风采
+
+div.teachers-style{
+	padding: 3rem 0;
+	h4{
+		text-align: center;
+		font-size: 2.6rem;
+		font-weight: 900;
+		color: #333;
+	}
+	p{
+		text-align: center;
+		font-size: 1.4rem;
+		color: #999999;
+		margin-top:.5rem;
+	}
+	.teachers-box{
+		width: 90%;
+		margin: 0 auto;
+		position: relative;
+		padding-bottom: 4rem;
+		overflow: hidden;
+		.teachers-list{
+			width: 100%;
+			margin-top: 2rem;
+			.left,.right{
+				width:48%;
+				img{
+					display: block;
+					width:100%;
+				}
+				h4{
+					margin-top: 1rem;
+					text-align: left;
+					margin-left: 1rem;
+					font-size: 2rem;
+					color: #ee2328;
+				}
+				p{
+					margin-left: 1rem;
+					text-align: left;
+					font-size: 1.2rem;
+				}
+			}
+		}
+		.teachers-list:after{
+			content:"";
+			display:block;
+			clear: both;
+		}
+	}
+
+}
+
+
+// 家长好评如潮
+
+div.teacher-parent{
+	padding: 3rem 0;
+	h4{
+		-webkit-text-size-adjust:none;
+		font-size: 2.6rem;
+		text-align: center;
+		font-weight: 700;
+		color: #333;
+	}
+	p{
+		font-size: 1.4rem;
+		text-align: center;
+		margin-top: 1rem;
+		color: #999;
+	}
+
+	div.weixin-list{
+		width:86%;
+		margin: 0 auto;
+		background: #ebebeb;
+		padding:1rem;
+		margin-top:2rem; 
+		img{
+			width:100%;
+		}
+	}
+	div.weixin-xian{
+		width: 86%;
+		margin: 1rem auto;
+		height:1px;
+		border-bottom:1px dashed #ccc;
+	}
+}
+
+// 弹框
+
+div.teachers-mask{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.6);
+}
+
+div.erweima{
+	width:18rem;
+	height:20rem;
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+	z-index: 99999;
+
+	img{
+		width: 100%;
+	} 
+}

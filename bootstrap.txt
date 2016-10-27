@@ -1,0 +1,6 @@
+
+ÄâÌ¬¿ò   http://www.runoob.com/bootstrap/bootstrap-modal-plugin.html
+
+ÓÃ·¨£º
+	$("ÄâÌ¬¿ò ").modal();
+

@@ -1,0 +1,64 @@
+    	
+    	/* 画一个矩形 */
+    	var rect = new fabric.Rect({
+  			left: 100,
+ 			top: 100,
+ 			fill: 'red',
+ 			width: 20,
+ 			height: 20
+		});
+
+		canvas.add(rect); //将矩形放入画布中
+
+		/*  分一个组 */
+		var circle = new fabric.Circle({
+  			radius: 100,
+  			fill: '#eef',
+  			scaleY: 0.5,
+  			originX: 'center',
+  			originY: 'center'
+		});
+
+		var text = new fabric.Text('hello world', {
+  			fontSize: 30,
+ 			originX: 'center',
+  			originY: 'center'
+		});
+		/*  组 */
+		var group = new fabric.Group([ circle, text ], {
+  			left: 150,
+  			top: 100,
+  			angle: -10
+		});
+
+		group.item(0).setFill('red');  //参数的第一个
+		group.item(1).set({				// 参数的第二个
+  			text: 'trololo',   // 文本的内容
+  			fill: 'white'		// 文本的颜色
+		});
+		canvas.add(group);  //将组放入画布中
+
+
+		var circle1 = new fabric.Circle({
+  			radius: 50,
+  			fill: 'red',
+  			left: 0
+		});
+		var circle2 = new fabric.Circle({
+  			radius: 50,
+  			fill: 'green',
+  			left: 100
+		});
+		var circle3 = new fabric.Circle({
+  			radius: 50,
+  			fill: 'blue',
+  			left: 200
+		});
+
+		var group = new fabric.Group([ circle1, circle2, circle3 ], {
+  			left: 200,  // 整个组和画布之间的距离
+  			top: 200
+		});
+
+		canvas.add(group);
+		JSON.stringify(canvas);

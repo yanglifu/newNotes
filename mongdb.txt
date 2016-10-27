@@ -1,0 +1,13 @@
+1. 下载 安装
+
+2. 注意 mongdb 只能 在 cmd 命令下运行 在 git 上 不能运行
+
+3. show dbs 显示所有的数据库
+
+4. 文档相当于关系数据库 中的 每一行数据
+
+5. 集合 是一组 文档的集合	相当去关系数据库中的 表
+
+6. 启动服务器  mongod --dbpath "d:\mongdb\db" --logpath "d:\mongdb\log\MongoDB.log" 
+
+	这里MongoDB.log就是开始建立的日志文件，--serviceName "MongoDB" 服务名为MongoDB

@@ -1,0 +1,434 @@
+@import "init"; //页面
+@import "font";
+@import "color"; 	//颜色
+.school-box{
+	width: 1366px;
+	height: auto;
+	margin: 0 auto;
+}
+
+div.school-top{
+	background:$top_B;
+	width: 100%;
+}
+div.school-inner{
+	width: 1200px;
+	height: auto;
+	margin: 0 auto;
+	height: 40px;
+	
+	.left a{
+		color: #fff;
+		font-size: 12px;
+		margin-left: 26px;
+		line-height: 40px;
+		display: inline-block;
+	}
+	.left a.first{
+		margin-left: 0;
+	}
+	.left i{		
+		font-size: 18px; 
+		display: block;
+		float: left;
+	}
+	.left span{
+		display: inline-block;
+		margin-left: 4px;
+	}
+	.right i{
+		font-size: 18px; 
+		display: block;
+		float: left;
+	}
+	.right span{
+		color: #fff;
+		display: inline-block;
+		margin-left: 4px;
+	}
+	.right span.red{
+		color: #FF1111;
+	}
+	.right a{
+		color: #fff;
+		font-size: 12px;
+		margin-left: 26px;
+		line-height: 40px;
+		display: block;
+		float: left;
+	}
+
+   /* 登录注册 box*/
+	div.login_register{
+		float: left;
+	}
+
+
+	.right .shu{
+		display: block;
+		float: left;
+		line-height: 36px;
+		margin: 0 4px;
+	}
+	.right a#school-register{
+		margin-left: 0;
+	}
+
+}
+
+/*logo 和列表*/
+div.school-header-box{
+	width: 100%;
+	background: #fff;
+	position: relative; 
+}
+div.school-header{
+	width: 1200px;
+	height: auto;
+	margin: 0 auto;
+	height: 80px;
+	.left{
+		margin-top: 14px;
+	}
+	.right{
+		line-height: 78px;
+	}
+	.right a{
+		margin-left: 32px;
+		color: $nav_C;
+	}
+	.right a.school-nav-index{
+		display: inline-block;
+
+		color: $nav_I;
+		border-bottom: 2px solid $nav_I;
+	} 
+}
+
+
+
+
+/* footer */
+
+div.school-footer-box{
+	width: 100%;
+	background: #333333;
+	div.school-footer{
+		width: 1200px;
+		margin: 0 auto;
+		height: 228px;
+		padding-top:50px;
+		.left{
+			li{
+				width: 70px;
+				margin-left: 80px;
+				float: left;
+				a{
+					color: #999999;
+					display: block;
+					font-size: 12px;
+					line-height: 30px;
+					span{
+						color: #fff;
+						font-size: 16px;
+					}
+				}
+			}
+		}
+		.right{
+			width: 360px;
+			text-align: center;
+			color: #fff;
+			padding-top: 10px;
+			h4{	
+				font-size: 40px;
+
+			}
+			p{
+				font-size: 18px;
+				line-height: 30px;
+				margin-top: 10px;
+			}
+			span{
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+div.school-sequence{
+	width: 100%;
+	height: 60px;
+	background: #2D2D2D;
+	line-height: 60px;
+	text-align: center;
+	a{
+		color: #fff;
+		font-size: 12px;
+	}
+	span{
+		color: #fff;
+		font-size: 12px;
+		margin-left: 5px;
+	}
+}
+
+
+
+/*  个人信息  */
+
+div.my_logon{
+	position: relative;
+	color: #fff;
+	float: left;
+	line-height: 40px;
+	margin-left: 30px;
+	img{
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		margin-top: 5px;
+		display: block;
+		float: left;
+	}
+	#id_name{
+		display: block;
+		float: left;
+		margin-left: 10px !important;
+		width: 60px;
+		white-space: nowrap;
+    	text-overflow: ellipsis;
+    	overflow: hidden;
+    	text-align: center;
+    	font-size: 14px;
+	}
+	i{
+		font-size: 12px !important;
+		margin-left: 10px;
+	}
+
+	ul.my_list{
+		display: none;				
+		width: 120px;
+		position: absolute;
+		top: 40px;
+		right: 0;
+		z-index: 88;
+		background: #333;
+		li{
+			height: 40px;
+			text-align: center;
+			border-bottom: 1px solid #fff;
+			a{
+				display: block;
+				width: 100%;height: 100%;
+				margin-left: 0;
+				line-height: 40px;
+			}
+			span{
+				display: inline-block;
+				width: 30px;
+				text-align: center;
+				margin: 0;
+			}			
+		}
+		li.last{
+			border:0;
+		}
+	}
+}
+
+.i1{
+	display: none !important;
+}
+div.my_logon:hover ul.my_list{
+	display: block;
+}
+div.my_logon:hover .i1{
+	display: block !important;
+}
+div.my_logon:hover .i2{
+	display: none !important;
+}
+
+
+
+/* 支付弹框 */
+
+/* 黑色遮罩 */
+div.school_mask{
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	filter:Alpha(opacity=50);
+	background:#000000;/*实现IE背景透明*/	
+    background:rgba(0, 0, 0, 0.5) none repeat scroll 0 0;/*实现FF背景透明，文字不透明*/
+}
+
+/* 支付 */
+
+div.payment_money{
+	width: 600px;
+	height: 380px;
+	border-radius: 3px;
+	position: fixed;
+	z-index: 9999;
+	top: 200px;
+	left: 50%;
+	margin-left: -300px;
+	background: #fff;
+	.payment_title{
+		padding:0 22px;
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		border-bottom: 1px solid  #ccc;
+		span{
+			font-size: 14px;
+			font-weight: bold;
+		}
+		i{
+			color: #ccc;
+			cursor: pointer;
+		}
+	}
+	.payment_information{
+		width: 100%;
+		height: 154px;
+		padding:0 22px;
+		li{
+			text-align: center;
+			height: 50px;
+			line-height: 50px;
+			color: #999999;
+			overflow: hidden;
+			span{
+				color: #656565;
+			}
+			span.xian{
+				margin: 0 4px;
+			}
+			a{ 
+				color: #333333;
+			}
+			.span1{
+				color: #fb5c5a;
+				margin-left: 12px;
+			}
+
+			.box{
+				width: 430px;
+				display: inline-block;
+				border:1px dashed #e5e5e5;
+				margin-top: 20px;
+				height: 50px;
+				line-height: 50px;
+				white-space: nowrap;
+				text-overflow:ellipsis;
+				overflow: hidden;
+				padding: 0 5px;
+
+			}
+			.Price{
+				text-align: left;
+				border:0;
+				margin-top: 0;
+			}			
+		}
+		li.one{
+			height: 80px;
+		}
+		li.mode{
+			margin-top: 20px;
+			a{
+				display: block;
+				width: 70px;
+				height: 32px;
+				border:1px solid #ccc;
+				text-align: center;
+				line-height: 32px;
+				margin-top: 10px;
+				margin-left: 10px;
+				color: 666666;
+				box-sizing: border-box;
+			}
+			a.index{
+				background: #fb5c5a;
+				border: 0;
+				color: #fff; 
+			}
+		}		
+	}
+}
+
+
+/*  图形验证弹框 */
+
+div.code_box{
+	width: 300px;
+	height: 260px;
+	background: #fff;
+	position: fixed;
+	top: 200px;
+	left: 50%;
+	margin-left: -150px;
+	z-index: 9999;
+	padding: 10px 20px;
+	h4{
+		line-height: 40px;
+		border-bottom: 1px solid #eee;
+		color: #ccc;
+		i{
+			cursor: pointer;
+		}
+	}
+	li{
+		overflow: hidden;
+		margin-top: 10px;
+		img{
+			width: 60%;
+			height: 60px;
+			float: left;
+		}
+		.btn_code{
+			float: right;
+			width: 80px;
+			height: 30px;
+			line-height: 30px;
+			background: #fb5c5a;
+			text-align: center;
+			color: #fff;
+			font-size: 12px;
+			margin-top: 30px;
+			cursor: pointer;
+		}
+		a{
+			display: block;
+			width: 100%;
+			height: 36px;
+			background: #fb5c5a;
+			color: #fff;
+			line-height: 36px;
+			text-align: center;
+			font-size: 14px;
+		}
+		
+		input{
+			width: 100%;
+			height: 36px;
+			border: 1px solid #eee;
+			text-indent: 12px;
+		}
+	}
+	p{
+		width: 260px;
+		height: 30px;
+		margin-top: 10px;
+		color: #fb5c5a;
+		overflow: hidden;
+
+	}
+}

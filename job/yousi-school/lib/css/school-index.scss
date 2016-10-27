@@ -1,0 +1,506 @@
+@import "base";
+@import "yousi_top";	//  公用头部
+html,body{
+	min-width: 1366px;
+	font-family: "微软雅黑";
+}
+
+/*  banner  */
+div.school-index-banner{
+	width: 100%;
+	height: 448px;
+	position: relative;
+}
+
+div.img-box{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	img{
+		width: 100%;
+		height: 100%;
+	}
+	background: green;
+}
+
+ul.banner-list{
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	z-index: 10;
+	li{
+		width: 12px;
+		height: 12px;
+		float: left;
+		border-radius: 50%;
+		margin-left: 10px;
+		background: #fff;
+	}
+	li.index{
+		background: #FB5C5A;
+	}
+}
+
+div.school-banner-inner{	
+	width: 1200px;
+	height: 100%;
+	position: absolute;
+	left: 50%;
+	margin-left: -600px;
+	z-index: 9;
+	.ul_list{
+		margin-top: 20px;
+		li{
+			width: 120px;
+			height: 30px;
+			line-height: 30px;
+			font-size: 12px;
+			text-align: center;
+			margin-top: 28px;
+			background: #000; 
+			background: rgba(0,0,0,0.4);
+
+			a{
+				display: block;
+				width: 100%;
+				height: 100%;
+				color: #fff;
+			}
+			a.index{
+				background: #FB5C5A;
+			}
+		}
+	}
+	.login-register{
+		width: 300px;
+		height: 100%;
+		background: #141821;
+		background: rgba(0,0,0,0.6);
+		padding-top: 20px;
+		.top{
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			padding: 0 20px;
+			font-size: 18px;
+			.register{
+				color: #fff;
+			}
+			.login{
+				color: #FB5C5A;
+			}
+		}
+		div.login_{
+			width: 100%;
+			height: 220px;
+			text-align: center;
+			margin-top: 20px;
+
+			img{
+				width: 96px;
+				height: 96px;
+				border-radius: 50%;
+				border: 2px  solid #000;
+			}
+			.color_fff{
+				color: #fff;
+				margin-top: 20px;
+			}
+			ul.student-information{
+				display: inline-block;
+				margin-top: 22px;
+				li{
+					width: 70px;
+					float: left;
+					border-right: 1px dashed #fff;
+					a{
+						text-align: center;
+						font-size: 14px;
+						display: block;
+						color: #fff;
+						span{
+							color: #DD282B;
+						}
+					}
+				}
+				li.last{
+					border: 0;
+				}
+			}
+		}
+		.ul_register{
+			width: 100%;
+			padding: 0 30px;
+			p{
+				width: 100%;
+				height: 20px;
+				color: #999;
+				text-align: right;
+			}
+			li.one{
+				width: 100%;
+				height: 40px;
+				background: #000;
+				background: rgba(0,0,0,0.8);
+				margin-top: 10px;
+				border-radius: 5px;
+				color: #fff;
+				line-height: 40px;
+				padding-left: 16px;
+				input{
+					background: 0;
+					border:0;
+					outline: none;
+
+				}
+
+			}
+			li.verification{
+				width: 100%;
+				height: 40px;
+				margin-top: 20px;
+				.left{
+					width: 60%;
+					height: 100%;
+					background: #000;
+					background: rgba(0,0,0,0.8);
+					border-radius: 5px;
+					line-height: 40px;
+					padding-left: 16px;
+					color: #fff;
+					input{
+						width: 80px;
+						background: 0;
+						border:0;
+						outline: none;
+					}
+				}
+				.right{
+					.get_code{
+						width: 80px;
+						height: 40px;
+						background: #FFA808;
+						font-size: 14px;
+						line-height: 40px;
+						text-align: center;
+						border-radius: 3px;
+						color: #fff;
+						cursor: pointer;
+					}
+				}
+			}
+			li.service_agreement{
+				width: 100%;
+				height: 40px;
+				margin-top: 20px;
+				color: #fff;
+				line-height: 40px;
+				font-size: 14px;
+				span{
+					color: #FB5C5A;
+				}
+				img{
+					cursor: pointer;
+				}
+			}
+			li.last{
+				background: #FB5C5A;
+				color: #fff;
+				line-height: 40px;
+				text-align: center;
+				padding: 0;
+				a{
+					color: #fff;
+					font-size: 14px;
+					display: inline-block;
+					width: 100%;
+					height: 100%;
+				}
+				a.index{
+					background: #ccc;
+					border-radius: 3px;
+				}
+			}
+			li.get_into{
+				margin-top: 30px;
+			}
+		}
+	}
+}
+
+
+/* 注册 登录 分割线 */
+span.separate{
+	margin: 0 5px;
+}
+
+
+/* 绝对是名师 */
+
+div.school-index1{
+	width: 100%;
+	height: 360px;
+	padding-top: 70px;
+}
+
+div.school-inner1{
+	@extend .init;
+	text-align: center;
+	ul.school-list1{
+		display: inline-block;
+		li{
+			float: left;
+			margin: 0 12px;
+			text-align: center;
+			img{
+				box-sizing :border-box;
+				border :5px solid #fff;
+				box-shadow: 0 0 5px #ccc;
+			}
+			h4{
+				font-size: 22px;
+				margin-top: 20px;
+				color: #333;
+			}
+			p{
+				margin-top: 12px;
+				font-size: 14px;
+				color: #999;
+			}
+		}
+	}
+	
+}
+
+/* 在线一对一课程 */
+
+div.school-index2{
+	width: 100%;
+	height: 300px;
+	.left,.right{
+		width: 50%;
+		height: 100%;
+		img{
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+//拥有专业的教辅教研开发团队
+
+div.school-box-11{
+	width: 100%;
+	height: 658px;
+	background: url(../images/school-51.jpg) no-repeat center;
+}
+
+div.school-inner-11{
+	@extend .init;
+	padding-top: 86px;
+	h4{
+		font-size: 30px;
+		color: #FB5C5A;
+		letter-spacing:4px;
+	}
+	.xian{
+		width: 436px;
+		height: 1px;
+		background: #fff;
+		margin-top: 10px;
+	}
+
+	p{
+		width: 575px;
+		margin-top: 36px;
+		color: #fff;
+		font-size: 14px;
+		line-height: 30px;
+	}
+	h5{
+		margin-top: 30px;
+		font-size: 16px;
+		color: #fff;
+	}
+	h6{
+		font-size: 14px;
+		color: #fff;
+		line-height: 30px;
+	}
+	.btn-a{
+		display: block;
+		margin-top: 20px;
+		width: 140px;
+		height: 30px;
+		color: #fff;
+		background: #FB5C5A;
+		font-size: 14px;
+		border-radius: 25px;
+		line-height: 30px;
+		text-align: center;
+		span{
+			font-size: 12px;
+		}
+	}
+}
+
+ul.list-11{
+	width: 1150px;
+	margin: 0 auto;
+	margin-top: 100px;
+	overflow: hidden;
+	li{
+		float: left;
+		width: 230px;
+		box-sizing:border-box;
+		text-align: center;
+		a{
+			display: block;
+			color: #FB5C5A;
+			font-size: 20px;
+			margin-top: 10px;
+		}
+		span{
+			color: #fff;
+			font-size: 14px;
+		}
+	}
+}
+
+
+//在线教学管理
+
+div.school-index3{
+	width: 100%;
+	img{
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+}
+
+/* 四对一的贴心服务  */
+
+div.school-modular-box-4{
+	width: 100%;
+	background: url(../images/school-1000.jpg) no-repeat center;
+}
+
+div.school-modular4{
+	@extend .init;
+	height: 545px;
+	position: relative;
+	a{
+		display: block;
+		position: absolute;
+		padding: 4px 14px;
+		border-radius: 5px;
+		background: #ffffdb;
+		top: 378px;
+		left: 540px;
+	}
+	
+}
+
+/*  超过50家国内大型媒体报道 */
+
+div.school-index4{
+	width: 100%;
+	height: auto;
+	background: #F6F6F6;
+	padding-bottom: 40px;
+}
+
+div.school-inner4{
+	@extend .init;
+	text-align: center;
+	position: relative;
+	div.school-position{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}
+	div.bg_left{
+		background: url(../images/school-index-bg10.png) no-repeat 62px 200px;
+	}
+	div.bg_right{
+		background: url(../images/school-index-bg11.png) no-repeat 1110px 280px;
+	}
+
+	.school-title{
+		width: auto;
+		height: 82px;
+		line-height: 82px;
+		display: inline-block;
+		margin-top: 40px;
+		border-bottom:1px solid #e9e9e9;
+		position: relative;
+		z-index: 2;
+		a{
+			font-size: 26px;
+			color: #333;
+			span{
+				color: #FB5C5A;
+			}
+		}
+	}
+	.school-describe{
+		width: 940px;
+		position: relative;
+		z-index: 2;
+		height: 82px;
+		margin: 80px auto 10px;
+		text-align: left;
+		font-size: 14px;
+		p{
+			color: #666;
+			
+		}
+	}
+}
+
+ul.school-trademark{
+	overflow: hidden;
+	width: 1118px;
+	margin: 60px auto 0;
+	position: relative;
+	z-index: 2;
+	li{
+		width: 166px;
+		height: 82px;
+		float: left;
+		margin: 14px 10px; 
+		img{
+			width: 100%;
+			height: 100%;
+			border: 1px solid  #efefef;
+		}
+	}
+}
+
+
+/* 合作机构背景 */
+
+div.bg_color4{
+	background: #fff;
+}
+
+
+/* color */
+
+.cb-FFA{
+	background: #FFA808 !important;
+}
+
+
+/* 登录注册 */
+
+div.box_body{
+	height: 700px;
+	background: url("../images/school-bg-login.png") no-repeat center;
+	background-size: 100%;
+}
+

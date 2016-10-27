@@ -1,0 +1,359 @@
+@import "color";
+@import "reset";
+@import "top";
+@import "footer";
+html,body{
+  font-size:14px;
+  font-family:"微软雅黑","宋体","黑体",Arial;
+}
+div,ul,li{
+  box-sizing: border-box;
+}
+//面包屑
+.jf-bread{
+  width:100%;
+  height: auto;
+}
+.jf-bread-inner{
+  width:1200px;
+  height: auto;
+  min-height: 770px;
+  margin:0 auto;
+}
+
+.breads{
+  width:100%;
+  height: 40px;
+  line-height: 40px;
+}
+.breads span{
+  color: $breadcolor1;
+}
+//选中的
+.breads span.lf-index{
+  color: $breadcolor2;
+}
+
+//左边
+.lf-left{
+  width:268px;
+  height: auto;
+  border:1px solid $searchborder;
+}
+.lf-left li{
+  width:100%;
+  height: 66px;
+  border-bottom: 1px solid $searchborder;
+  line-height: 66px;
+  text-align: center;
+  color: #999999;
+  background: #f5f5f5;
+}
+.lf-left li:hover{
+  background: #ffffff;
+  color: #333333;
+  font-weight: bold;
+}
+//选中样式
+.lf-left li.lf-selected{
+  background: #ffffff;
+  color: #333333;
+  font-weight: bold;
+}
+
+//右边
+.lf-right{
+  width:910px;
+  height: 700px;
+  border:1px solid $searchborder;
+}
+.lf-title{
+  width:100%;
+  height: 40px;
+  position: relative;
+  border-bottom: 1px solid $searchborder;
+}
+.lf-title li{
+  float: left;
+  width:106px;
+  height: 40px;
+  text-align: center;
+  line-height: 38px;
+}
+
+.lf-title li.title-index{
+  border-top: 2px solid #ff3934;
+  border-left:1px solid $searchborder;
+  border-right:1px solid $searchborder;
+  background: #ffffff;
+  margin-left: -1px;
+  height: 41px;
+}
+.lf-title li.title-index a{
+  color: #ff3934;
+}
+// 去备课
+.lf-beike{
+  width:72px;
+  height: 26px;
+  position: absolute;
+  top:6px;
+  right:30px;
+  border-radius: 3px;
+  background: #ff3934 ;
+  text-align: center;
+  line-height: 24px;
+  color: #fdf5f5;
+}
+.lf-beike:hover{
+  background:  #C2322B;
+}
+//分类
+.lf-class{
+  width:870px;
+  height: 40px;
+  background: #f9f9f9;
+  margin:0 auto;
+  line-height: 40px;
+  margin-top: 20px;
+  color: #a2a2a2;
+}
+
+.lf-class li{
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lf-class .lf-class-one{
+  width:500px;
+  text-align: center;
+}
+.lf-class .lf-class-one a:hover{
+  color: #387cb0;
+  text-decoration: underline;
+}
+.lf-class .lf-class-two{
+  width:180px;
+  text-align: center;
+}
+.lf-class .lf-class-three{
+  width:180px;
+  text-align: center;
+}
+
+// 列表
+.class-list{
+  background: #ffffff;
+  border-bottom: 1px dashed #e9e9e9;
+  color: #696969;
+}
+.class-list .class-list-one{
+  text-align: left;
+  padding-left: 10px;
+}
+
+// 下载
+.lf-a-left{
+  color: $breadcolor2;
+}
+
+
+// 弹框
+.mask{
+  position: fixed;
+  width:100%;
+  height: 100%;
+  top:0;
+  left:0;
+  background: #000000;
+  opacity: 0.6;
+  z-index: 99999;
+}
+.ex8-appointment{
+  position: fixed;
+  width:380px;
+  height: 310px;
+  background: url("../img/jf-i-logo.png")no-repeat center;
+  z-index: 999999;
+}
+.jf-login{
+  width:240px;
+  height: 230px;
+  margin: 80px auto;
+}
+.jf-login a{
+  display: block;
+  color: #66aaeb;
+  margin-top: 10px;
+}
+.jf-login input{
+  width:100%;
+  height: 40px;
+  border:0;
+  outline: none;
+  background: #f5f5f5;
+  margin-top: 8px;
+  line-height: 40px;
+}
+input[name=button]{
+  background: #66aaeb;
+  color: #f7fafd;
+}
+
+.ex8-inputbox{
+  width:14px;
+  height: 14px;
+  background: url("../img/jf-i-close.png") no-repeat center;
+  position: absolute;
+  top:70px;
+  right: 20px;
+  cursor: pointer;
+}
+.errorMsg{
+  color: #333333;
+}
+
+//意见反馈
+.jf-opinion{
+  width:30px;
+  height: 94px;
+  position: fixed;
+  top:50%;
+  right:-6px;
+  background: #939393;
+  padding: 6px;
+  color: #254c6a;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.jf-feedback{
+  position: fixed;
+  top:0;
+  left:0;
+  z-index:999999;
+  width:380px;
+  height: 268px;
+  background: #ffffff;
+}
+.jf-feedback-login{
+  width:340px;
+  height: 230px;
+  margin: 20px auto;
+}
+.jf-feedback-login textarea{
+  width:336px;
+  height: 122px;
+  border:0;
+  outline: none;
+  background: #f5f5f5;
+  color: #a6a6a6;
+  resize: none;
+}
+.jf-feedback-login #phone{
+  width:100%;
+  height: 28px;
+  background: #f5f5f5;
+  border:0;
+  outline: none;
+  margin-top: 10px;
+  color: #A9A9A9;
+}
+.jf-feedback-login .jf-code{
+  width:100%;
+  height: 30px;
+  margin-top: 6px;
+}
+.jf-feedback-login .jf-code #code{
+  display: block;
+  width:64px;
+  height: 28px;
+  background: #f5f5f5;
+  border:1px solid #e8e8e8;
+  outline: none;
+  float: left;
+  color: #A9A9A9;
+}
+.jf-feedback-login .jf-code img{
+  display: block;
+  float: left;
+  width:64px;
+  height: 28px;
+  margin-left: 20px;
+  border:1px solid #e8e8e8;
+}
+.jf-feedback-login .jf-code .left,.jf-login .jf-code .right{
+  width:56px;
+  height: 26px;
+  outline: none;
+}
+.jf-feedback-login .jf-code .left{
+  margin-right: 10px;
+  color: #505050;
+  border:1px solid #e8e8e8;
+}
+.jf-feedback-login .jf-code .right{
+  color: #ffeae9;
+  background: #ff3934;
+  border:0;
+}
+
+// 背景变化
+.bgphoto{
+  background: url("../img/jf-logo-d.png") no-repeat center !important;
+}
+
+
+//试卷
+
+.jf-paging{
+  width:100%;
+  height: 200px;
+}
+.jf-paging-inner{
+  width:1200px;
+  height: 200px;
+  margin:0 auto;
+}
+.paging-inner{
+  width:910px;
+  height: 100%;
+  text-align: center;
+}
+.uls-paging{
+  width:auto;
+  height: 38px;
+  margin-top: 90px;
+  display: inline-block;
+}
+.uls-paging-teaching{
+  right:314px;
+}
+
+// 搜索的结果页面分页
+.search-paging{
+  right:280px;
+}
+.uls-paging li:hover a{
+  color: $navborder;
+}
+.uls-paging li{
+  float: left;
+  padding: 8px 16px;
+  margin: 0 10px;
+  border:1px solid $searchborder;
+}
+
+//选中的颜色
+.uls-paging li.index{
+  border:0;
+}
+.uls-paging li.index a{
+  color: $navborder;
+}
+
+// 试卷库
+.jf-margin-left{
+  right: 300px;
+}

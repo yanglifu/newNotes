@@ -1,0 +1,49 @@
+//分页
+@import "color";
+.jf-paging{
+  width:100%;
+  height: 200px;
+}
+.jf-paging-inner{
+  width:1200px;
+  height: 200px;
+  margin:0 auto;
+  position: relative;
+}
+.uls-paging{
+  width:auto;
+  height: 38px;
+  position: absolute;
+  top:80px;
+  right: 160px;
+}
+.uls-paging-teaching{
+  right:314px;
+}
+
+// 搜索的结果页面分页
+.search-paging{
+  right:280px;
+}
+.uls-paging li:hover a{
+  color: $navborder;
+}
+.uls-paging li{
+  float: left;
+  padding: 8px 16px;
+  margin: 0 10px;
+  border:1px solid $searchborder;
+}
+
+//选中的颜色
+.uls-paging li.index{
+  border:0;
+}
+.uls-paging li.index a{
+  color: $navborder;
+}
+
+// 试卷库
+.jf-margin-left{
+  right: 300px;
+}

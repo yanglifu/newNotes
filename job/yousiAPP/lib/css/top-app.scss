@@ -1,0 +1,49 @@
+@import 'init';
+@import 'font';
+html,body{
+	font-family: "微软雅黑"; 
+	font-size:10px !important;
+}
+.main{
+	width:100%;
+	max-width:750px;
+	margin: 0 auto;
+}
+.main:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.marginTop{
+	margin-top: .4rem;
+}
+
+// 头部
+div.index-top{
+	padding: 1rem 1.2rem;
+	.logo{
+		width:50%;
+		img{
+			display:block;
+			width:100%;
+		}
+	}
+	.phone{
+		display: block;
+		padding: 0.4rem 0.6rem;
+		background:  #fb5c5a;
+		font-size: 1.2rem;
+		color:#fff;
+		border-radius:0.2rem;
+	}
+}
+
+// banner
+div.index-banner{
+	position: relative;
+	img{
+		display: block;
+		width:100%;
+	}
+}
+

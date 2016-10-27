@@ -1,0 +1,242 @@
+@import "base";
+@import "yousi_top";
+html,body{
+	font-family: 微软雅黑;
+	background: #f5f5f5;
+	font-size: 14px;
+	min-width: 1336px;
+
+}
+
+.conform-order{
+	width: 1140px;
+	height: auto;
+	margin: 0 auto;
+	div.order-title{
+		width: 100%;
+		height: 45px;
+		text-align: center;
+		line-height: 45px;
+		margin-top: 30px;
+		.left,.right{
+			width: 50%;
+			height: 100%;
+			color: #fff;	
+		}
+		.left{
+			background: url("../images/order-1.png") no-repeat center;
+		}
+		.right{
+			background: url("../images/order-2.png") no-repeat center;
+		}
+		.bg1{
+			background: url("../images/order3.png") no-repeat center;
+		}
+		.bg2{
+			background: url("../images/order4.png") no-repeat center;
+		}
+
+	}
+}
+
+div.order-box{
+	width: 100%;
+	height: auto;
+	padding:0 20px;
+	margin-top: 30px;
+	background: #fff;
+	h4.title{
+		line-height: 40px;
+		color: #666;
+		border-bottom: 1px solid #e5e5e5;
+		font-size: 18px;
+	}
+	div.order_information{
+		width: 100%;
+		height: 140px;
+		background: #f5f5f5;
+		padding: 30px;
+		margin-top: 30px;
+		.photo{
+			width: 148px;
+			height: 84px;
+			background: red;
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.left{
+			width: 650px;
+			height: 84px;
+			color: #999999;
+			margin-left: 20px;
+			font-size: 15px;
+			h4{
+				color: #000;
+				font-size: 18px;
+				line-height: 50px;
+				span{
+					color: #fb5c5a;
+				}
+			}
+			span{
+				color: #656565;
+			}
+			span.xian{
+				margin: 0 11px;
+			}
+		}
+		.right{
+			height: 100%;
+			line-height: 84px;
+			color: #fb5c5a;
+			font-size: 18px;
+		}
+	}
+	div.payment-method{
+		width: 100%;
+		height: 270px;
+		margin-top: 30px;
+		background: red;
+		img{
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+div.order-border{
+	border: 1px solid #e5e5e5;
+}
+div.coupon{
+	width: 100%;
+	height: 100px;
+	border: 1px solid #e5e5e5;
+	margin-top: 20px;
+	padding: 30px;
+	.left{
+		width: 370px;
+		color: #333333;
+		font-size: 16px;
+		height: 100%;
+		i{
+			font-size: 16px;
+			line-height: 40px;
+		}
+		span.span1{
+			margin-left: 20px;
+			color: #333333;
+		}
+		span.span2{
+			margin-left: 20px;
+			color: #999999;
+			font-size: 12px;
+		}
+	}
+	.center{
+		width: 430px;
+		input[name='coupon']{
+			height: 34px;
+			outline: none;
+			border: 1px solid #fb5c5a;
+			text-indent: 12px;
+		}
+		a{
+			display: inline-block;
+			width: 54px;
+			height: 34px;
+			line-height: 34px;
+			color: #333333;
+			text-align: center;
+		}
+		a.index{
+			background: #fb5c5a;
+			color: #fff;
+		}
+	}
+	.right{
+		line-height: 34px;
+		color: #999999;
+		font-size: 14px;
+		span{
+			font-size: 16px;
+			color: #666666;
+		}
+	}
+}
+
+div.place-order{
+	width: 100%;
+	height: 96px;
+	padding:0 30px ;
+	text-align: right;
+	h4{
+		text-align: right;
+		color: #000;
+		font-size: 16px;
+		margin-top: 20px;
+		span{
+			color: #fb5c5a;
+		}
+	}
+	a{
+		display: inline-block;
+		width: 80px;
+		height: 30px;
+		background: #ffa808;
+		color: #fff;
+		text-align: center;
+		line-height: 30px;
+		margin-top: 10px;
+	}
+}
+
+
+/*  订单完成 */
+div.box_body{
+	width: 100%;
+	min-height: 600px;
+	height: auto;
+}
+
+div.order-padding{
+	padding-bottom: 50px;
+	border: 1px solid #e5e5e5;
+}
+ul.order_success{
+	width: 100%;
+	height: 360px;
+	background: #f5f5f5;
+	margin-top: 30px;
+	padding-top: 50px;
+	li{
+		text-align: center;
+		h4{
+			font-size: 20px;
+			color: #fb5c5a;
+			font-weight: bold;
+			line-height: 40px;
+		}
+		p{
+			font-size: 16px; 
+			color: #666666;
+		}
+		a{
+			width: 128px;
+			height: 30px;
+			line-height: 30px;
+			display: inline-block;
+			border: 1px solid #fb5c5a;
+			border-radius: 3px;
+			margin: 0 24px;
+			color: #fb5c5a;
+		}
+	}
+	li.one{
+		margin-top: 20px;
+	}
+	li.last{
+		margin-top: 80px;
+	}
+}

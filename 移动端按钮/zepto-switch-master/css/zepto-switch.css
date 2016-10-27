@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+.zepto-form-item-switch {
+    display: -webkit-box;
+    -webkit-box-align: center;
+
+    position: relative;
+    font-size: 16px;
+    height: 44px;
+    line-height: 44px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.zepto-form-item-switch p {
+    margin: 0;
+    padding: 0;
+}
+
+.zepto-switch {
+    position: absolute;
+    font-size: 16px;
+    right: 15px;
+    top: 50%;
+    margin-top: -16px;
+    width: 52px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.zepto-switch input {
+    width: 52px;
+    height: 32px;
+    position: absolute;
+    z-index: 2;
+    border: none;
+    background: none;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+.zepto-switch input:before {
+    content: '';
+    width: 50px;
+    height: 30px;
+    border: 1px solid #dfdfdf;
+    background-color: #fdfdfd;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    box-shadow: #dfdfdf 0px 0px 0px 0px inset;
+    -webkit-transition: border 0.5s, box-shadow 0.5s;
+    transition: border 0.5s, box-shadow 0.5s;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+}
+
+.switch-default input:checked:before {
+    border-color: #adadad;
+    background-color: #e6e6e6;
+    box-shadow: #adadad 0px 0px 0px 16px inset;
+}
+
+.switch-primary input:checked:before {
+    border-color: #204d74;
+    background-color: #286090;
+    box-shadow: #204d74 0px 0px 0px 16px inset;
+}
+
+.switch-success input:checked:before {
+    border-color: #4cae4c;
+    background-color: #5cb85c;
+    box-shadow: #4cae4c 0px 0px 0px 16px inset;
+}
+
+.switch-info input:checked:before {
+    border-color: #269abc;
+    background-color: #31b0d5;
+    box-shadow: #269abc 0px 0px 0px 16px inset;
+}
+
+.switch-warning input:checked:before {
+    border-color: #d58512;
+    background-color: #ec971f;
+    box-shadow: #d58512 0px 0px 0px 16px inset;
+}
+
+.switch-dangers input:checked:before {
+    border-color: #ac2925;
+    background-color: #c9302c;
+    box-shadow: #ac2925 0px 0px 0px 16px inset;
+}
+
+.zepto-switch input:checked:before {
+    transition: border 0.5s, box-shadow 0.5s, background-color 1.2s;
+    -webkit-transition: border 0.5s, box-shadow 0.5s, background-color 1.2s;
+}
+
+.zepto-switch input:after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    border-radius: 100%;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    -webkit-transition: left 0.4s;
+    transition: left 0.4s;
+}
+
+.zepto-switch input:checked:after {
+    left: 21px;
+    -webkit-transition: left 0.4s;
+    transition: left 0.4s;
+}
+
+
+
+

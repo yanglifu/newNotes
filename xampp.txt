@@ -1,0 +1,7 @@
+Error: Apache shutdown unexpectedly.    错误：Apache意外关机。
+This may be due to a blocked port, missing dependencies,  这可能是由于一个封闭的端口，缺少的依赖关系.
+improper privileges, a crash, or a shutdown by another method.   不恰当的特权，崩溃，或者被另一种方法关闭。
+Press the Logs button to view error logs and check    按“日志”按钮查看错误日志和检查
+the Windows Event Viewer for more clues   窗口事件查看更多线索
+If you need more help, copy and post this   如果您需要更多的帮助，复制和发布此
+entire log window on the forums   在论坛上的整个日志窗口

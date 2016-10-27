@@ -1,0 +1,393 @@
+1、什么是react？
+	
+	它是一个用于创建可复用，可聚合 Web组件的js库。只提供了前端MVC框架中的“V”。不是完整的MVC框架。
+
+2、为何使用react？
+
+	（1）组件化的。   而不是写html模板，js逻辑与HTML标签紧密相连并且容易理解。
+
+	（2）单向数据流。  数据一旦更新，就直接重新渲染整个app。
+
+			   管理UI 的状态并不简单
+
+				修改DOM树
+		
+				修改数据
+
+				接收用户的输入
+
+				异步API数据请求
+
+	（3）虚拟 DOM 树。   React重建DOM 树、找到与上个版本的DOM 的差异、计算出最新的DOM 更新操作、从操作队列中
+
+批量地执行DOM更新操作。
+
+react搭建环境：
+
+		npm init --save browser-sync        /* 配置package.json文件*/
+		
+		将package.json文件中的"scripts":{
+
+						"dev":"browser-sync start --server --files "*.*""
+					}
+		npm run dev      /* 自动监听 自动刷新浏览器 */
+		
+		<script type="text/jsx;harmony=true" src="app.jsx"></script>   /* 支持ES2015 */
+
+		
+1、react入门：
+
+	react 帮助我们管理视图。
+
+	提出虚拟DOM结构的概念，也管理了一套虚拟DOM。 检查和真正浏览器的DOM有什么不同。
+
+	React 要求必须要有一个父级元素， 并且是  只可以 有且只有一个父级元素。
+
+	react是通过改变它的状态也就是外部改变他 （state）达到重新渲染DOM结构的组件化的效果。
+
+
+	
+
+
+
+	class Count extends React.Component{    /* Count是组件 extends  继承  */
+
+		constructor(){    /* Count组件  它的构造函数  初始化组件  */
+
+		    this.state = {count:0};     /* state 赋值 为一个对象  对象下面有count  初始值为0
+
+							  原始的状态  也可用  this.setState() */
+		}
+		
+		update(){     /* 定义方法    */
+
+		    this.setState({      /* 用setState方法 改变对象的值  改变对象中count属性的值*/
+					
+			count:++this.state.count    /* 值会不停地改变 */
+		    });
+		}
+			
+		render(){
+			
+		    return(     /* （）----因为可能有多行 */
+			
+			<div>   /* 所有的标签都在这个父级元素里   它作为 整个react组件的父级元素 */
+			
+			     <h1></h1>
+			
+			     <h2>{this.state.count}</h2>   /*  count找不到 */
+			
+			</div>
+		    );
+		}
+	}
+	
+	/* 为了能更好的观察 调用 update 方法  让 react渲染的count组件 赋值给 当前浏览器的全局的对象*/
+
+	count = React.render(      /* React.render  渲染组件 */
+
+		<Count/>,   /* 渲染的组件名 */
+		
+		document.getElementById("content");   /* body 中给一个id名为content的div */
+	)
+
+
+·React好处：
+
+	先编写react渲染--render方法，设置需要的状态。  渲染完组件后，当组件发生变化的时候，只需要在外部 改react 
+
+本身的state，它帮助我们更新DOM结构，然后响应在浏览器，也可以在服务器端渲染。
+
+	开发人员只需要开发组件 ，然后管理组件就好了。
+
+
+
+2、react组件嵌套：（ES2015）
+
+		react中的属性 ： props
+
+
+//  定义Comment 组件
+
+class Comment extends React.Component{
+
+	render(){
+		return(
+			
+			<div>
+
+				<div className="comment-body">  		
+		
+					{this.props.children}				
+	
+				</div>
+				<div className="comment-author">  	
+				
+					// props：组件本身的属性	   javascript代码用{}
+		
+					-{this.props.author}	//  -只是给了一个符号而已
+		
+				</div>
+		
+			</div>
+
+		)；
+	}
+}
+
+
+
+//  定义CommentList 组件
+
+class CommentList extends React.Component{
+
+	render(){
+
+		var commentsNode = this.props.comments.map(function(comment,index){
+
+			return (
+				// key：为了解决浏览器的警告   comment-：前缀     index：索引
+
+				<Comment key={'comment-'+index} author={comment.author}>  // 指明它的作者，内容
+			
+					{comment.body}
+
+				</Comment>
+			
+			)
+		});		
+
+		return(
+			<div className="comment-list">   // 指派样式的话就可以   写个 className
+				
+			     // CommentList      //CommentList应用：  CommentList可以包含多个组件
+			
+				/*<Comment author="Zhang">  // 指明它的作者，内容
+			
+					This is Zhang's comment.
+
+				</Comment>
+				<Comment author="Yang">  // 指明它的作者，内容
+			
+					This is Yang's comment.
+
+				</Comment>*/
+
+				{commentsNode}   // 用commentsNode替换
+			
+			</div>
+
+		)
+	}
+}
+
+
+
+//  定义CommentForm 组件
+
+class CommentForm extends React.Component{
+
+	handleSubmit(e){
+		
+		e.preventDefault();   // 阻止默认事件
+
+		//  
+		
+		const author = this.refs.author.getDOMNode().value.trim();
+
+		const body = this.refs.body.getDOMNode().value.trim();
+
+		const form= this.refs.form.getDOMNode();  // 拿到表单是因为要重置表单
+
+	}
+
+	render(){
+		return(
+			/*<div className="comment-form">
+				
+			     CommentForm
+			
+			</div>*/
+
+			<form className="comment-form" ref="form" onSubmit={e => {this.handleSubmit()}}> 
+
+				// ref:属性  react标记的属性，获取表单的对象
+				
+			     <input type="text" placeholder="Your name" ref="author"/>
+
+			     <input type="text" placeholder="Input your comment" ref="body"/>
+
+			     <input type="submit" placeholder="Add"/>
+			
+			</form>
+
+
+		)
+	}
+}
+
+
+
+/*var comments=[
+
+	{author:"Zhang",body:"this is Zhang's comment"}
+
+]
+
+var other=[
+
+	{author:"Yang",body:"this is Yang's comment"}
+
+]*/
+
+
+// 定义CommentBox组件
+
+class CommentBox extends React.Component{   //   CommentBox 组件名
+
+	super();   // 调用继承这个类的构造函数，然后编写所要初始化的构造函数的代码
+
+	constructor(props){  //  默认不会调用父组件的构造函数
+	 
+		this.state={     //   赋一个初始值    通过state管理react组件
+			
+			comments:props.comments||[]    
+		}
+	}
+
+
+
+	//  生命周期方法
+
+	loadDataFromServer() {
+		$.ajax({
+			//url:"comments.json",
+
+			url:this.props.url,
+			
+			dataType:"json",
+
+			/*
+			success:function(comments){
+				this.setState({comments:comments});
+			}.bind(this)
+			*/
+
+			success:comments => {
+				this.setState({comments:comments});
+			}
+
+		})
+	}
+
+	componentDidMount(){   //  有了它可加载服务器端请求
+	
+		this.loadDataFromServer();
+	}
+
+	
+
+	//　定义handleNewComment(comment)方法
+
+	handleNewComment(comment){
+
+		const comments = this.state.comments;
+		const newComment = comments.concat([comment]);   //  concat：连接数组
+		this.setState({comments:newComment});		
+
+		$.ajax({
+			url:this.props.url,
+			dataType:"json",
+			type:"post",     //  未定义post服务器内容
+			success:comment =>{
+				this.setState({comments:comments});
+			},
+			error:(xhr,status,err) => {
+				console.log(err.toString());
+				this.setState({comments:comments});
+			}
+		})
+		
+	}
+
+
+	render(){
+
+		return(
+
+			<div>
+	//   定义样式：class（2015中的关键字）  在react中要用 className
+
+				<div className="comment-body">
+				
+					<h1>Comments</h1>
+
+					// 包含了CommentList组件 需在外部定义一个CommentList组件
+		
+				       /* <CommentList comments={comments}/> */
+
+
+
+					 // comments将不在是javascript变量
+
+					//  让comments属于commentBox的一个状态
+
+
+				// 一旦state，将不会是comments原生的变量了，这里是没有值得 可以通过构造函数
+					
+					<CommentList comments={this.state.comments}/> 
+
+					// 包含了CommentForm组件 需在外部定义一个CommentList组件
+					
+					//<CommentForm/> 
+					
+						 		// 上面定义handleNewComment(comment)方法
+					<CommentForm onSubmit={comment => this.handleNewComment(comment)}/> 
+				
+				</div>
+
+				<div className="comment-author">{this.props.author}</div>
+
+			</div>
+
+			);
+	}
+}
+  
+box = React.render(  //  将渲染完的commentBox赋值给全局的javascript对象。
+
+	//<CommentBox comments="{comments}"/>,
+	
+	<CommentBox url="comments.json"/>,
+
+	document.getElementById('content')
+	)
+
+
+
+
+3、react组件的生命周期：
+
+	帮助我们通过  服务器端加载数据
+
+	*************箭头函数**************
+	
+		ES6中的箭头函数     () =>{} 
+	
+		1、 默认给你做一个bind操作   改变this   this永远指向当前的对象。
+	
+		2、（  , ）有参数可以直接使用，如果有一个参数可以省略（）。
+
+4、组件事件 和 表单处理
+	
+	onSubmit  提交事件      onSubmit={e => {this.handleSubmit(e)}}
+
+	consf   //  定义常量
+
+	this.refs   // refs：react 对应的内置对象  可获取对应的表单，body ，值
+
+	getDOMNode()    //  获取 某某对应的HTML对象
+
+	trim()      // 原生的方法 不希望有空格   
+
+	con

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>胜</title>
+</head>
+<body>
+<div id="content" style="width:400px;height:100px;border:1px solid black;" contenteditable="true"></div>
+<div>
+    <!-- 这个地方用butoon后者inpput按钮，不然会出现bug,目前还不明白研究中-->
+    <button class="btn btn-default" id="add-one">添加几个字</button>
+    <button class="btn btn-default" id="add-multi">添加表情</button>
+</div>
+
+
+<script>
+    var $addOne = document.querySelector('#add-one');
+    var $addMulti = document.querySelector('#add-multi');
+    var div = document.getElementById('content');
+
+    $addOne.onclick=function(e) {
+        insertText('SB啊');
+    };
+    $addMulti.onclick=function(e) {
+        insertImg('img/1.gif');
+    };
+
+    function insertImg(src) {
+        if ('getSelection' in window) {
+            var sel = window.getSelection();
+            if (sel && sel.rangeCount === 1 && sel.isCollapsed) {
+                //有选区，且选区数量是一个，且选区的起始点和终点在同一位置
+                div.focus();
+                var range = sel.getRangeAt(0);
+                var img = new Image();
+                img.src=src;
+                range.insertNode(img);
+                range.collapse(false);//对于IE来说，参数不可省略
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        } else if ('selection' in document) {
+            div.focus();
+            var range = document.selection.createRange();
+            range.pasteHTML('<img src="' + src + '">');
+            div.focus();//IE 11模拟的IE5~IE8无须这一步也能获得焦点
+        }
+    }
+
+    function insertText(text) {
+        if ('getSelection' in window) {
+            var sel = window.getSelection();
+            if (sel && sel.rangeCount === 1 && sel.isCollapsed) {
+                //有选区，且选区数量是一个，且选区的起始点和终点在同一位置
+                div.focus();
+                var range = sel.getRangeAt(0);
+                var textNode = document.createTextNode(text);
+                range.insertNode(textNode);
+                range.collapse(false);//对于IE来说，参数不可省略
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        } else if ('selection' in document) {
+            div.focus();
+            var range = document.selection.createRange();
+            range.text = text;
+            div.focus();//IE 11模拟的IE5~IE8无须这一步也能获得焦点
+        }
+    }
+</script>
+</body>
+</html>

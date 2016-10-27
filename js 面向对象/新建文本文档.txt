@@ -1,0 +1,25 @@
+var nicktitle = $(".jf-nickname"),
+    nicklist = $(".jf-top-list-bg>.uls"),
+    nickicon = $(".jf-top-list-bg");
+
+function Nickname(option){
+    this.title = option.title;
+    this.list = option.list;
+    this.icon = option.icon;
+    this.nick();
+}
+Nickname.prototype={
+    nick:function(){
+        var that = this;
+        that.title.hover(function(){
+            that.list.removeClass("fn-hide");
+            that.icon.css({background:"url(img/jf-top-login-s.png)  no-repeat  center 24px"});
+        },function(){
+            that.list.addClass("fn-hide");
+            that.icon.css({background:"url(img/jf-top-login-x.png)  no-repeat  center 24px"});
+        });
+    }
+};
+var  nick = new Nickname({title:nicktitle,list:nicklist,icon:nickicon});
+
+// 实例化对象 要放在对象的后面 否则 原型上的方法会报错   即:  this.nick() not function

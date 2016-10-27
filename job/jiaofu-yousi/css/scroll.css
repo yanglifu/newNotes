@@ -1,0 +1,32 @@
+body,div,p{
+	margin: 0;
+	padding: 0;
+}
+.box{
+	width: 500px;
+	height: 400px;
+	margin: 20px auto;
+	position: relative;
+	overflow: hidden;
+	border: 1px solid #ccc;
+}
+.box .inner{
+	width: auto;
+	padding: 20px;
+}
+.scroll{
+	width: 10px;
+	height: 100%;
+	background: #abcdef;
+	display: block;
+	position: absolute;
+	right: 0px;
+	top: 0;
+}
+.btn{
+	width: 10px;
+	position: absolute;
+	z-index: 10;
+	border-radius: 25px;
+	background: #a50000;
+}

@@ -1,0 +1,71 @@
+@import "color";
+//footer
+.jf-footer{
+  width:100%;
+  height: 180px;
+  background: $footercolor;
+}
+.jf-footer-inner{
+  width:1200px;
+  height: 120px;
+  margin: 0 auto;
+}
+.jf-footer-inner .left{
+  width:auto;
+  padding: 6px 18px;
+}
+.jf-footer-inner .left ul{
+  width:100%;
+  height:50px;
+}
+
+.jf-footer-inner .left ul li{
+  float: left;
+  margin-left: 22px;
+  line-height: 50px;
+  color: #999999;
+}
+.jf-footer-inner .left ul li a{
+  color: #999999;
+}
+.jf-footer-inner .left ul li a:hover{
+  color: #FFFFFF;
+}
+.jf-footer-inner .left ul .first{
+  width:100px ;
+  font-size: 20px;
+  color: #ffffff;
+}
+.jf-footer-inner .right{
+  width:270px;
+  height: auto;
+  padding: 20px 0;
+}
+.jf-footer-inner .right .jf-phone{
+  width:100%;
+  height: 66px;
+  background: url("../img/jf-phone.png") no-repeat 18px center ;
+}
+.jf-footer-inner .right .jf-phone div{
+  width:190px;
+  height: 100%;
+}
+.jf-footer-inner .right .jf-phone div h4{
+  color: #f4f4f4;
+  line-height: 30px;
+  font-size: 20px;
+}
+.jf-footer-inner .right .jf-phone div span{
+  color: #939393;
+  font-size: 10px;
+}
+// 版权
+.jf-footer-bottom{
+  width:1200px;
+  height: 60px;
+  margin: 0 auto;
+  line-height: 30px;
+  text-align: center;
+  color: #979797;
+  border-top: 1px solid #5b5b5b;
+}

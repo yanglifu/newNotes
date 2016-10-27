@@ -1,0 +1,8 @@
+@charset "UTF-8";
+html html, html body, body html, body body {
+  font-size: 14px;
+  font-family: "微软雅黑","宋体","黑体",Arial; }
+html div, html ul, html li, body div, body ul, body li {
+  box-sizing: border-box; }
+
+/*# sourceMappingURL=font.css.map */

@@ -1,0 +1,12 @@
+1. 	obj.oninput=function(){}		oninput 事件在用户输入时触发。
+					该事件在 <input> 或 <textarea> 元素的值发生改变时触发
+					支持移动端 复制 粘贴
+
+2. 	obj.cancelBubble = true;		阻止事件冒泡
+
+3.	数组 操作 
+
+	添加	 arr.push  
+	删除	arr.splice(1,1)		// 删除 从下标为1的元素开始 删除1位
+	更改	arr.splice(1,1,'adc')		// 先删除 元素 然后在添加
+	

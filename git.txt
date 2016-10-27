@@ -1,0 +1,26 @@
+http-server   启动本地静态服务器
+
+git log  查看提交历史
+
+git reset --hard  37d046f4f71e321d288d2301eb0137917739c38e   去撤销这次修改
+
+ git pull origin master  $ git pull <远程主机名> <远程分支名>:<本地分支名>
+
+$ git pull origin next  取回origin/next分支，再与当前分支合并。实质上，这等同于先做git fetch，再做git merge。
+
+http-server 开启本地服务器 默认端口8080
+http-server -p 8899 开启本地服务器 端口 8899
+
+git 简单流程
+	git add .
+	git commit -m "注释";
+	git pull origin master
+	git push origin master
+
+git 复制远程仓库
+	git clone 【https://your_username@bitbucket.org/your_username/name_of_remote_repository.git】  拷贝代码
+	提交复制远程仓库的代码时  需要输入用户名 密码
+
+1git init
+2.git config user.name "someone"
+3.git config user.email "someone@someplace.com"

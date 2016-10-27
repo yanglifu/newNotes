@@ -1,0 +1,9 @@
+ 
+1. html  双核浏览器  优先使用谷歌内核渲染
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1200,initial-scale=1.0,user-scalable=no">
+    <meta name="renderer" content="webkit">
+
+2. letter-spacing:8px  字间距
+
+3.  autocomplete="off"   input  关闭谷歌自动填充

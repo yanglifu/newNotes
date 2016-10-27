@@ -1,0 +1,549 @@
+@import "reset";
+@import "top";
+@import "header";
+@import "banner";
+@import "footer";
+html,body{
+   font-size:14px;
+   font-family:"微软雅黑","宋体","黑体",Arial;
+   box-sizing: border-box;
+ }
+
+
+//优质教学套件
+.jf-nav{
+  width:100%;
+  height: 158px;
+}
+.jf-nav-inner .ullist{
+  width:25%;
+  height: 100%;
+  padding:46px 0;
+}
+
+.jf-nav-inner .ullist .left{
+  width:80px;
+  height: 100%;
+  margin-left: 26px;
+  text-align: center;
+}
+.jf-nav-inner .ullist .right{
+  width:144px;
+  height: 100%;
+}
+.jf-nav-inner .ullist .right h4{
+  font-size: 14px;
+  color: $teachcolor1;
+}
+.jf-nav-inner .ullist .right p{
+  font-size: 12px;
+  color: $teachcolor2;
+}
+
+// 课程使用案列
+.jf-content1{
+  width:100%;
+  height: 470px;
+  background: $topbackground;
+}
+.jf-content1-inner{
+  height: 100%;
+}
+.jf-content1-inner .left{
+  width:550px;
+  height: 100%;
+}
+.jf-content1-inner .left h4{
+  font-size: 22px;
+  line-height: 50px;
+  color: $footercolor;
+  font-weight: 700;
+}
+.jf-video{
+  width:100%;
+  height:284px;
+  position: relative;
+  background: #000000;
+}
+.jf-video-switch{
+  width:64px;
+  height: 48px;
+  position: absolute;
+  top:120px;
+  left:240px;
+}
+.jf-carousel{
+  width:100%;
+  height: 120px;
+  position: relative;
+  margin-top: 8px;
+}
+.jf-carousel-left,.jf-carousel-right{
+  width:22px;
+  height: 22px;
+  position: absolute;
+  top:48px;
+  cursor: pointer;
+}
+.jf-carousel-left{
+  background: url("../img/jf-i-66.png") no-repeat center;
+}
+.jf-carousel-right{
+  right:0;
+  background: url("../img/jf-i-77.png") no-repeat center;
+}
+.carousel-box{
+  width:496px;
+  height: 120px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.carousel-center{
+  width:1000px;
+  height: 100%;
+}
+.carousel-center li{
+  float: left;
+  width:144px;
+  height: 100%;
+  margin-left:17px;
+}
+.carousel-center li img{
+  width:100%;
+}
+//最受欢迎的教辅排行榜
+.jf-base h4{
+  font-size: 22px;
+  line-height: 50px;
+  font-weight: 600;
+  color: $footercolor;
+}
+.jf-right-content{
+  width:590px;
+  height: 390px;
+  background: #ffffff;
+}
+.jf-uls-title{
+  width:100%;
+  height: 42px;
+  background: $ulbackground;
+}
+.jf-uls-title li{
+  float: left;
+  text-align: center;
+  width:106px;
+  line-height: 42px;
+  cursor: pointer;
+  color: #b4b6bb;
+}
+
+.jf-uls-title li a{
+  text-decoration: underline;
+}
+.jf-base-left{
+  height: 100%;
+
+}
+.jf-base-center{
+  width:106px;
+  height: 100%;
+}
+li.jf-base-right{
+  height: 100%;
+  float: right;
+}
+li.jf-base-right a{
+  color: #f9f9f9;
+}
+// 选项卡 选中
+li.jf-index{
+  border-top:3px solid $teachborder;
+  background: $teachbackground;
+  line-height: 38px;
+  color: $teachborder;
+}
+// 选项卡 box内容
+.jf-box{
+  width:100%;
+  height: auto;
+  padding: 20px;
+}
+.jf-subject{
+  width:100%;
+  height: 60px;
+  background: $subjectbackground;
+  color: #7f7f7f;
+}
+.jf-subject li{
+  width:100%;
+  height: 30px;
+}
+.jf-top-left-grade{
+  width:12%;
+  height: 100%;
+  text-align: center;
+  line-height: 30px;
+  background: url("../img/jf-i-x.png") no-repeat 54px center;
+  cursor: pointer;
+  position: relative;
+}
+// 年级选中
+.grade-list{
+  width:100%;
+  height: auto;
+  background:#f5f5f5;
+  position: absolute;
+  left:0;
+}
+
+.grade-list li:hover{
+  background:#696e78;
+  color: #ffffff;
+}
+.jf-bg-grade{
+  width:12%;
+  height: 100%;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+.jf-grade{
+  width:80%;
+  height: 100%;
+  margin-left: 20px;
+}
+.jf-grade a:hover{
+  color: #cd403c;
+}
+.jf-grade li{
+  width:auto;
+  height:100%;
+  float: left;
+  text-align: center;
+  line-height: 30px;
+  padding: 0 4px;
+}
+.jf-grade .data-bg{
+  background: #eeeeee;
+}
+.jf-grade li a.lf-list-index{
+  color: #cd403c;
+}
+.jf-grade .jf-first{
+  width:100px;
+}
+
+.jf-data{
+  width:100%;
+  height: 266px;
+}
+.jf-data>li{
+  width:100%;
+  height: 38px;
+  border-bottom: 1px dashed $teachcolor2;
+}
+// data 行ul li
+.jf-data-uls{
+  width:100%;
+  height: 100%;
+}
+.jf-data-uls li{
+  line-height: 46px;
+  font-size: 12px;
+  color: $ulcolor;
+}
+.jf-data-uls .one{
+  width:335px;
+  height: 100%;
+}
+.jf-data-uls .one a:hover{
+  color: #3E81B3;
+}
+.jf-data-uls .two{
+  width:134px;
+  height: 100%;
+}
+.jf-data-uls .three{
+  width:auto;
+  height: 100%;
+}
+.jf-data-uls .three span{
+  color: $teachcolor2;
+}
+
+//热门教学宝典
+.jf-canon{
+  width:100%;
+  height: auto;
+  padding: 30px 0;
+  overflow: hidden;
+}
+.jf-canon-inner{
+  width:1200px;
+  height: 100%;
+}
+.jf-ly-title{
+  width:590px;
+  height: 100%;
+  border:1px solid $searchborder;
+}
+.jf-ly-title .title{
+   width:100%;
+   height: 42px;
+   border:1px solid $searchborder;
+ }
+
+// 热门教学宝典 left
+.jf-ly-title .title .left{
+  height: 100%;
+  padding: 0 10px;
+  border-bottom: 2px solid $topcolor1;
+  line-height: 40px;
+}
+.jf-ly-title .title .left h4{
+  font-size: 16px;
+  font-weight: 800;
+  color: #444444;
+}
+
+//更多课件
+
+.jf-ly-title .title .right{
+  height: 100%;
+  padding: 0 20px;
+  line-height: 40px;
+}
+.jf-ly-title .title .right a{
+  color: #2e76ac;
+  text-decoration:underline;
+}
+//期末
+.jf-ly-title .box{
+  padding: 0 20px;
+  width:100%;
+  height: 194px;
+}
+.jf-ly-title .box .one{
+  width:460px;
+}
+
+//  优思教辅为老师带来
+.jf-Supplementary{
+  width:100%;
+  height: 342px;
+  background: $topbackground;
+}
+.jf-supplementary-inner{
+  height: 100%;
+}
+.jf-supplementary-inner>li{
+  padding: 40px 0;
+  width:33.33%;
+  height: 100%;
+  float: left;
+  text-align: center;
+}
+//圆角照片
+.jf-photo{
+  width:186px;
+  height: 186px;
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.jf-supplementary-inner>li h4{
+  line-height: 50px;
+  color: #9c9c9c;
+  font-size: 16px;
+}
+.jf-supplementary-inner>li .title{
+  width:auto;
+  height: 26px;
+  margin: 0 auto;
+
+}
+.jf-supplementary-inner>li>.title>li{
+  float: left;
+  padding: 2px 5px;
+  border:1px solid $titleborder;
+  color: #414141;
+  margin: 0 4px;
+}
+.jf-supplementary-inner>li>.title>li.first{
+  margin-left: 46px;
+}
+.jf-supplementary-inner>li>.title>li.last{
+  margin-left: 92px;
+}
+.jf-supplementary-inner>li>.title>li:hover{
+  opacity: 0.8;
+}
+//优思的logo
+.jf-yousi{
+  width:100%;
+  height: 230px;
+  padding-top:80px;
+  background: $teachbackground;
+}
+.jf-yousi-inner{
+  width:828px;
+  height:80px;
+  margin:0 auto;
+  border:1px solid $searchborder;
+  border-right:0;
+}
+.jf-yousi-inner li{
+  float: left;
+  width:25%;
+  height: 100%;
+  text-align: center;
+  padding: 20px 0;
+  border-right:1px solid $searchborder;
+}
+
+
+// 弹框
+.mask{
+  position: fixed;
+  width:100%;
+  height: 100%;
+  top:0;
+  left:0;
+  background: #000000;
+  opacity: 0.6;
+  z-index: 99999;
+}
+.ex8-appointment{
+  position: fixed;
+  width:380px;
+  height: 310px;
+  background: url("../img/jf-i-logo.png")no-repeat center;
+  z-index: 999999;
+}
+.jf-login{
+  width:240px;
+  height: 230px;
+  margin: 80px auto;
+}
+.jf-login a{
+  display: block;
+  color: #66aaeb;
+  margin-top: 10px;
+}
+.jf-login input{
+  width:100%;
+  height: 40px;
+  border:0;
+  outline: none;
+  background: #f5f5f5;
+  margin-top: 8px;
+  line-height: 40px;
+}
+input[name=button]{
+  background: #66aaeb;
+  color: #f7fafd;
+}
+
+.ex8-inputbox{
+  width:14px;
+  height: 14px;
+  background: url("../img/jf-i-close.png") no-repeat center;
+  position: absolute;
+  top:70px;
+  right: 20px;
+  cursor: pointer;
+}
+.errorMsg{
+  color: #333333;
+}
+
+//意见反馈
+.jf-opinion{
+  width:30px;
+  height: 94px;
+  position: fixed;
+  top:50%;
+  right:-6px;
+  background: #939393;
+  padding: 6px;
+  color: #254c6a;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.jf-feedback{
+  position: fixed;
+  top:0;
+  left:0;
+  z-index:999999;
+  width:380px;
+  height: 268px;
+  background: #ffffff;
+}
+.jf-feedback-login{
+  width:340px;
+  height: 230px;
+  margin: 20px auto;
+}
+.jf-feedback-login textarea{
+  width:336px;
+  height: 122px;
+  border:0;
+  outline: none;
+  background: #f5f5f5;
+  color: #a6a6a6;
+  resize: none;
+}
+.jf-feedback-login #phone{
+  width:100%;
+  height: 28px;
+  background: #f5f5f5;
+  border:0;
+  outline: none;
+  margin-top: 10px;
+  color: #A9A9A9;
+}
+.jf-feedback-login .jf-code{
+  width:100%;
+  height: 30px;
+  margin-top: 6px;
+}
+.jf-feedback-login .jf-code #code{
+  display: block;
+  width:64px;
+  height: 28px;
+  background: #f5f5f5;
+  border:1px solid #e8e8e8;
+  outline: none;
+  float: left;
+  color: #A9A9A9;
+}
+.jf-feedback-login .jf-code img{
+  display: block;
+  float: left;
+  width:64px;
+  height: 28px;
+  margin-left: 20px;
+  border:1px solid #e8e8e8;
+}
+.jf-feedback-login .jf-code .left,.jf-login .jf-code .right{
+  width:56px;
+  height: 26px;
+  outline: none;
+}
+.jf-feedback-login .jf-code .left{
+  margin-right: 10px;
+  color: #505050;
+  border:1px solid #e8e8e8;
+}
+.jf-feedback-login .jf-code .right{
+  color: #ffeae9;
+  background: #ff3934;
+  border:0;
+}
+
+// 背景变化
+.bgphoto{
+  background: url("../img/jf-logo-d.png") no-repeat center !important;
+}
+

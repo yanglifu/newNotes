@@ -1,0 +1,1 @@
+.ztree li span.button   在css文件中将这个元素的 width 设为0  就没有那个难看的图标喽

@@ -1,0 +1,6 @@
+$("body",parent.document).find("iframe")
+
+从iframe嵌入的页面中重新找到iframe元素
+
+
+$("body",parent.document).append('这是子级页面添加的内容！');

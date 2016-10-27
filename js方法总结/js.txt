@@ -1,0 +1,22 @@
+ 1. window.location.reload();  // 页面刷新
+
+2. 页面底部计算滚动条 滚动的距离时， 要减去最后一屛的高度 
+
+3. 数组： 	Array.join() 	数组转化为字符串
+	String.split() 	字符串转化为数组
+	Array.reverse()  	返回颠倒顺序的 数组
+	Array.sort() 	以字母表顺序排序 undefined 元素会排在末尾
+	Array.slice()
+	Array.map()
+	Array.filter()	
+	Array.every(function(x){ return x<10})     	
+	Array.some(function(x){ return x<10})
+	Array.reduce()
+	Array.reduceRight()
+	Array.indexOf("元素"，i )  	// i 为索引  从哪个位置开始查询(可选项)	
+	Array.lastIndexOf()		// 从后开始查询	
+
+
+	
+	
+	

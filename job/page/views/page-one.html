@@ -1,0 +1,182 @@
+<p><p><!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+<title>清华北大学霸亲述如何百天冲刺提百分</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta  name="keywords"content="时音，1对1，中考，高考，一对一，家教，名校，学霸，提分"/>
+<meta name="description" content="明明可以跟着学霸提分，跟着学霸飞，却偏偏要苦苦挣扎？" />
+
+<link href="../lib/css/page-one.css" rel="stylesheet" type="text/css"/>
+<LINK href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+<script src='http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js'></script>
+ <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?0c4104885b7f861eabc956ceb8cf4cec";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+
+</head>
+
+<body class='ex3-body'>
+<!-- <img src="../lib/images/"  alt="预约在线课程" class='fn-hide'> -->
+<!-- //top -->
+<div class="main ex4-top border-box m0a fn-clear">
+    <div class="fn-left">
+        <img src="../lib/img/shujian1.png"  alt="">
+    </div>
+    <div class="fn-right">
+        <a class="btn_a_bg" href="tel:4000939775">
+            4000-939-775
+        </a>
+    </div>
+</div>
+<!-- //top end -->
+
+<!-- //banner -->
+<div class="main ex2-banner ex3-banner ex4-banner border-box m0a fn-clear">
+    <img src="../lib/img/shujia2.webp"  alt="预约在线课程">
+    <a href="#ex4Form">立即预约</a>
+</div>
+<!-- //banner end -->
+
+<!-- //banner -->
+<div class="main ex2-banner ex3-banner ex4-banner border-box m0a fn-clear">
+    <img src="../lib/img/shujia3.webp"  alt="预约在线课程">
+</div>
+<!-- //banner end -->
+
+<!-- //banner -->
+<div class="main ex2-banner ex3-banner ex4-banner border-box m0a fn-clear">
+    <img src="../lib/img/shujia4.webp"  alt="预约在线课程">
+</div>
+<!-- //banner end -->
+<!-- //banner -->
+<div class="main ex2-banner ex3-banner ex4-banner border-box m0a fn-clear">
+    <img src="../lib/img/shujia5.webp"  alt="预约在线课程">
+</div>
+<!-- //banner end -->
+<!-- //banner -->
+<div class="main ex2-banner ex3-banner ex4-banner border-box m0a fn-clear">
+    <img src="../lib/img/shujia6.webp"  alt="预约在线课程">
+</div>
+<!-- //banner end -->
+<!-- //banner -->
+<div class="main ex2-banner ex3-banner ex4-banner border-box m0a fn-clear">
+    <img src="../lib/img/shujia7.webp"  alt="预约在线课程">
+</div>
+<!-- //banner end -->
+<!-- //banner -->
+<div class="main ex2-banner ex3-banner ex4-banner border-box m0a fn-clear">
+    <img src="../lib/img/shujia8.webp"  alt="预约在线课程">
+</div>
+<!-- //banner end -->
+<!-- //banner -->
+<div class="main ex2-banner ex3-banner ex4-banner border-box m0a fn-clear">
+    <img src="../lib/img/shujia9.webp"  alt="预约在线课程">
+</div>
+<!-- //banner end -->
+<!-- //banner -->
+<div class="main ex2-banner ex3-banner ex4-banner border-box m0a fn-clear">
+    <img src="../lib/img/shujia10.webp"  alt="预约在线课程">
+</div>
+<!-- //banner end -->
+<!-- //form -->
+<a name="ex4Form"></a>
+<div class="ex3-form1 ex4-form1 main border-box extension4-title ex4-arrow-wrap m0a fn-clear">
+    <h5>预约<span>免费</span>试听</h5>
+    <input type="text" name='name' placeholder='学生姓名'>
+    <input type="text" name='phone' placeholder='手机号码'>
+    <p class='errorMsg fn-hide'></p>
+    <button class='btn btn-red extension3FormSubmit'>领取试听课</button>
+</div>
+<!-- //form end -->
+
+<!--footer-->
+    <div class="main ex9-footer">
+        <a href="tel:4000939775" class="fn-left ex9-footer-left"><img src="../lib/img/ex9-photo-left.webp" alt=""></a>
+        <a href="#ex4Form" class="fn-left ex9-footer-right"><img src="../lib/img/ex9-photo-right.webp" alt=""></a>
+    </div>
+<!-- footer end -->
+
+
+  <!-- //表单提交 -->
+<script>
+    /* ajax 验证请求数据 */
+    $(".extension3FormSubmit").click(function(){
+        var self = $(this),
+                mobile = self.siblings('input[name=phone]').val(),
+                name = self.siblings('input[name=name]').val(),
+                errormsg = self.siblings('.errorMsg');
+
+        if (self.hasClass('disable')) return;
+        $.ajax({
+            'type' : 'POST',
+            'url' : '/index.php?m=intention&c=index&a=intention_post',
+            'data' : {
+                tel_phone : mobile,
+                name : name
+            },
+            beforeSend : function () {
+
+                errormsg.text('').addClass('fn-hide');
+                if (!mobile) {
+                    errormsg.text('手机号不能为空').removeClass('fn-hide');
+                    return false;
+                }
+                if (!(/^1\d{10}$/.test(mobile))) {
+                    errormsg.text('手机号码格式不正确').removeClass('fn-hide');
+                    return false;
+                }
+
+                if (!name) {
+                    errormsg.text('姓名不能为空').removeClass('fn-hide');
+                    return false;
+                }
+
+                self.addClass('disable');
+
+            },
+            success : function (data) {
+
+                if (data == '200') {
+                    $('input[name=phone]').val('');
+                    $('input[name=name]').val('');
+                    errormsg.text('').removeClass('fn-hide');
+                    setTimeout(function () {
+                        errormsg.text('').addClass('fn-hide');
+                    }, 4000)
+
+                } else {
+
+                    errormsg.text('预约失败，请重新预约或联系客服').removeClass('fn-hide');
+
+                }
+
+                self.removeClass('disable');
+
+            },
+            error : function (data) {
+
+                data = JSON.parse(data.responseText);
+
+                self.removeClass('disable');
+                if(data && data.desc) {
+                    errormsg.text(data.desc.message)
+                } else {
+                    errormsg.text('网络连接失败，请检查网络后再次预约')
+                }
+            }
+
+        });
+    });
+</script>
+<!-- //表单提交 end -->
+</body>
+</html>  

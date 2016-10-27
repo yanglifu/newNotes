@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="swiper-3.4.0.min.css">
+	<script src="jquery-3.1.1.min.js"></script>
+	<script src="swiper-3.4.0.jquery.min.js"></script>
+	<style>
+		div.box{
+			width: 300px;
+			height: 200px;
+			position: relative;
+			border: 1px solid red;
+		}
+		.mubb{
+			float: left;
+		}
+		.mubb1{
+			height: 200px;
+			background: blue;
+		}
+		.mubb2{
+
+			height: 200px;
+			background: #abcdef;
+		}
+		.mubb3{
+
+			height: 200px;
+			background: green;
+		}
+		.mubb4{
+
+			height: 200px;
+			background: yellow;
+		}
+		.mubb5{
+
+			height: 200px;
+			background: #fff;
+		}
+		.mubb6{
+
+			height: 200px;
+			background: #000;
+		}
+		.btn{
+			width: 100px;
+			height: 30px;
+			position: absolute;
+			top: 48%;
+			right: -100px;
+			background: red;
+			cursor: pointer;
+		}
+		div.swiper-slide{
+			width: auto !important;
+			float: left !important;
+		}
+	</style>
+</head>
+<body>
+<div class="box">
+	<div class="btn"></div>
+	<div class="swiper-container">
+	  <div class="swiper-wrapper">
+	    <div class="swiper-slide"><div class=" mubb mubb1">11212fdsfasdfasdfasdfasdf12</div></div>
+	    <div class="swiper-slide"><div class="mubb mubb2">212asdfas12</div></div>
+	    <div class="swiper-slide"><div class=" mubb mubb3">32asdf12</div></div>
+	    <div class="swiper-slide"><div class=" mubb mubb4">41sdfadf2</div></div>
+	    <div class="swiper-slide"><div class=" mubb mubb5">5df2</div></div>
+	    <div class="swiper-slide"><div class=" mubb mubb6">61212121121212</div></div>
+	  </div>
+	</div>
+</div>
+	
+<script>
+	var mySwiper = new Swiper('.swiper-container', {
+		autoplay: 5000,//可选选项，自动滑动
+		slidesPerView : 'auto',
+		nextButton:'.btn',
+	})
+</script>		
+</body>
+</html>

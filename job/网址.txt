@@ -1,0 +1,21 @@
+jiaofu.yousi.com
+jiajiao.yousi.com
+shijin100.com
+http://172.16.3.141:7766/
+http://kelude.aliyun.com/   	
+http://172.16.3.141:7767/Promotion/singlepage/d/2  		单页地址	
+http://yousi.com/Promotion/singlepage/d/4	
+
+http://172.16.3.141:8804/goldtutors/page/id/1			家教单页地址
+
+yousi_websit_back  	后台页面
+
+
+
+http://2.swiper.com.cn/				swiper
+http://2.swiper.com.cn/api/pagination/2014/1217/68.html		swiper 应用
+http://echarts.baidu.com/					图表
+
+http://docs.unity3d.com/Manual/UICanvas.html 			canvas ui
+
+
